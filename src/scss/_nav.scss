@@ -1,0 +1,28 @@
+nav.nav {
+  width: 100%;
+  display: flex;
+  padding: 22px 160px;
+  align-items: center;
+  background-color: #fff;
+  .container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    a.logo {
+      width: 132px;
+      display: flex;
+      img {
+        width: 100%;
+      }
+    }
+    .toggle-menu-btn {
+      display: flex;
+      cursor: pointer;
+      width: 66px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
