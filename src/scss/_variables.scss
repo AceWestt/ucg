@@ -2,3 +2,36 @@ $green: #009933;
 $greyDarkCorp: #2b2b2a;
 $greyLight: #ededf0;
 $greyLighter: #f5f5f5;
+
+@mixin scrollbars(
+	$size,
+	$border-radius,
+	$foreground-color,
+	$background-color: mix($foreground-color, white, 50%)
+) {
+	// For Google Chrome
+	&::-webkit-scrollbar {
+		width: $size;
+		height: $size;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: $foreground-color;
+		border-radius: $border-radius;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: $background-color;
+		border-radius: $border-radius;
+	}
+
+	// For Internet Explorer
+	& {
+		scrollbar-face-color: $foreground-color;
+		scrollbar-track-color: $background-color;
+	}
+}
+@mixin textoutline($color: #fff) {
+	text-shadow: -1px -1px 0 $color, 1px -1px 0 $color, -1px 1px 0 $color,
+		1px 1px 0 $color;
+}

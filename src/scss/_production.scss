@@ -1,0 +1,333 @@
+.page.production {
+	.section.main {
+		background-color: #2a2a2a;
+		.small-card-container {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			.small-card {
+				display: flex;
+				align-items: stretch;
+				margin-top: -70px;
+				box-shadow: 0px 8px 12px 4px rgba(0, 0, 0, 0.25);
+				.side {
+					&.left {
+						display: flex;
+						flex-direction: column;
+						flex-shrink: 0;
+						background-color: $greyDarkCorp;
+						.title {
+							font-size: 42px;
+							color: #fff;
+							font-weight: 500;
+							background-color: $green;
+							padding: 42px 76px;
+							height: auto;
+							flex-shrink: 0;
+						}
+						.highlights {
+							width: 100%;
+							height: 100%;
+							display: flex;
+							flex-direction: column;
+							justify-content: center;
+							gap: 35px;
+							padding: 54px 40px;
+							.item {
+								display: flex;
+								align-items: center;
+								gap: 16px;
+								span.line {
+									width: 30px;
+									height: 2px;
+									background-color: $green;
+								}
+								span.text {
+									color: #fff;
+									font-size: 18px;
+									font-weight: 600;
+								}
+							}
+						}
+					}
+					&.right {
+						display: flex;
+						padding: 30px 40px;
+						justify-content: center;
+						align-items: center;
+						background-color: #2a2a2a;
+						img {
+							height: 100%;
+							max-width: 100%;
+							object-fit: contain;
+						}
+					}
+				}
+			}
+		}
+		.plants-container {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			margin-top: 100px;
+			.map-container {
+				margin: 100px 0 0 0;
+				width: 100%;
+				display: flex;
+				justify-content: flex-end;
+				.map-bg {
+					width: 1200px;
+					margin-bottom: 220px;
+				}
+				.thumb-container {
+					display: flex;
+					flex-direction: column;
+					position: absolute;
+					bottom: 55px;
+					right: 0;
+					width: 480px;
+					.thumb-img {
+						width: 100%;
+						height: 270px;
+						overflow: hidden;
+						background-color: #fff;
+						img {
+							width: 100%;
+							height: 100%;
+							position: absolute;
+							top: 0;
+							left: 0;
+							object-fit: cover;
+							opacity: 0;
+							transition: all 0.3s linear;
+							&.active {
+								opacity: 1;
+							}
+						}
+					}
+					.thumb-title {
+						width: 100%;
+						text-align: center;
+						padding: 16px 20px;
+						background-color: $green;
+						color: #fff;
+						font-weight: 700;
+						font-size: 22px;
+					}
+				}
+				.points-container {
+					width: 100%;
+					height: 100%;
+					display: flex;
+					position: absolute;
+					top: 0;
+					left: 0;
+					.point {
+						width: auto;
+						position: absolute;
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						// gap: 8px;
+						transform: translate(50%, -50%);
+						span {
+							position: absolute;
+							text-align: center;
+							bottom: calc(100% + 8px);
+							left: 50%;
+							transform: translateX(-50%);
+							width: auto;
+							font-weight: 600;
+							text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.5);
+							font-size: 18px;
+							color: #fff;
+							// background: #343331;
+							opacity: 0;
+							transition: all 0.3s linear;
+						}
+						.icon-container {
+							cursor: pointer;
+							width: 20px;
+							height: 20px;
+							border-radius: 50%;
+							background-color: transparent;
+							transition: all 0.3s linear;
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							img {
+								width: 20px;
+							}
+						}
+						&:hover {
+							span {
+								opacity: 1;
+							}
+						}
+						&.active {
+							span {
+								display: none;
+							}
+							.icon-container {
+								width: 66px;
+								height: 66px;
+								background-color: rgba($color: #009933, $alpha: 0.8);
+								img {
+									width: 35px;
+								}
+							}
+						}
+					}
+				}
+			}
+			.list {
+				width: 612px;
+				display: flex;
+				flex-direction: column;
+				position: absolute;
+				left: 0;
+				top: 150px;
+				background-color: #4e4e4e;
+				padding: 20px 40px;
+				.item {
+					width: 100%;
+					display: flex;
+					flex-direction: column;
+					border-bottom: 1px solid #eeeeee;
+					padding: 33px 0;
+					&:last-child {
+						border-bottom: transparent;
+					}
+					&-header {
+						display: flex;
+						align-items: center;
+						width: 100%;
+						.plant-icon {
+							width: 20px;
+							margin: 0;
+							flex-shrink: 0;
+						}
+						span {
+							width: 100%;
+							font-size: 26px;
+							font-weight: 500;
+							color: #fff;
+							padding: 0 18px;
+						}
+						.control-button {
+							width: 32px;
+							cursor: pointer;
+						}
+					}
+					&-body {
+						width: 100%;
+						display: flex;
+						overflow: hidden;
+						transition: all 0.3s linear;
+						&-container {
+							width: 100%;
+							display: flex;
+							flex-direction: column;
+							padding-top: 30px;
+							gap: 30px;
+							position: absolute;
+							top: 0;
+							left: 0;
+							.detail {
+								display: flex;
+								flex-direction: column;
+								gap: 16px;
+								font-size: 18px;
+								line-height: 27px;
+								color: #fff;
+								.value {
+									font-weight: 600;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.section.text-section-one {
+		margin: 150px 0;
+		align-items: center;
+		gap: 100px;
+		.side {
+			width: 100%;
+			&.pattern-holder {
+				width: 972px;
+				flex-shrink: 0;
+				img {
+					width: 100%;
+				}
+			}
+			&.text-holder {
+				display: flex;
+				flex-direction: column;
+				gap: 70px;
+				color: $greyDarkCorp;
+				h3 {
+					font-weight: 700;
+					font-size: 60px;
+					line-height: 78px;
+					letter-spacing: 0.02em;
+				}
+				p {
+					font-size: 18px;
+					line-height: 27px;
+					max-width: 620px;
+				}
+			}
+		}
+	}
+	.section.text-section-two {
+		margin-bottom: 100px;
+		gap: 100px;
+		.section-container {
+			display: flex;
+			gap: 100px;
+			align-items: center;
+			.side {
+				width: 100%;
+				&.text-holder {
+					display: flex;
+					flex-direction: column;
+					color: $greyDarkCorp;
+					gap: 40px;
+				}
+				&.img-text-holder {
+					width: 1100px;
+					flex-shrink: 0;
+					img {
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						top: 0;
+						left: 0;
+						object-fit: cover;
+					}
+					.text-wrapper {
+						width: 100%;
+						height: 100%;
+						display: flex;
+						padding: 80px;
+						justify-content: center;
+						gap: 40px;
+						color: #fff;
+						flex-direction: column;
+						h2 {
+							max-width: 410px;
+						}
+						p {
+							max-width: 885px;
+							color: #fff;
+						}
+					}
+				}
+			}
+		}
+	}
+}
