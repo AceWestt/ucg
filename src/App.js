@@ -52,6 +52,9 @@ function App() {
 						<Route path="/career">
 							<Career />
 						</Route>
+						<Route path='/news'>
+							<News />
+						</Route>
 					</Switch>
 					<Footer />
 				</AppProvider>
