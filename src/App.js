@@ -13,6 +13,7 @@ import ProjectsDetailed from './pages/ProjectsDetailed';
 import SpecialOffer from './pages/SpecialOffer';
 import Development from './pages/Development';
 import Contact from './pages/Contact';
+import Career from './pages/Career';
 
 function App() {
 	return (
@@ -47,6 +48,9 @@ function App() {
 						</Route>
 						<Route path="/contact">
 							<Contact />
+						</Route>
+						<Route path="/career">
+							<Career />
 						</Route>
 					</Switch>
 					<Footer />

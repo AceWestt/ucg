@@ -115,15 +115,25 @@ body {
 		&.primary {
 			color: #fff;
 			background-color: $green;
+			&.disabled {
+				background-color: $grey;
+			}
 		}
 		&.secondary,
 		&.subtle {
 			background-color: transparent;
 			color: $green;
 			border: 1px solid $green;
+			&.disabled {
+				color: $grey;
+				border-color: $grey;
+			}
 		}
 		&.subtle {
 			border-color: transparent;
+			&.disabled {
+				border-color: transparent;
+			}
 		}
 		&.rnd {
 			width: 74px;
@@ -141,6 +151,9 @@ body {
 			&.primary {
 				background-color: transparent;
 				border: 2px solid $green;
+				&.disabled {
+					border-color: $grey;
+				}
 				.icn-wrap {
 					background-color: $green;
 				}
