@@ -8,6 +8,7 @@ body {
 	flex-direction: column;
 	background-color: $greyLighter;
 	width: 100%;
+	// overflow: hidden;
 	* {
 		box-sizing: border-box;
 		position: relative;
@@ -71,12 +72,21 @@ body {
 		font-size: 18px;
 		margin: 0;
 		line-height: 27px;
+		@media #{$mobileQuery} {
+			font-size: 3.763vw;
+			line-height: 5.645vw;
+		}
 	}
 
 	.text-mini {
 		font-size: 14px;
 		margin: 0;
 		line-height: 21px;
+		@media #{$mobileQuery} {
+			font-size: 3.763vw;
+			margin: 0;
+			line-height: 5.645vw;
+		}
 	}
 
 	.green-text {
@@ -109,12 +119,22 @@ body {
 		padding: 20px 26px;
 		width: auto;
 		cursor: pointer;
+		@media #{$mobileQuery} {
+			gap: 2.688vw;
+			padding: 4.032vw 5.376vw;
+		}
 		img {
 			width: 20px;
+			@media #{$mobileQuery} {
+				width: 5.376vw;
+			}
 		}
 		span {
 			font-weight: 700;
 			font-size: 18px;
+			@media #{$mobileQuery} {
+				font-size: 3.763vw;
+			}
 		}
 		&.primary {
 			color: #fff;
@@ -144,6 +164,11 @@ body {
 			height: 74px;
 			padding: 5px;
 			border-radius: 50%;
+			@media #{$mobileQuery} {
+				width: 16.129vw;
+				height: 16.129vw;
+				padding: 1.344vw;
+			}
 			.icn-wrap {
 				display: flex;
 				justify-content: center;
@@ -151,6 +176,9 @@ body {
 				border-radius: 50%;
 				width: 100%;
 				height: 100%;
+				img {
+					width: 2.688vw;
+				}
 			}
 			&.primary {
 				background-color: transparent;
@@ -172,6 +200,9 @@ body {
 		justify-content: center;
 		align-items: flex-start;
 		height: 387px;
+		@media #{$mobileQuery} {
+			height: 58.602vw;
+		}
 		img {
 			position: absolute;
 			width: 100%;
@@ -186,6 +217,10 @@ body {
 			padding: 0;
 			font-size: 80px;
 			font-weight: 700;
+			@media #{$mobileQuery} {
+				font-size: 6.989vw;
+				line-height: 9.14vw;
+			}
 		}
 	}
 
@@ -223,14 +258,9 @@ body {
 
 	.m-t-n {
 		margin-top: -85px;
-	}
-
-	p {
-		color: $greyDarkCorp;
-		font-size: 18px;
-		line-height: 27px;
-		margin: 0;
-		padding: 0;
+		@media #{$mobileQuery} {
+			margin-top: 0;
+		}
 	}
 
 	.page {
@@ -241,10 +271,16 @@ body {
 
 	.p-left {
 		padding-left: 160px;
+		@media #{$mobileQuery} {
+			padding-left: 5.376vw;
+		}
 	}
 
 	.p-right {
 		padding-right: 160px;
+		@media #{$mobileQuery} {
+			padding-right: 5.376vw;
+		}
 	}
 
 	section,
@@ -264,13 +300,24 @@ body {
 		font-weight: 700;
 		padding: 10px 20px;
 		background-color: $green;
+		@media #{$mobileQuery} {
+			padding: 2.688vw 4.032vw;
+			font-size: 3.763vw;
+		}
 	}
 
 	.section.partners {
 		gap: 100px;
 		margin-bottom: 100px;
+		@media #{$mobileQuery} {
+			gap: 8.065vw;
+			margin-bottom: 26.882vw;
+		}
 		.section-title {
 			margin-left: 160px;
+			@media #{$mobileQuery} {
+				margin-left: 5.376vw;
+			}
 		}
 		.list-wrap {
 			display: flex;
@@ -296,9 +343,18 @@ body {
 					justify-content: center;
 					align-items: center;
 					border: 2px solid #fff;
+					@media #{$mobileQuery} {
+						width: 86.022vw;
+						height: 43.011vw;
+						border-color: transparent;
+					}
 					img {
 						max-width: 100px;
 						max-height: 66px;
+						@media #{$mobileQuery} {
+							max-width: 26.882vw;
+							max-height: 17.742vw;
+						}
 					}
 				}
 			}
@@ -307,8 +363,19 @@ body {
 	.text-block {
 		width: 100%;
 		display: flex;
+		@media #{$mobileQuery} {
+			flex-direction: column;
+			gap: 8.065vw;
+		}
 		.side {
 			width: 100%;
+			@media #{$mobileQuery} {
+				h3 {
+					font-weight: 500;
+					font-size: 5.376vw;
+					line-height: 6.989vw;
+				}
+			}
 			p,
 			.text-usual {
 				white-space: pre-wrap;
@@ -399,9 +466,21 @@ body {
 				display: flex;
 				height: 100%;
 				gap: 60px;
+				@media #{$mobileQuery} {
+					width: 100vw;
+					flex-direction: column-reverse;
+					gap: 11.559vw;
+					align-self: flex-start;
+					justify-self: flex-start;
+					padding-top: 16.129vw;
+					justify-content: flex-end;
+				}
 				.side {
 					height: 100%;
 					width: 100%;
+					@media #{$mobileQuery} {
+						height: auto;
+					}
 					&.text {
 						display: flex;
 						flex-direction: column;
@@ -410,18 +489,41 @@ body {
 						color: #fff;
 						justify-content: space-between;
 						gap: 75px;
+						@media #{$mobileQuery} {
+							padding: 5.376vw 5.376vw 16.129vw;
+							gap: 8.065vw;
+						}
 						.info-container {
 							display: flex;
 							flex-direction: column;
 							gap: 30px;
+							@media #{$mobileQuery} {
+								gap: 8.065vw;
+							}
 							.info {
 								display: flex;
 								flex-direction: column;
 								gap: 16px;
+								@media #{$mobileQuery} {
+									gap: 4.839vw;
+								}
+							}
+							.label {
+								@media #{$mobileQuery} {
+									font-size: 3.226vw;
+									line-height: 150%;
+								}
 							}
 							h2 {
 								margin-bottom: 10px;
 								max-width: 370px;
+								@media #{$mobileQuery} {
+									font-weight: 500;
+									font-size: 6.452vw;
+									line-height: 8.333vw;
+									max-width: 100%;
+									/* or 31px */
+								}
 							}
 						}
 
@@ -437,6 +539,12 @@ body {
 						display: flex;
 						justify-content: center;
 						align-items: center;
+						@media #{$mobileQuery} {
+							width: 100%;
+							padding: 0 10.753vw;
+							flex-shrink: 1;
+							height: auto;
+						}
 						img {
 							width: 100%;
 						}
@@ -452,6 +560,9 @@ body {
 			top: 96px;
 			right: 160px;
 			z-index: 100000;
+			@media #{$mobileQuery} {
+				display: none;
+			}
 			.control {
 				width: 24px;
 				cursor: pointer;
@@ -486,30 +597,57 @@ body {
 		justify-content: center;
 		gap: 60px;
 		color: $greyDarkCorp;
+		@media #{$mobileQuery} {
+			gap: 8.065vw;
+		}
 		.text-row {
 			width: 100%;
 			display: flex;
 			flex-direction: column;
 			gap: 60px;
+			@media #{$mobileQuery} {
+				gap: 8.065vw;
+			}
 			.row-title {
 				font-weight: 600;
 				font-size: 32px;
+				@media #{$mobileQuery} {
+					font-weight: 500;
+					font-size: 6.452vw;
+					line-height: 8.333vw;
+				}
 			}
 			.row-content {
 				width: 100%;
 				display: flex;
 				gap: 60px;
+				@media #{$mobileQuery} {
+					flex-direction: column;
+					gap: 5.376vw;
+				}
+
 				&.vertical {
 					flex-direction: column;
 					gap: 40px;
+					@media #{$mobileQuery} {
+						flex-direction: column;
+						gap: 5.376vw;
+					}
 				}
 				.column {
 					width: 300px;
 					display: flex;
 					flex-direction: column;
 					gap: 30px;
+					@media #{$mobileQuery} {
+						width: 100%;
+						gap: 4.839vw;
+					}
 					&:first-child {
 						width: 394px;
+						@media #{$mobileQuery} {
+							width: 100%;
+						}
 					}
 					&:last-child {
 						width: auto;
@@ -518,11 +656,20 @@ body {
 						font-weight: 600;
 						font-size: 22px;
 						color: $green;
+						@media #{$mobileQuery} {
+							font-size: 3.763vw;
+							line-height: 4.57vw;
+						}
 					}
 					.value {
 						font-weight: 500;
 						font-size: 20px;
 						line-height: 24px;
+						@media #{$mobileQuery} {
+							font-size: 3.763vw;
+							font-weight: 400;
+							line-height: 4.57vw;
+						}
 					}
 				}
 			}
@@ -548,22 +695,39 @@ body {
 			display: flex;
 			align-items: center;
 			gap: 130px;
+			@media #{$mobileQuery} {
+				flex-direction: column;
+				padding: 26.075vw 5.376vw;
+				gap: 24.194vw;
+			}
 			.side {
 				width: 100%;
 				display: flex;
 				flex-direction: column;
 				&.text {
 					gap: 60px;
+					@media #{$mobileQuery} {
+						gap: 6.72vw;
+					}
 					.title {
 						font-weight: 600;
 						font-size: 50px;
 						line-height: 65px;
 						letter-spacing: 0.02em;
+						@media #{$mobileQuery} {
+							font-weight: 700;
+							font-size: 5.914vw;
+							line-height: 7.796vw;
+						}
 					}
 					.desc {
 						font-size: 30px;
 						line-height: 36px;
 						letter-spacing: 0.02em;
+						@media #{$mobileQuery} {
+							font-size: 4.839vw;
+							line-height: 7.258vw;
+						}
 					}
 				}
 				&.form {
@@ -572,20 +736,34 @@ body {
 						display: flex;
 						flex-direction: column;
 						gap: 40px;
+						@media #{$mobileQuery} {
+							flex-direction: column;
+							gap: 8.065vw;
+						}
 						.form-control {
 							display: flex;
 							flex-direction: column;
 							align-items: flex-start;
 							width: 100%;
 							gap: 14px;
+							@media #{$mobileQuery} {
+								gap: 4.301vw;
+							}
 							&.btn-container {
 								flex-direction: row;
 								gap: 20px;
 								align-items: center;
+								@media #{$mobileQuery} {
+									gap: 3.763vw;
+								}
 							}
 							label {
 								font-weight: 500;
 								font-size: 22px;
+								@media #{$mobileQuery} {
+									font-size: 3.763vw;
+									line-height: 4.032vw;
+								}
 							}
 							input {
 								padding: 20px;
@@ -595,6 +773,11 @@ body {
 								border-bottom: 1px solid #fff;
 								color: #fff;
 								font-size: 18px;
+								@media #{$mobileQuery} {
+									font-size: 3.763vw;
+									line-height: 5.645vw;
+									padding: 3.763vw;
+								}
 								&::placeholder {
 									color: #b9b9b9;
 								}
@@ -611,6 +794,10 @@ body {
 
 	.section.news-flow-component {
 		gap: 54px;
+		@media #{$mobileQuery} {
+			gap: 14.516vw;
+			padding-right: 5.376vw;
+		}
 		.header {
 			width: 100%;
 			display: flex;
@@ -620,9 +807,13 @@ body {
 				display: flex;
 				align-items: center;
 				gap: 50px;
+				@media #{$mobileQuery} {
+					display: none;
+				}
 				.control {
 					width: 24px;
 					cursor: pointer;
+
 					img {
 						width: 100%;
 					}
@@ -645,14 +836,29 @@ body {
 				color: $greyDarkCorp;
 				height: 100%;
 				height: auto;
+				@media #{$mobileQuery} {
+					width: calc(100vw - 10.753vw);
+				}
 				.date {
 					font-weight: 500;
 					font-size: 16px;
 					margin: 0 0 30px 0;
+					@media #{$mobileQuery} {
+						font-weight: 500;
+						font-size: 3 763vw;
+						line-height: 5.645vw;
+						margin: 0 0 8.065vw 0;
+						/* or 21px */
+					}
 				}
 				h4 {
 					line-height: 27px;
 					margin: 0 0 auto 0;
+					@media #{$mobileQuery} {
+						font-weight: 600;
+						font-size: 4.839vw;
+						line-height: 5.914vw;
+					}
 				}
 
 				> img {
@@ -660,9 +866,16 @@ body {
 					width: 100%;
 					height: 280px;
 					object-fit: cover;
+					@media #{$mobileQuery} {
+						height: 50.538vw;
+						margin: 8.065vw 0 0 0;
+					}
 				}
 				p {
 					margin: 30px 0;
+					@media #{$mobileQuery} {
+						margin: 8.065vw 0;
+					}
 				}
 				.btn {
 					padding: 0;
@@ -673,6 +886,12 @@ body {
 			width: 100%;
 			display: flex;
 			justify-content: center;
+		}
+	}
+	.mobile-only {
+		display: none;
+		@media #{$mobileQuery} {
+			display: flex;
 		}
 	}
 }

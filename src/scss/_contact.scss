@@ -1,5 +1,8 @@
 .page.contact {
 	.section.content {
+		@media #{$mobileQuery} {
+			padding: 0;
+		}
 		.container {
 			display: flex;
 			width: 100%;
@@ -10,9 +13,18 @@
 			gap: 100px;
 			margin-top: -70px;
 			margin-bottom: 100px;
+			@media #{$mobileQuery} {
+				gap: 16.129vw;
+				margin-top: 0;
+				margin-bottom: 16.129vw;
+			}
 			.block {
 				width: 100%;
 				display: flex;
+				@media #{$mobileQuery} {
+					flex-direction: column;
+					padding-right: 5.376vw;
+				}
 				&.b-white {
 					background-color: #fff;
 				}
@@ -20,16 +32,28 @@
 					padding: 40px 100px;
 					display: flex;
 					width: 100%;
+					@media #{$mobileQuery} {
+						flex-direction: column;
+						padding: 16.129vw 5.376vw;
+					}
 				}
 				.img-container {
 					flex-shrink: 0;
 					&.first {
 						width: 520px;
 						min-height: 660px;
+						@media #{$mobileQuery} {
+							width: 100%;
+							min-height: 114.247vw;
+						}
 					}
 					&.second {
 						width: 960px;
 						min-height: 700px;
+						@media #{$mobileQuery} {
+							width: 100%;
+							min-height: auto;
+						}
 					}
 					img {
 						width: 100%;
@@ -39,6 +63,9 @@
 				}
 				&.plants {
 					padding-left: 100px;
+					@media #{$mobileQuery} {
+						padding-left: 5.376vw;
+					}
 					.text-container-wrapper {
 						.text-row {
 							.row-content {
@@ -46,11 +73,17 @@
 									&:nth-child(2) {
 										.value {
 											max-width: 240px;
+											@media #{$mobileQuery} {
+												max-width: 100%;
+											}
 										}
 									}
 									&:last-child {
 										.value {
 											max-width: 400px;
+											@media #{$mobileQuery} {
+												max-width: 100%;
+											}
 										}
 									}
 								}
@@ -63,6 +96,10 @@
 						flex-direction: column;
 						justify-content: center;
 						padding-right: 175px;
+						@media #{$mobileQuery} {
+							// padding-right: ;
+							padding-right: 5.376vw;
+						}
 						.call-me {
 							margin-top: 28px;
 							padding-top: 28px;
@@ -71,11 +108,25 @@
 							display: flex;
 							justify-content: space-between;
 							align-items: center;
+							@media #{$mobileQuery} {
+								flex-direction: column;
+								justify-content: flex-start;
+								align-items: flex-start;
+								margin-top: 10.753vw;
+								padding-top: 0;
+								gap: 8.065vw;
+								border-color: transparent;
+							}
 							.label {
 								font-weight: 700;
 								font-size: 20px;
 								line-height: 24px;
 								color: $greyDarkCorp;
+								@media #{$mobileQuery} {
+									font-weight: 600;
+									font-size: 4.839vw;
+									line-height: 5.914vw;
+								}
 							}
 						}
 					}
@@ -83,6 +134,9 @@
 			}
 			.section-title {
 				margin-left: 100px;
+				@media #{$mobileQuery} {
+					margin-left: 5.376vw;
+				}
 			}
 		}
 	}

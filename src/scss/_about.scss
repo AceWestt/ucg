@@ -5,6 +5,10 @@
 		line-height: 88px;
 		font-weight: 700;
 		margin: 0;
+		@media #{$mobileQuery} {
+			font-size: 5.376vw;
+			line-height: 5.914vw;
+		}
 	}
 	.section-2-card {
 		width: 100%;
@@ -13,14 +17,27 @@
 		align-items: center;
 		background-color: #fff;
 		gap: 147px;
+		@media #{$mobileQuery} {
+			width: calc(100% + 5.376vw);
+			margin-left: -5.376vw;
+			padding: 16.129vw 5.376vw;
+			flex-direction: column;
+			gap: 10.753vw;
+		}
 		.text-wrap {
 			width: 100%;
 			display: flex;
 			flex-direction: column;
 			gap: 50px;
+			@media #{$mobileQuery} {
+				gap: 10.753vw;
+			}
 		}
 		img {
 			width: 837px;
+			@media #{$mobileQuery} {
+				width: 100%;
+			}
 		}
 	}
 	.section-3-wrap {
@@ -35,6 +52,9 @@
 				height: 100%;
 				object-fit: cover;
 			}
+			@media #{$mobileQuery} {
+				display: none;
+			}
 		}
 		.text-wrap {
 			width: 100%;
@@ -46,11 +66,23 @@
 			align-items: flex-start;
 			gap: 100px;
 			color: #fff;
+			img {
+				width: 422px;
+				@media #{$mobileQuery} {
+					width: 32.258vw;
+				}
+			}
+			@media #{$mobileQuery} {
+				gap: 16.129vw;
+			}
 			.details {
 				display: flex;
 				flex-direction: column;
 				width: 100%;
 				gap: 40px;
+				@media #{$mobileQuery} {
+					gap: 8.065vw;
+				}
 				&-detail {
 					width: 100%;
 					display: flex;
@@ -58,12 +90,20 @@
 					gap: 40px;
 					padding-bottom: 40px;
 					border-bottom: 1px solid #dfdfdf;
+					@media #{$mobileQuery} {
+						gap: 8.065vw;
+						padding-bottom: 8.065vw;
+					}
 					&:last-child {
 						border-bottom: 0 solid transparent;
 					}
 					.title {
 						font-weight: 700;
 						font-size: 26px;
+						@media #{$mobileQuery} {
+							font-weight: 500;
+							font-size: 5.376vw;
+						}
 					}
 				}
 			}
@@ -71,6 +111,10 @@
 				color: #fff;
 				max-width: 660px;
 				margin-bottom: 100px;
+				@media #{$mobileQuery} {
+					max-width: 100%;
+					margin-bottom: 8.065vw;
+				}
 				&:last-child {
 					margin-bottom: 0;
 				}
@@ -83,14 +127,24 @@
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
+		@media #{$mobileQuery} {
+			padding-top: 16.129vw;
+			padding-bottom: 16.129vw;
+		}
 		.section-title {
 			margin-left: 100px;
 			width: auto;
+			@media #{$mobileQuery} {
+				margin-left: 0;
+			}
 		}
 		.officers-wrap {
 			width: 100%;
 			display: flex;
 			margin-top: 150px;
+			@media #{$mobileQuery} {
+				margin-top: 16.129vw;
+			}
 			.control {
 				width: 24px;
 				height: 100%;
@@ -100,6 +154,9 @@
 				position: absolute;
 				top: 0;
 				right: 100%;
+				@media #{$mobileQuery} {
+					display: none;
+				}
 				img {
 					width: 100%;
 				}
@@ -131,6 +188,11 @@
 					height: 274px;
 					border-radius: 50%;
 					margin-bottom: 47px;
+					@media #{$mobileQuery} {
+						width: 53.763vw;
+						height: 53.763vw;
+						margin-bottom: 8.065vw;
+					}
 				}
 				.name,
 				.job-title {
@@ -138,44 +200,87 @@
 					color: $greyDarkCorp;
 					font-size: 22px;
 					margin-bottom: 30px;
+					@media #{$mobileQuery} {
+						font-size: 4.839vw;
+						line-height: 5.914vw;
+						margin-bottom: 5.376vw;
+					}
 				}
 				.job-title {
 					font-weight: 500;
 					text-align: center;
-					max-width: 340px;
+
 					line-height: 33px;
 					margin-bottom: 14px;
+					@media #{$mobileQuery} {
+						font-size: 3.763vw;
+						line-height: 5.645vw;
+						max-width: 83.871vw;
+						margin-bottom: 8.065vw;
+					}
 				}
 				.btn {
 					margin-top: 44px;
+					padding: 0;
+					@media #{$mobileQuery} {
+						margin-top: 0;
+						display: none;
+					}
 				}
 			}
 		}
 	}
 	.section.structure {
 		gap: 60px;
+		@media #{$mobileQuery} {
+			gap: 16.129vw;
+			background-color: $greyDarkCorp;
+			padding-top: 16.129vw;
+			padding-bottom: 16.129vw;
+		}
+
 		.section-title {
 			margin-left: 100px;
+			@media #{$mobileQuery} {
+				margin-left: 0;
+			}
 		}
 		.structure-wrap {
 			width: 100%;
 			display: flex;
 			img {
 				width: 100%;
+				@media #{$mobileQuery} {
+					display: none;
+					&.mobile {
+						display: block;
+					}
+				}
 			}
 		}
 	}
 	.section.for-investors {
 		margin-top: 100px;
 		gap: 60px;
+		@media #{$mobileQuery} {
+			margin-top: 26.882vw;
+			gap: 16.129vw;
+		}
 		.section-title {
 			margin-left: 100px;
+			@media #{$mobileQuery} {
+				margin-left: 0;
+			}
 		}
 		.columns {
 			display: flex;
 			width: 100%;
 			gap: 64px;
 			align-items: flex-start;
+			@media #{$mobileQuery} {
+				margin-left: 0;
+				flex-direction: column;
+			}
 			.column {
 				width: 100%;
 				display: flex;
@@ -192,9 +297,16 @@
 					color: #fff;
 					justify-content: center;
 					border-radius: 8px 8px 0 0;
+					@media #{$mobileQuery} {
+						padding: 5.376vw;
+						border-radius: 2.151vw 2.151vw 0 0;
+					}
 					&-title {
 						font-size: 22px;
 						font-weight: 700;
+						@media #{$mobileQuery} {
+							font-size: 3.763vw;
+						}
 					}
 					&-open-btn {
 						display: flex;
@@ -207,6 +319,9 @@
 						transform: translateY(-50%);
 						right: 20px;
 						cursor: pointer;
+						@media #{$mobileQuery} {
+							display: none;
+						}
 					}
 				}
 				&-body {
@@ -217,6 +332,11 @@
 					border-radius: 0 0 8px 8px;
 					background-color: #fff;
 					transition: all 0.2s linear;
+					@media #{$mobileQuery} {
+						border-radius: 0 0 2.151vw 2.151vw;
+						height: 24.194vw;
+						padding: 7.527vw 5.376vw;
+					}
 					.files {
 						height: 100%;
 						width: 100%;
@@ -224,13 +344,19 @@
 						flex-direction: column;
 						overflow-x: hidden;
 						overflow-y: hidden;
-						@include scrollbars(6px, 10px, #bcbcbc);
+
+						@media #{$mobileQuery} {
+							@include scrollbars(1.613vw, 2.688vw, #bcbcbc);
+						}
 						.file {
 							display: flex;
 							justify-content: space-between;
 							align-items: center;
 							padding: 10px 5px;
 							border-bottom: 1px solid #c4c4c4;
+							@media #{$mobileQuery} {
+								padding: 2.688vw 1.344vw;
+							}
 							&:first-child {
 								padding-top: 0;
 							}
@@ -242,9 +368,15 @@
 								color: $greyDarkCorp;
 								font-weight: 500;
 								font-size: 16px;
+								@media #{$mobileQuery} {
+									font-size: 3.226vw;
+								}
 							}
 							a {
 								width: 20px;
+								@media #{$mobileQuery} {
+									width: 3.763vw;
+								}
 								img {
 									width: 100%;
 								}
@@ -261,6 +393,10 @@
 					left: 50%;
 					transform: translate(-50%, 50%);
 					transition: all 0.3s linear;
+					@media #{$mobileQuery} {
+						width: 6.989vw;
+						height: 6.989vw;
+					}
 				}
 				&.expanded {
 					.column-head {
@@ -270,9 +406,15 @@
 					}
 					.column-body {
 						height: 172px;
+						@media #{$mobileQuery} {
+							height: 46.237vw;
+						}
 						.files {
 							overflow-y: auto;
 							padding-right: 5px;
+							@media #{$mobileQuery} {
+								padding-right: 1.344vw;
+							}
 						}
 					}
 					.toggle-btn {
@@ -285,8 +427,17 @@
 	.section.shares {
 		margin: 116px 0 0 0;
 		gap: 100px;
+		@media #{$mobileQuery} {
+			margin: 19.624vw 0 0 0;
+			gap: 16.129vw;
+			background-color: #fff;
+			padding: 16.129vw 5.376vw;
+		}
 		> .section-title {
 			margin-left: 100px;
+			@media #{$mobileQuery} {
+				margin-left: 0;
+			}
 		}
 		.shares-section-container {
 			background-color: #fff;
@@ -294,21 +445,39 @@
 			display: flex;
 			flex-direction: column;
 			padding: 100px;
+			@media #{$mobileQuery} {
+				padding: 2.688vw 0;
+			}
 			.header {
 				display: flex;
 				gap: 160px;
 				color: $greyDarkCorp;
+				@media #{$mobileQuery} {
+					gap: 10.753vw;
+					flex-direction: column;
+				}
 				.title {
 					font-weight: 700;
 					font-size: 26px;
 					line-height: 33px;
 					max-width: 576px;
+					@media #{$mobileQuery} {
+						font-weight: 500;
+						font-size: 4.839vw;
+						line-height: 6.183vw;
+						max-width: 100%;
+					}
 				}
 				p {
 					max-width: 626px;
 					margin: 0;
 					font-size: 18px;
 					line-height: 27px;
+					@media #{$mobileQuery} {
+						font-size: 3.763vw;
+						line-height: 5.645vw;
+						max-width: 100%;
+					}
 				}
 			}
 			.numbers {
@@ -317,10 +486,17 @@
 				flex-direction: column;
 				gap: 100px;
 				margin: 100px 0 0 0;
+				@media #{$mobileQuery} {
+					margin: 16.129vw 0 0 0;
+					gap: 16.129vw;
+				}
 				.row {
 					display: flex;
 					width: 100%;
 					justify-content: flex-end;
+					@media #{$mobileQuery} {
+						justify-content: flex-start;
+					}
 					&:nth-child(2n) {
 						justify-content: flex-start;
 					}
@@ -328,6 +504,9 @@
 						display: flex;
 						flex-direction: column;
 						align-items: stretch;
+						@media #{$mobileQuery} {
+							display: none;
+						}
 						.top {
 							color: #fff;
 							@include textoutline(#d2d2d2);
@@ -336,12 +515,22 @@
 							justify-content: center;
 							padding-bottom: 40px;
 							border-bottom: 1px solid #dadada;
+							@media #{$mobileQuery} {
+								padding-bottom: 5.376vw;
+								border-bottom: 0;
+							}
 							.value {
 								font-weight: 300;
 								font-size: 200px;
+								@media #{$mobileQuery} {
+									font-size: 21.505vw;
+								}
 							}
 							.label {
 								font-size: 60px;
+								@media #{$mobileQuery} {
+									font-size: 5.376vw;
+								}
 							}
 						}
 						.bottom {
@@ -350,14 +539,26 @@
 							font-size: 42px;
 							color: $greyDarkCorp;
 							padding-left: 20px;
+							@media #{$mobileQuery} {
+								padding-left: 0;
+								padding-top: 0;
+								font-size: 4.301vw;
+								line-height: 5.108vw;
+							}
 							span {
 								opacity: 0;
 							}
 						}
 						&.active {
+							@media #{$mobileQuery} {
+								display: flex;
+							}
 							.top {
 								@include textoutline(transparent);
 								color: $green;
+								@media #{$mobileQuery} {
+									display: flex;
+								}
 							}
 							.bottom {
 								span {
@@ -375,11 +576,17 @@
 				flex-direction: column;
 				align-items: flex-start;
 				gap: 100px;
+				@media #{$mobileQuery} {
+					margin-top: 26.882vw;
+				}
 				.list {
 					width: 100%;
 					display: flex;
 					flex-direction: column;
 					gap: 40px;
+					@media #{$mobileQuery} {
+						gap: 8.065vw;
+					}
 					.item {
 						width: 100%;
 						display: flex;
@@ -387,22 +594,40 @@
 						padding-bottom: 40px;
 						border-bottom: 1px solid #dfdfdf;
 						gap: 60px;
+						@media #{$mobileQuery} {
+							gap: 8.065vw;
+						}
 						.title {
 							font-size: 32px;
 							font-weight: 600;
+							@media #{$mobileQuery} {
+								font-size: 6.452vw;
+								font-weight: 400;
+							}
 						}
 						.contact-details {
 							display: flex;
 							align-items: flex-start;
 							gap: 80px;
+							@media #{$mobileQuery} {
+								gap: 5.376vw;
+								flex-direction: column;
+							}
 							.detail {
 								display: flex;
 								flex-direction: column;
 								gap: 30px;
+								@media #{$mobileQuery} {
+									gap: 4.839vw;
+								}
 								.label {
 									color: $green;
 									font-size: 22px;
 									font-weight: 600;
+									@media #{$mobileQuery} {
+										font-weight: 600;
+										font-size: 3.763vw;
+									}
 								}
 								p {
 									margin: 0;
@@ -410,6 +635,11 @@
 									font-weight: 500;
 									line-height: 24px;
 									max-width: 372px;
+									@media #{$mobileQuery} {
+										font-size: 3.763vw;
+										line-height: 4.57vw;
+										max-width: 100%;
+									}
 								}
 							}
 						}
@@ -420,11 +650,20 @@
 	}
 	.section.partners {
 		margin: 100px 0 0 0;
+		@media #{$mobileQuery} {
+			margin: 26.882vw 0 0 0;
+		}
 		.section-title {
 			margin-left: 260px;
+			@media #{$mobileQuery} {
+				margin-left: 5.376vw;
+			}
 		}
 	}
 	.section.bottom-form {
 		margin-top: 100px;
+		@media #{$mobileQuery} {
+			margin-top: 16.129vw;
+		}
 	}
 }

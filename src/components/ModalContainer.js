@@ -26,8 +26,12 @@ const ModalContainer = () => {
 			isOfficerModalOpen
 		) {
 			setIsModalContainerOpen(true);
+			document.body.style.height = '100vh';
+			document.body.style.overflow = 'hidden';
 		} else {
 			setIsModalContainerOpen(false);
+			document.body.style.overflow = 'auto';
+			document.body.style.height = 'auto';
 		}
 	}, [
 		isMenuOpen,

@@ -17,6 +17,7 @@ const AppProvider = ({ children }) => {
 		setIsFactoryModalOpen(false);
 		setIsFormModalOpen(false);
 		setIsSiteMapModalOpen(false);
+		setIsOfficerModalOpen(false);
 	};
 
 	return (

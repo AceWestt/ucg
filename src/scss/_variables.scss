@@ -6,7 +6,7 @@ $greyLighter: #f5f5f5;
 
 $mobileBreakPoint: 991px;
 
-$mobileQuery: 'screen and max-width(#{$mobileBreakPoint})';
+$mobileQuery: 'screen and (max-width: #{$mobileBreakPoint})';
 
 @mixin scrollbars(
 	$size,

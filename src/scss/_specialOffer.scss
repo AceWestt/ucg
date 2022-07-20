@@ -1,5 +1,8 @@
 .page.special-offer {
 	.section.content {
+		@media #{$mobileQuery} {
+			padding: 0;
+		}
 		.container {
 			display: flex;
 			width: 100%;
@@ -10,17 +13,33 @@
 			gap: 150px;
 			margin-top: -70px;
 			margin-bottom: 100px;
+			@media #{$mobileQuery} {
+				padding: 16.129vw 5.376vw 16.129vw 5.376vw;
+				margin-top: 0;
+				gap: 10.753vw;
+			}
 			.wrapper {
 				width: 100%;
 				display: flex;
 				flex-direction: column;
 				gap: 60px;
+				@media #{$mobileQuery} {
+					gap: 10.753vw;
+				}
 				h2 {
 					margin-bottom: 40px;
+					@media #{$mobileQuery} {
+						margin-bottom: 0;
+						font-size: 6.989vw;
+						line-height: 9.14vw;
+					}
 				}
 				.text-block {
 					padding-bottom: 60px;
 					border-bottom: 1px solid #dfdfdf;
+					@media #{$mobileQuery} {
+						padding-bottom: 8.065vw;
+					}
 					&:last-child {
 						border-bottom: transparent;
 						padding-bottom: 0;

@@ -1,5 +1,8 @@
 .page.home {
 	padding-bottom: 150px;
+	@media #{$mobileQuery} {
+		padding-bottom: 26.882vw;
+	}
 	.hero-section {
 		width: 100%;
 		display: flex;
@@ -25,6 +28,10 @@
 					width: 100%;
 					padding-top: 260px;
 					padding-bottom: 154px;
+					@media #{$mobileQuery} {
+						padding-bottom: 0;
+						padding-top: 67.473vw;
+					}
 					h1 {
 						margin: 0;
 						padding: 0;
@@ -33,6 +40,11 @@
 						font-size: 80px;
 						line-height: 104px;
 						text-align: left;
+						@media #{$mobileQuery} {
+							font-size: 8.602vw;
+							line-height: 130%;
+							/* or 42px */
+						}
 					}
 				}
 				.logo-holder {
@@ -43,6 +55,9 @@
 					align-items: flex-end;
 					padding-bottom: 54px;
 					padding-left: 68px;
+					@media #{$mobileQuery} {
+						display: none;
+					}
 					img {
 						width: 340px;
 					}
@@ -52,6 +67,9 @@
 				width: 100%;
 				display: flex;
 				height: 260px;
+				@media #{$mobileQuery} {
+					height: auto;
+				}
 				.left {
 					width: 100%;
 					display: flex;
@@ -60,6 +78,9 @@
 					padding-bottom: 60px;
 					padding-right: 60px;
 					align-items: center;
+					@media #{$mobileQuery} {
+						display: none;
+					}
 					.social-links {
 						margin: auto auto 0 0;
 						display: flex;
@@ -81,6 +102,9 @@
 					justify-content: space-between;
 					align-items: center;
 					padding: 60px;
+					@media #{$mobileQuery} {
+						display: none;
+					}
 					h3 {
 						color: $greyDarkCorp;
 						font-size: 22px;
@@ -98,6 +122,10 @@
 					height: 100%;
 					align-items: center;
 					justify-content: flex-end;
+					@media #{$mobileQuery} {
+						width: 100%;
+						padding: 16.129vw 5.376vw 18.817vw;
+					}
 				}
 			}
 		}
@@ -106,10 +134,17 @@
 		display: flex;
 		background-color: $greyLight;
 		align-items: center;
+		@media #{$mobileQuery} {
+			flex-direction: column;
+		}
 		.bg-pattern {
 			position: absolute;
 			left: 0;
 			top: 160px;
+			@media #{$mobileQuery} {
+				top: 20.968vw;
+				width: 70.387vw;
+			}
 		}
 		.left {
 			width: 100%;
@@ -119,8 +154,17 @@
 			padding-right: 90px;
 			height: 100%;
 			gap: 60px;
+			@media #{$mobileQuery} {
+				padding-right: 5.376vw;
+				gap: 10.753vw;
+				align-items: center;
+				padding-top: 26.882vw;
+			}
 			.logo {
 				width: 410px;
+				@media #{$mobileQuery} {
+					width: 53.763vw;
+				}
 			}
 			p {
 				font-weight: 400;
@@ -129,6 +173,11 @@
 				margin: 0;
 				padding: 0;
 				text-align: left;
+				@media #{$mobileQuery} {
+					font-size: 3.763vw;
+					line-height: 150%;
+					text-align: center;
+				}
 			}
 		}
 		.right {
@@ -138,6 +187,10 @@
 			align-items: center;
 			height: 100%;
 			padding: 300px 0 217px;
+			@media #{$mobileQuery} {
+				width: 100%;
+				padding: 10.753vw 5.376vw;
+			}
 			img {
 				width: 100%;
 			}
@@ -147,8 +200,15 @@
 		padding: 150px 0 0 0;
 		background-color: #fff;
 		gap: 100px;
+		@media #{$mobileQuery} {
+			padding: 15.591vw 0 0 0;
+			gap: 16.129vw;
+		}
 		.section-title {
 			margin-left: 160px;
+			@media #{$mobileQuery} {
+				margin-left: 5.376vw;
+			}
 		}
 		.list {
 			width: 100%;
@@ -160,6 +220,13 @@
 				height: 100%;
 				flex-wrap: wrap;
 				align-items: stretch;
+				@media #{$mobileQuery} {
+					height: auto;
+					flex-wrap: nowrap;
+					flex-direction: column-reverse;
+					align-items: flex-start;
+					padding: 8.065vw 0 0 0;
+				}
 				.details {
 					width: 50%;
 					height: 100%;
@@ -169,21 +236,39 @@
 					flex-direction: column;
 					align-items: flex-start;
 					color: $greyDarkCorp;
+					@media #{$mobileQuery} {
+						width: 100%;
+						padding: 5.376vw 5.376vw 8.065vw 5.376vw;
+						gap: 8.065vw;
+					}
 					.title {
 						font-weight: 700;
 						font-size: 26px;
+						@media #{$mobileQuery} {
+							font-size: 6.452vw;
+						}
 					}
 					.common-details {
 						display: flex;
 						flex-direction: column;
 						gap: 30px;
+						@media #{$mobileQuery} {
+							gap: 5.376vw;
+						}
 						.row {
 							display: flex;
 							flex-direction: column;
 							gap: 16px;
+							@media #{$mobileQuery} {
+								gap: 4.839vw;
+							}
 							.row-title {
 								font-weight: 800;
 								font-size: 14px;
+								@media #{$mobileQuery} {
+									font-weight: 600;
+									font-size: 3.763vw;
+								}
 							}
 							p {
 								margin: 0;
@@ -191,6 +276,11 @@
 								font-size: 18px;
 								line-height: 22px;
 								max-width: 700px;
+								@media #{$mobileQuery} {
+									font-weight: 400;
+									font-size: 3.763vw;
+									line-height: 4.57vw;
+								}
 							}
 						}
 					}
@@ -199,6 +289,10 @@
 					width: 50%;
 					display: flex;
 					overflow: hidden;
+					@media #{$mobileQuery} {
+						width: 100%;
+						height: 45.161vw;
+					}
 					img {
 						position: absolute;
 						top: 0;
@@ -210,8 +304,14 @@
 				}
 				&:nth-child(2n) {
 					flex-direction: row-reverse;
+					@media #{$mobileQuery} {
+						flex-direction: column-reverse;
+					}
 					.details {
 						padding-left: 100px;
+						@media #{$mobileQuery} {
+							padding-left: 5.376vw;
+						}
 					}
 				}
 			}
@@ -223,6 +323,9 @@
 	.section.projects {
 		margin: 100px 0 0 0;
 		gap: 60px;
+		@media #{$mobileQuery} {
+			margin: 26.882vw 0 0 0;
+		}
 		.projects-container {
 			width: 100%;
 			display: flex;
@@ -307,5 +410,8 @@
 	}
 	.section.news-flow-component {
 		margin-top: 220px;
+		@media #{$mobileQuery} {
+			margin-top: 16.129vw;
+		}
 	}
 }

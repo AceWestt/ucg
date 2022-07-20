@@ -30,6 +30,16 @@ const ProductionMain = ({ id = '' }) => {
 					</div>
 					<div className="side right">
 						<img src={smallCardImg} alt="plant" />
+						<div className="highlights mobile-only">
+							{highlights.map((h, i) => {
+								return (
+									<div className="item" key={i}>
+										<span className="line"></span>
+										<span className="text">{h}</span>
+									</div>
+								);
+							})}
+						</div>
 					</div>
 				</div>
 			</div>

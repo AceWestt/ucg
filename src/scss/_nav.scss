@@ -4,6 +4,9 @@ nav.nav {
 	padding: 22px 160px;
 	align-items: center;
 	background-color: #fff;
+	@media #{$mobileQuery} {
+		padding: 5.376vw;
+	}
 	.container {
 		width: 100%;
 		display: flex;
@@ -12,16 +15,35 @@ nav.nav {
 		a.logo {
 			width: 132px;
 			display: flex;
+			@media #{$mobileQuery} {
+				width: 32.258vw;
+			}
 			img {
 				width: 100%;
+			}
+		}
+		.nav-link {
+			@media #{$mobileQuery} {
+				display: none;
+			}
+		}
+		.btn.primary {
+			@media #{$mobileQuery} {
+				display: none;
 			}
 		}
 		.toggle-menu-btn {
 			display: flex;
 			cursor: pointer;
 			width: 66px;
+			@media #{$mobileQuery} {
+				width: 8.602vw;
+			}
 			&.open {
 				width: 30px;
+				@media #{$mobileQuery} {
+					width: 5.914vw;
+				}
 			}
 			img {
 				width: 100%;

@@ -11,11 +11,14 @@ const Officers = ({ id = '' }) => {
 	const { setActiveDirector, setIsOfficerModalOpen } = useAppContext();
 	useEffect(() => {
 		swiperRef.current = new Swiper(swiperElementRef.current, {
-			slidesPerView: 3,
+			slidesPerView: 1,
 			spaceBetween: 0,
 			// loop: true,
 			autoplay: true,
 			modules: [Autoplay],
+			breakpoints: {
+				slidesPerView: 3,
+			},
 		});
 	}, []);
 
@@ -43,7 +46,7 @@ const Officers = ({ id = '' }) => {
 										<div className="item">
 											<img src={o.img} alt={o.name} />
 											<div className="name">{o.name}</div>
-											<div className="title">{o.title}</div>
+											<div className="job-title">{o.title}</div>
 											{(o.education || o.experience) && (
 												<Btn
 													type="subtle"

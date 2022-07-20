@@ -4,6 +4,10 @@
 	padding-bottom: 26px;
 	background-color: $greyDarkCorp;
 	gap: 40px;
+	@media #{$mobileQuery} {
+		padding-top: 16.129vw;
+		padding-bottom: 5.376vw;
+	}
 	.footer-bg-img {
 		position: absolute;
 		right: 0;
@@ -16,6 +20,9 @@
 		justify-content: space-between;
 		.logo {
 			width: 132px;
+			@media #{$mobileQuery} {
+				width: 35.484vw;
+			}
 			img {
 				width: 100%;
 			}
@@ -24,9 +31,17 @@
 			display: flex;
 			align-items: center;
 			gap: 20px;
+			@media #{$mobileQuery} {
+				flex-direction: column;
+				gap: 5.376vw;
+			}
 			img {
 				max-width: 18px;
 				max-height: 18px;
+				@media #{$mobileQuery} {
+					max-width: 4.301vw;
+					max-height: 4.301vw;
+				}
 			}
 		}
 	}
@@ -35,12 +50,20 @@
 		display: flex;
 		justify-content: space-between;
 		gap: 30px;
+		@media #{$mobileQuery} {
+			flex-direction: column;
+			gap: 8.065vw;
+		}
 		.link-group {
 			display: flex;
 			flex-direction: column;
 			max-width: 200px;
 			gap: 16px;
 			color: #fff;
+			@media #{$mobileQuery} {
+				max-width: 100%;
+				gap: 5.376vw;
+			}
 			a,
 			.text-menu {
 				&:active,
@@ -50,6 +73,12 @@
 			}
 			.text-menu {
 				margin-bottom: 4px;
+				@media #{$mobileQuery} {
+					margin-bottom: 0;
+					font-weight: 600;
+					font-size: 4.301vw;
+					line-height: 5.108vw;
+				}
 			}
 			.text-mini,
 			.text-mini:visited {
@@ -63,5 +92,9 @@
 		border-top: 1px solid #7a7a7a;
 		text-align: center;
 		color: #fff;
+		@media #{$mobileQuery} {
+			padding: 5.376vw 20px 0;
+			font-size: 3.226vw;
+		}
 	}
 }
