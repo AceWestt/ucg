@@ -6,6 +6,7 @@ import img2 from '@imgs/contact/2.jpg';
 import TextContainerWrapper from '../components/TextContainerWrapper';
 import { plants } from '../files/plants';
 import Btn from '../components/Btn';
+import BottomForm from '@components/BottomForm';
 
 const Contact = () => {
 	const plantsData = plants.map((p) => {
@@ -33,7 +34,7 @@ const Contact = () => {
 			<div className="section content p-left">
 				<div className="container">
 					<div className="block b-white">
-						<div className="text-container-wrapper-parent">
+						<div className="text-container-wrapper-parent" id="contact-main-office">
 							<TextContainerWrapper data={firstDetails} wrapValue />
 						</div>
 
@@ -42,11 +43,11 @@ const Contact = () => {
 						</div>
 					</div>
 					<div className="section-title">Наши заводы:</div>
-					<div className="block plants">
+					<div className="block plants" id="contact-factories">
 						<TextContainerWrapper data={plantsData} />
 					</div>
 					<div className="block b-white hr">
-						<div className="text-container-wrapper-parent">
+						<div className="text-container-wrapper-parent" id="contact-hr">
 							<TextContainerWrapper data={hr} wrapValue vertical />
 							<div className="call-me">
 								<span className="label">
@@ -63,6 +64,7 @@ const Contact = () => {
 					</div>
 				</div>
 			</div>
+			<BottomForm />
 		</div>
 	);
 };

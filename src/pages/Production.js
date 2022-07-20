@@ -9,7 +9,7 @@ const Production = () => {
 	return (
 		<div className="page production">
 			<CommonHero title="Производство" img={heroImg} />
-			<ProductionMain />
+			<ProductionMain id="production-factory-map" />
 			<section className="section text-section-one p-right">
 				<div className="side pattern-holder">
 					<img src={patternImg} alt="pattern" />

@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import galleryControlBtn from '@imgs/common/galleryControlbtn.svg';
-// import Swiper from 'swiper';
-import Swiper from 'https://unpkg.com/swiper@8/swiper-bundle.esm.browser.min.js';
+import Swiper, { Navigation, Thumbs } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
@@ -26,6 +25,7 @@ const Gallery = ({ customClass = '', slides = [] }) => {
 			gallerySwiperRef.current = new Swiper(gallerySwiperElementRef.current, {
 				loop: true,
 				spaceBetween: 10,
+				modules: [Navigation, Thumbs],
 				navigation: {
 					nextEl: nextButtonRef.current,
 					prevEl: prevButtonRef.current,

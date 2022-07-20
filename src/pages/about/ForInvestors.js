@@ -4,9 +4,12 @@ import downloadBtn from '@imgs/common/filedownload.svg';
 import samplePdf from '@files/sample.pdf';
 import toggleColumnBtn from '@imgs/common/expandBlockButton.svg';
 
-const ForInvestors = () => {
+const ForInvestors = ({ id = '' }) => {
 	return (
-		<section className="section for-investors section-column p-left p-right">
+		<section
+			className="section for-investors section-column p-left p-right"
+			id={id}
+		>
 			<div className="section-title">Инвесторам:</div>
 			<div className="columns">
 				{columns.map((c, index) => {

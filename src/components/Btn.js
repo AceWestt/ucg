@@ -9,17 +9,41 @@ const Btn = ({
 	text = '',
 	icon,
 	disabled = false,
+	submitButton = false,
 	action = () => {},
+	link = {},
 }) => {
 	if (!icon) {
 		icon = defaultIcon;
 		if (type === 'secondary' || type === 'subtle') {
 			icon = defaultIconSec;
 		}
-		if (disabled) {
-			icon = disabledIcn;
-			action = () => {};
-		}
+	}
+	if (disabled) {
+		icon = disabledIcn;
+		action = () => {};
+	}
+	if (link && link.href && link.href.length > 0) {
+		return (
+			<a
+				href={link.href}
+				className={`btn ${type} ${customClass} ${disabled ? 'disabled' : ''}`}
+			>
+				{icon && <img src={icon} alt={text} />}
+				{text && <span>{text}</span>}
+			</a>
+		);
+	}
+	if (submitButton && !disabled) {
+		return (
+			<button
+				className={`btn ${type} ${customClass} ${disabled ? 'disabled' : ''}`}
+				type="submit"
+			>
+				{icon && <img src={icon} alt={text} />}
+				{text && <span>{text}</span>}
+			</button>
+		);
 	}
 	return (
 		<div

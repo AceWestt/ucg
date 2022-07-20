@@ -1,8 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { plants } from '@files/plants';
-// import Swiper from 'swiper';
-import Swiper from 'https://unpkg.com/swiper@8/swiper-bundle.esm.browser.min.js';
-import Btn from '@components/Btn';
+import Swiper, { Navigation } from 'swiper';
 import controlBtnIcn from '@imgs/common/whitePrevBtnIcn.svg';
 import 'swiper/css';
 const ProductsGallery = ({ customClass = '', products = [] }) => {
@@ -17,6 +15,7 @@ const ProductsGallery = ({ customClass = '', products = [] }) => {
 			productsSwiperRef.current = new Swiper(productsElementSwiperRef.current, {
 				slidesPerView: 'auto',
 				spaceBetween: -1,
+				modules: [Navigation],
 				navigation: {
 					nextEl: nextButtonRef.current,
 					prevEl: prevButtonRef.current,
@@ -61,11 +60,11 @@ const ProductsGallery = ({ customClass = '', products = [] }) => {
 													<p>{plantsString}</p>
 												</div>
 											</div>
-											{Array.isArray(p.certs) && p.certs.length > 0 && (
+											{/* {Array.isArray(p.certs) && p.certs.length > 0 && (
 												<div className="btn-container">
 													<Btn text="Посмотреть сертификаты" />
 												</div>
-											)}
+											)} */}
 										</div>
 										<div className="side img">
 											<img src={p.img} alt={p.mark} />

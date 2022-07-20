@@ -1,4 +1,5 @@
 .page.home {
+	padding-bottom: 150px;
 	.hero-section {
 		width: 100%;
 		display: flex;
@@ -303,5 +304,8 @@
 				}
 			}
 		}
+	}
+	.section.news-flow-component {
+		margin-top: 220px;
 	}
 }

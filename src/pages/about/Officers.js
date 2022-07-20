@@ -1,18 +1,21 @@
 import React, { useEffect, useRef } from 'react';
 import Btn from '../../components/Btn';
-import Swiper from 'swiper';
+import Swiper, { Autoplay } from 'swiper';
 import 'swiper/css';
-import officer1 from '../../imgs/about/offficers-1.png';
-import officer2 from '../../imgs/about/offficers-2.png';
-import officer3 from '../../imgs/about/offficers-3.png';
+import { officers } from '../../files/officers';
 import chevronLeft from '../../imgs/common/chevron-left.svg';
-const Officers = () => {
+import { useAppContext } from '../../appContext';
+const Officers = ({ id = '' }) => {
 	const swiperRef = useRef(null);
 	const swiperElementRef = useRef(null);
+	const { setActiveDirector, setIsOfficerModalOpen } = useAppContext();
 	useEffect(() => {
 		swiperRef.current = new Swiper(swiperElementRef.current, {
 			slidesPerView: 3,
 			spaceBetween: 0,
+			// loop: true,
+			autoplay: true,
+			modules: [Autoplay],
 		});
 	}, []);
 
@@ -25,7 +28,7 @@ const Officers = () => {
 	};
 
 	return (
-		<section className="section officers p-left p-right">
+		<section className="section officers p-left p-right" id={id}>
 			<div className="section-title">Руководители:</div>
 			<div className="officers-wrap">
 				<div className="control officers-prev-button" onClick={onPrev}>
@@ -41,7 +44,16 @@ const Officers = () => {
 											<img src={o.img} alt={o.name} />
 											<div className="name">{o.name}</div>
 											<div className="title">{o.title}</div>
-											<Btn type="subtle" text="Подробнее" />
+											{(o.education || o.experience) && (
+												<Btn
+													type="subtle"
+													text="Подробнее"
+													action={() => {
+														setActiveDirector(o);
+														setIsOfficerModalOpen(true);
+													}}
+												/>
+											)}
 										</div>
 									</div>
 								);
@@ -58,24 +70,3 @@ const Officers = () => {
 };
 
 export default Officers;
-
-const officers = [
-	{
-		id: 1,
-		name: 'Коробкин Василий Викторович',
-		title: 'Генеральный директор АО “Бекабадцемент”',
-		img: officer1,
-	},
-	{
-		id: 2,
-		name: 'Коробкин Василий Викторович',
-		title: 'Генеральный директор АО “Бекабадцемент”',
-		img: officer2,
-	},
-	{
-		id: 3,
-		name: 'Коробкин Василий Викторович',
-		title: 'Генеральный директор АО “Бекабадцемент”',
-		img: officer3,
-	},
-];

@@ -11,7 +11,7 @@ const SpecialOffer = () => {
 	return (
 		<div className="page special-offer">
 			<CommonHero title="Специальное предложение" img={heroImg} />
-			<section className="section content p-left">
+			<section className="section content p-left" id="special-offer-details">
 				{Array.isArray(plants) && plants.length > 0 && (
 					<div className="container">
 						{plants.map((p, i) => {

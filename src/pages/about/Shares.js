@@ -1,9 +1,9 @@
 import React from 'react';
 import { plants } from '@files/plants';
 
-const Shares = () => {
+const Shares = ({ id = '', plantsId = '' }) => {
 	return (
-		<section className="section shares section-column p-left">
+		<section className="section shares section-column p-left" id={id}>
 			<div className="section-title">Количество акций и уставной капитал:</div>
 			<div className="shares-section-container">
 				<div className="header">
@@ -79,7 +79,7 @@ const Shares = () => {
 						</div>
 					</div>
 				</div>
-				<div className="plants">
+				<div className="plants" id={plantsId}>
 					<div className="section-title">Наши заводы:</div>
 					<div className="list">
 						{plants.map((p, i) => {

@@ -4,6 +4,10 @@ $greyDarkCorp: #2b2b2a;
 $greyLight: #ededf0;
 $greyLighter: #f5f5f5;
 
+$mobileBreakPoint: 991px;
+
+$mobileQuery: 'screen and max-width(#{$mobileBreakPoint})';
+
 @mixin scrollbars(
 	$size,
 	$border-radius,

@@ -1,4 +1,5 @@
 import React from 'react';
+import BottomForm from '../components/BottomForm';
 import CommonHero from '../components/CommonHero';
 import Partners from '../components/commonSections/Partners';
 import hero from '../imgs/about/hero.png';
@@ -13,7 +14,7 @@ import Structure from './about/Structure';
 const About = () => {
 	return (
 		<div className="page about">
-			<CommonHero title="О Компании" img={hero} />
+			<CommonHero id="about-company" title="О Компании" img={hero} />
 			<section className="p-left">
 				<div className="section-2-card m-t-n">
 					<div className="text-wrap">
@@ -30,7 +31,7 @@ const About = () => {
 				</div>
 			</section>
 			<section>
-				<div className="section-3-wrap">
+				<div className="section-3-wrap" id="about-mission">
 					<div className="img-wrap">
 						<img src={section3img} alt="img" />
 					</div>
@@ -87,11 +88,12 @@ const About = () => {
 					</div>
 				</div>
 			</section>
-			<Officers />
-			<Structure />
-			<ForInvestors />
-			<Shares />
-			<Partners />
+			<Officers id="about-directors" />
+			<Structure id="about-structure" />
+			<ForInvestors id="about-for-investors" />
+			<Shares id="about-shares" plantsId="about-factories" />
+			<Partners id="about-partners" />
+			<BottomForm />
 		</div>
 	);
 };

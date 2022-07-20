@@ -6,9 +6,9 @@ import img4 from '@imgs/common/partners/4.png';
 import img5 from '@imgs/common/partners/5.png';
 import img6 from '@imgs/common/partners/6.png';
 
-const Partners = () => {
+const Partners = ({ id = '' }) => {
 	return (
-		<section className="section partners section-column">
+		<section className="section partners section-column" id={id}>
 			<div className="section-title">Партнеры:</div>
 			<div className="list-wrap">
 				{[1, 2].map((i) => {

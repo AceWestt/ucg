@@ -8,7 +8,7 @@ import plantIcn from '@imgs/production/plantIcn.svg';
 
 const responsive = false;
 
-const ProductionMain = () => {
+const ProductionMain = ({ id = '' }) => {
 	const [activePlant, setActivePlant] = useState(0);
 
 	return (
@@ -33,7 +33,7 @@ const ProductionMain = () => {
 					</div>
 				</div>
 			</div>
-			<div className="plants-container">
+			<div className="plants-container" id={id}>
 				<div className="section-title">Наши заводы:</div>
 				<div className="map-container">
 					<img src={mapImg} className="map-bg" alt="map" />

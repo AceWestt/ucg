@@ -5,10 +5,12 @@ import logo from '../../imgs/common/logo.svg';
 import Btn from '../../components/Btn';
 import facebookIcn from '../../imgs/common/facebookicn.svg';
 import twitterIcn from '../../imgs/common/twittericn.svg';
+import { useAppContext } from '../../appContext';
 // import slidePrevIcn from '../../imgs/common/hero-slider-prev.svg';
 // import slideNextIcn from '../../imgs/common/hero-slider-next.svg';
 
 const Hero = () => {
+	const { setIsFormModalOpen } = useAppContext();
 	return (
 		<div className="hero-section">
 			<div className="slide">
@@ -27,10 +29,16 @@ const Hero = () => {
 				<div className="bottom-sec">
 					<div className="left p-left">
 						<div className="social-links">
-							<a href="https://www.facebook.com/" className="social-links-link">
+							<a
+								href="https://www.facebook.com/unitedcementgroup/"
+								className="social-links-link"
+							>
 								<img src={facebookIcn} alt="fb" />
 							</a>
-							<a href="https://twitter.com/?lang=en" className="social-links-link">
+							<a
+								href="https://twitter.com/cement_group?s=21&t=UPU-YlqBmOQl5tUPednszg"
+								className="social-links-link"
+							>
 								<img src={twitterIcn} alt="twitter" />
 							</a>
 						</div>
@@ -48,10 +56,10 @@ const Hero = () => {
 							Немного истории о<br />
 							нашем холдинге
 						</h3>
-						<Btn type="secondary" text="Подробнее" />
+						<Btn type="secondary" text="Подробнее" link={{ href: '/about' }} />
 					</div>
 					<div className="right p-right">
-						<BtnRounded />
+						<BtnRounded action={() => setIsFormModalOpen(true)} />
 					</div>
 				</div>
 			</div>

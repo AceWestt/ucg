@@ -5,6 +5,7 @@ import openBtnIcn from '@imgs/development/buttonOpen.svg';
 import closeBtnIcn from '@imgs/development/buttonClose.svg';
 import { plants as rawPlants } from '../files/plants';
 import TextBlock from '../components/TextBlock';
+import BottomForm from '@components/BottomForm';
 
 const Development = () => {
 	const [active, setActive] = useState(-1);
@@ -55,6 +56,7 @@ const Development = () => {
 					})}
 				</div>
 			</section>
+			<BottomForm />
 		</div>
 	);
 };

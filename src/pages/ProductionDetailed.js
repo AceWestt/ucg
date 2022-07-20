@@ -14,7 +14,11 @@ const ProductionDetailed = () => {
 	return (
 		<div className="page production-detailed">
 			<section className="section go-back p-left">
-				<Btn type="subtle" text="Вернуться к списку заводов" />
+				<Btn
+					type="subtle"
+					text="Вернуться к списку заводов"
+					link={{ href: '/production' }}
+				/>
 			</section>
 			<section className="section content p-left">
 				<div className="container">

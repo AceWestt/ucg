@@ -4,12 +4,16 @@ import heroImg from '@imgs/career/hero.jpg';
 import { openings } from '../files/openings';
 import parse from 'html-react-parser';
 import Btn from '../components/Btn';
+import BottomForm from '@components/BottomForm';
 
 const Career = () => {
 	return (
 		<div className="page career">
 			<CommonHero img={heroImg} title="Карьера" />
-			<section className="section content section-column p-left p-right">
+			<section
+				className="section content section-column p-left p-right"
+				id="career-openings"
+			>
 				{openings.map((o, i) => {
 					return (
 						<div className="opening-container" key={`opening-container-${i}`}>
@@ -70,6 +74,7 @@ const Career = () => {
 					);
 				})}
 			</section>
+			<BottomForm />
 		</div>
 	);
 };

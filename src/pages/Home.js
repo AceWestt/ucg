@@ -6,9 +6,11 @@ import factorymodel from '../imgs/home/ucg-factory-model.png';
 import logo from '../imgs/common/logo.svg';
 import { plants } from '@files/plants';
 import { products } from '../files/products';
-import Partners from '../components/commonSections/Partners';
+import { news } from '../files/news';
 import ProductsGallery from '../components/ProductsGallery';
-import ProjectsHome from './home/ProjectsHome';
+import Partners from '../components/commonSections/Partners';
+import NewsFlow from '../components/NewsFlow';
+// import ProjectsHome from './home/ProjectsHome';
 
 const Home = () => {
 	return (
@@ -64,7 +66,7 @@ const Home = () => {
 											<p>{p.director ? p.director : '-'}</p>
 										</div>
 									</div>
-									<Btn text="Подробнее о заводе" />
+									<Btn text="Подробнее о заводе" link={{ href: `/production/${i}` }} />
 								</div>
 								<div className="img">
 									<img src={p.homeImg} alt={p.title} />
@@ -77,8 +79,9 @@ const Home = () => {
 			<section className="section products">
 				<ProductsGallery products={products} />
 			</section>
-			<ProjectsHome />
+			{/* <ProjectsHome /> */}
 			<Partners />
+			<NewsFlow news={news} />
 		</div>
 	);
 };
