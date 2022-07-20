@@ -9,8 +9,8 @@
 			flex-direction: column;
 			align-items: flex-start;
 			background-color: #fff;
-			padding: 100px 260px 150px 100px;
-			margin-top: -70px;
+			padding: 5.208vw 13.542vw 7.813vw 5.208vw;
+			margin-top: -3.646vw;
 			margin-bottom: 0;
 			@media #{$mobileQuery} {
 				margin-top: 0;
@@ -20,8 +20,8 @@
 				width: 100%;
 				display: flex;
 				flex-direction: column;
-				gap: 60px;
-				padding-bottom: 60px;
+				gap: 3.125vw;
+				padding-bottom: 3.125vw;
 				border-bottom: 1px solid #dfdfdf;
 				@media #{$mobileQuery} {
 					gap: 10.753vw;
@@ -30,8 +30,8 @@
 				}
 				.company-title {
 					font-weight: 700;
-					font-size: 80px;
-					line-height: 88px;
+					font-size: 4.167vw;
+					line-height: 4.583vw;
 					@media #{$mobileQuery} {
 						font-size: 6.989vw;
 						line-height: 7.796vw;
@@ -42,8 +42,8 @@
 				width: 100%;
 				display: flex;
 				flex-direction: column;
-				padding-top: 80px;
-				padding-bottom: 80px;
+				padding-top: 4.167vw;
+				padding-bottom: 4.167vw;
 				border-bottom: 1px solid #dfdfdf;
 				@media #{$mobileQuery} {
 					padding-top: 8.065vw;
@@ -57,7 +57,7 @@
 					padding-bottom: 0;
 				}
 				&.active {
-					padding-bottom: 70px;
+					padding-bottom: 3.646vw;
 					@media #{$mobileQuery} {
 						padding-bottom: 10.753vw;
 					}
@@ -76,7 +76,7 @@
 					}
 					.toggle-button {
 						cursor: pointer;
-						width: 32px;
+						width: 1.667vw;
 						@media #{$mobileQuery} {
 							width: 5.914vw;
 						}
@@ -96,16 +96,16 @@
 				width: 100%;
 				display: flex;
 				flex-direction: column;
-				gap: 60px;
+				gap: 3.125vw;
 				position: absolute;
 				top: 0;
 				left: 0;
-				padding-top: 100px;
+				padding-top: 5.208vw;
 				@media #{$mobileQuery} {
 					padding-top: 8.065vw;
 				}
 				.text-block {
-					padding-bottom: 60px;
+					padding-bottom: 3.125vw;
 					border-bottom: 1px solid #dfdfdf;
 					@media #{$mobileQuery} {
 						padding-bottom: 8.065vw;

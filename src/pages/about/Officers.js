@@ -17,7 +17,9 @@ const Officers = ({ id = '' }) => {
 			autoplay: true,
 			modules: [Autoplay],
 			breakpoints: {
-				slidesPerView: 3,
+				991: {
+					slidesPerView: 3,
+				},
 			},
 		});
 	}, []);

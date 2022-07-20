@@ -5,9 +5,9 @@
 			padding: 0;
 		}
 		.categories {
-			height: 140px;
-			margin-top: -70px;
-			gap: 20px;
+			height: 7.292vw;
+			margin-top: -3.646vw;
+			gap: 1.042vw;
 			display: none;
 			@media #{$mobileQuery} {
 				margin-top: 0;
@@ -39,16 +39,16 @@
 					.icon {
 						position: absolute;
 						top: 50%;
-						left: 60px;
+						left: 3.125vw;
 						transform: translateY(-50%);
-						width: 40px;
+						width: 2.083vw;
 					}
 					span {
 						white-space: pre-wrap;
 						text-align: center;
 						font-weight: 700;
-						font-size: 28px;
-						line-height: 36px;
+						font-size: 1.458vw;
+						line-height: 1.875vw;
 						letter-spacing: 0.02em;
 					}
 				}
@@ -64,17 +64,17 @@
 			}
 		}
 		.projects {
-			margin-top: 150px;
-			margin-bottom: 150px;
+			margin-top: 7.813vw;
+			margin-bottom: 7.813vw;
 			flex-wrap: wrap;
-			gap: 18px;
+			gap: 0.938vw;
 			@media #{$mobileQuery} {
 				margin-top: 16.129vw;
 				margin-bottom: 16.129vw;
 				gap: 0;
 			}
 			.project {
-				width: calc(50% - 18px / 2);
+				width: calc(50% - 0.938vw / 2);
 				padding-top: calc(50% * 0.55);
 				overflow: hidden;
 				cursor: pointer;
@@ -94,7 +94,7 @@
 				.info {
 					background-color: rgba($color: $greyDarkCorp, $alpha: 0.5);
 					display: flex;
-					padding: 50px;
+					padding: 2.604vw;
 					align-items: center;
 					flex-direction: column;
 					color: #fff;

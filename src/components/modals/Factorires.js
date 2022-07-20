@@ -24,7 +24,7 @@ const Factorires = () => {
 							<img src={p.homeImg} alt="img" className="bg" />
 							<div className="info">
 								<div className="title">{p.title}</div>
-								<Btn link={{ href: `/production/${i}` }} text="Выбрать" />
+								{p.fields && <Btn link={{ href: `/production/${i}` }} text="Выбрать" />}
 								<div className="address">{p.address}</div>
 							</div>
 						</div>

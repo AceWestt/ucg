@@ -9,8 +9,8 @@
 			.small-card {
 				display: flex;
 				align-items: stretch;
-				margin-top: -70px;
-				box-shadow: 0px 8px 12px 4px rgba(0, 0, 0, 0.25);
+				margin-top: -3.646vw;
+				box-shadow: 0vw 0.417vw 0.625vw 0.208vw rgba(0, 0, 0, 0.25);
 				@media #{$mobileQuery} {
 					width: 100%;
 					flex-direction: column;
@@ -28,11 +28,11 @@
 							background-color: transparent;
 						}
 						.title {
-							font-size: 42px;
+							font-size: 2.188vw;
 							color: #fff;
 							font-weight: 500;
 							background-color: $green;
-							padding: 42px 76px;
+							padding: 2.188vw 3.958vw;
 							height: auto;
 							flex-shrink: 0;
 							@media #{$mobileQuery} {
@@ -47,23 +47,23 @@
 							display: flex;
 							flex-direction: column;
 							justify-content: center;
-							gap: 35px;
-							padding: 54px 40px;
+							gap: 1.823vw;
+							padding: 2.813vw 2.083vw;
 							@media #{$mobileQuery} {
 								display: none;
 							}
 							.item {
 								display: flex;
 								align-items: center;
-								gap: 16px;
+								gap: 0.833vw;
 								span.line {
-									width: 30px;
-									height: 2px;
+									width: 1.563vw;
+									height: 0.104vw;
 									background-color: $green;
 								}
 								span.text {
 									color: #fff;
-									font-size: 18px;
+									font-size: 0.938vw;
 									font-weight: 600;
 								}
 							}
@@ -71,7 +71,7 @@
 					}
 					&.right {
 						display: flex;
-						padding: 30px 40px;
+						padding: 1.563vw 2.083vw;
 						justify-content: center;
 						align-items: center;
 						background-color: #2a2a2a;
@@ -103,7 +103,7 @@
 								gap: 4.301vw;
 								span.line {
 									width: 8.065vw;
-									height: 1px;
+									height: 0.052vw;
 									background-color: $green;
 								}
 								span.text {
@@ -122,13 +122,13 @@
 			display: flex;
 			flex-direction: column;
 			align-items: flex-start;
-			margin-top: 100px;
+			margin-top: 5.208vw;
 			@media #{$mobileQuery} {
 				margin-top: 16.129vw;
 				background-color: #2b2b2a;
 			}
 			.map-container {
-				margin: 100px 0 0 0;
+				margin: 5.208vw 0 0 0;
 				width: 100%;
 				display: flex;
 				justify-content: flex-end;
@@ -136,8 +136,8 @@
 					margin: 16.129vw 0 0 0;
 				}
 				.map-bg {
-					width: 1200px;
-					margin-bottom: 220px;
+					width: 62.5vw;
+					margin-bottom: 11.458vw;
 					@media #{$mobileQuery} {
 						display: none;
 					}
@@ -146,15 +146,15 @@
 					display: flex;
 					flex-direction: column;
 					position: absolute;
-					bottom: 55px;
+					bottom: 2.865vw;
 					right: 0;
-					width: 480px;
+					width: 25vw;
 					@media #{$mobileQuery} {
 						display: none;
 					}
 					.thumb-img {
 						width: 100%;
-						height: 270px;
+						height: 14.063vw;
 						overflow: hidden;
 						background-color: #fff;
 						img {
@@ -174,11 +174,11 @@
 					.thumb-title {
 						width: 100%;
 						text-align: center;
-						padding: 16px 20px;
+						padding: 0.833vw 1.042vw;
 						background-color: $green;
 						color: #fff;
 						font-weight: 700;
-						font-size: 22px;
+						font-size: 1.146vw;
 					}
 				}
 				.points-container {
@@ -197,27 +197,27 @@
 						display: flex;
 						flex-direction: column;
 						align-items: center;
-						// gap: 8px;
+						// gap: 8.006px;
 						transform: translate(50%, -50%);
 						span {
 							position: absolute;
 							text-align: center;
-							bottom: calc(100% + 8px);
+							bottom: calc(100% + 0.417vw);
 							left: 50%;
 							transform: translateX(-50%);
 							width: auto;
 							font-weight: 600;
-							text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.5);
-							font-size: 18px;
+							text-shadow: 0vw 0.052vw 0.313vw rgba(0, 0, 0, 0.5);
+							font-size: 0.938vw;
 							color: #fff;
 							// background: #343331;
-							opacity: 0;
+							opacity: 1;
 							transition: all 0.3s linear;
 						}
 						.icon-container {
 							cursor: pointer;
-							width: 20px;
-							height: 20px;
+							width: 1.042vw;
+							height: 1.042vw;
 							border-radius: 50%;
 							background-color: transparent;
 							transition: all 0.3s linear;
@@ -225,7 +225,7 @@
 							justify-content: center;
 							align-items: center;
 							img {
-								width: 20px;
+								width: 1.042vw;
 							}
 						}
 						&:hover {
@@ -238,11 +238,11 @@
 								display: none;
 							}
 							.icon-container {
-								width: 66px;
-								height: 66px;
+								width: 3.438vw;
+								height: 3.438vw;
 								background-color: rgba($color: #009933, $alpha: 0.8);
 								img {
-									width: 35px;
+									width: 1.823vw;
 								}
 							}
 						}
@@ -250,14 +250,14 @@
 				}
 			}
 			.list {
-				width: 612px;
+				width: 31.875vw;
 				display: flex;
 				flex-direction: column;
 				position: absolute;
 				left: 0;
-				top: 150px;
+				top: 7.813vw;
 				background-color: #4e4e4e;
-				padding: 20px 40px;
+				padding: 1.042vw 2.083vw;
 				@media #{$mobileQuery} {
 					position: relative;
 					top: auto;
@@ -271,7 +271,7 @@
 					display: flex;
 					flex-direction: column;
 					border-bottom: 1px solid #eeeeee;
-					padding: 33px 0;
+					padding: 1.719vw 0;
 					@media #{$mobileQuery} {
 						padding: 8.065vw 0;
 					}
@@ -283,7 +283,7 @@
 						align-items: center;
 						width: 100%;
 						.plant-icon {
-							width: 20px;
+							width: 1.042vw;
 							margin: 0;
 							flex-shrink: 0;
 							@media #{$mobileQuery} {
@@ -292,10 +292,10 @@
 						}
 						span {
 							width: 100%;
-							font-size: 26px;
+							font-size: 1.354vw;
 							font-weight: 500;
 							color: #fff;
-							padding: 0 18px;
+							padding: 0 0.938vw;
 							@media #{$mobileQuery} {
 								font-size: 4.839vw;
 								line-height: 6.183vw;
@@ -303,7 +303,7 @@
 							}
 						}
 						.control-button {
-							width: 32px;
+							width: 1.667vw;
 							cursor: pointer;
 							@media #{$mobileQuery} {
 								width: 5.914vw;
@@ -319,8 +319,8 @@
 							width: 100%;
 							display: flex;
 							flex-direction: column;
-							padding-top: 30px;
-							gap: 30px;
+							padding-top: 1.563vw;
+							gap: 1.563vw;
 							position: absolute;
 							top: 0;
 							left: 0;
@@ -331,9 +331,9 @@
 							.detail {
 								display: flex;
 								flex-direction: column;
-								gap: 16px;
-								font-size: 18px;
-								line-height: 27px;
+								gap: 0.833vw;
+								font-size: 0.938vw;
+								line-height: 1.406vw;
 								color: #fff;
 								@media #{$mobileQuery} {
 									font-size: 3.763vw;
@@ -341,7 +341,11 @@
 								}
 								.value {
 									font-weight: 600;
-									line-height: 5.645vw;
+									line-height: 1.103vw;
+									@media #{$mobileQuery} {
+										font-weight: 600;
+										line-height: 5.645vw;
+									}
 								}
 							}
 						}
@@ -351,9 +355,9 @@
 		}
 	}
 	.section.text-section-one {
-		margin: 150px 0;
+		margin: 7.813vw 0;
 		align-items: center;
-		gap: 100px;
+		gap: 5.208vw;
 		@media #{$mobileQuery} {
 			margin: 16.129vw 0;
 			gap: 10.753vw;
@@ -362,7 +366,7 @@
 		.side {
 			width: 100%;
 			&.pattern-holder {
-				width: 972px;
+				width: 50.625vw;
 				flex-shrink: 0;
 				@media #{$mobileQuery} {
 					width: 100%;
@@ -377,7 +381,7 @@
 			&.text-holder {
 				display: flex;
 				flex-direction: column;
-				gap: 70px;
+				gap: 3.646vw;
 				color: $greyDarkCorp;
 				@media #{$mobileQuery} {
 					gap: 10.753vw;
@@ -385,8 +389,8 @@
 				}
 				h3 {
 					font-weight: 700;
-					font-size: 60px;
-					line-height: 78px;
+					font-size: 3.125vw;
+					line-height: 4.063vw;
 					letter-spacing: 0.02em;
 					@media #{$mobileQuery} {
 						font-size: 5.376vw;
@@ -394,9 +398,9 @@
 					}
 				}
 				p {
-					font-size: 18px;
-					line-height: 27px;
-					max-width: 620px;
+					font-size: 0.938vw;
+					line-height: 1.406vw;
+					max-width: 32.292vw;
 					@media #{$mobileQuery} {
 						font-size: 3.763vw;
 						line-height: 5.645vw;
@@ -407,8 +411,8 @@
 		}
 	}
 	.section.text-section-two {
-		margin-bottom: 100px;
-		gap: 100px;
+		margin-bottom: 5.208vw;
+		gap: 5.208vw;
 		@media #{$mobileQuery} {
 			margin-bottom: 16.129vw;
 			gap: 16.129vw;
@@ -421,7 +425,7 @@
 		}
 		.section-container {
 			display: flex;
-			gap: 100px;
+			gap: 5.208vw;
 			align-items: center;
 			@media #{$mobileQuery} {
 				gap: 16.129vw;
@@ -433,7 +437,7 @@
 					display: flex;
 					flex-direction: column;
 					color: $greyDarkCorp;
-					gap: 40px;
+					gap: 2.083vw;
 					@media #{$mobileQuery} {
 						gap: 16.129vw;
 						padding: 0 5.376vw;
@@ -451,7 +455,7 @@
 					}
 				}
 				&.img-text-holder {
-					width: 1100px;
+					width: 57.292vw;
 					flex-shrink: 0;
 					@media #{$mobileQuery} {
 						width: 100%;
@@ -469,16 +473,18 @@
 						width: 100%;
 						height: 100%;
 						display: flex;
-						padding: 80px;
+						padding: 4.167vw;
 						justify-content: center;
-						gap: 40px;
+						gap: 2.083vw;
 						color: #fff;
 						flex-direction: column;
+						align-items: center;
 						@media #{$mobileQuery} {
 							padding: 16.129vw 5.376vw;
 						}
 						h2 {
-							max-width: 410px;
+							max-width: 21.354vw;
+							text-align: center;
 							@media #{$mobileQuery} {
 								width: 100%;
 								max-width: 100%;
@@ -489,7 +495,7 @@
 							}
 						}
 						p {
-							max-width: 885px;
+							max-width: 46.094vw;
 							color: #fff;
 							@media #{$mobileQuery} {
 								max-width: 100%;

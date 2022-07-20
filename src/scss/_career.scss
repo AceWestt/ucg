@@ -1,8 +1,8 @@
 .page.career {
 	.section.content {
-		padding-top: 100px;
-		padding-bottom: 100px;
-		gap: 100px;
+		padding-top: 5.208vw;
+		padding-bottom: 5.208vw;
+		gap: 5.208vw;
 		color: $greyDarkCorp;
 		background-color: #fff;
 		@media #{$mobileQuery} {
@@ -14,14 +14,14 @@
 			width: 100%;
 			display: flex;
 			flex-direction: column;
-			gap: 60px;
+			gap: 3.125vw;
 			@media #{$mobileQuery} {
 				gap: 16.129vw;
 			}
 			.plant-title {
 				font-weight: 600;
-				font-size: 32px;
-				line-height: 42px;
+				font-size: 1.667vw;
+				line-height: 2.188vw;
 				@media #{$mobileQuery} {
 					font-weight: 500;
 					font-size: 6.989vw;
@@ -32,14 +32,14 @@
 				width: 100%;
 				display: flex;
 				flex-direction: column;
-				gap: 30px;
+				gap: 1.563vw;
 				@media #{$mobileQuery} {
 					gap: 8.065vw;
 				}
 				.label {
 					font-weight: 600;
-					font-size: 22px;
-					line-height: 33px;
+					font-size: 1.146vw;
+					line-height: 1.719vw;
 					@media #{$mobileQuery} {
 						font-weight: 600;
 						font-size: 4.839vw;
@@ -49,14 +49,14 @@
 				.list {
 					width: 100%;
 					display: flex;
-					gap: 120px;
+					gap: 6.25vw;
 					@media #{$mobileQuery} {
 						flex-direction: column;
 						gap: 5.376vw;
 					}
 					.item {
-						font-size: 20px;
-						line-height: 24px;
+						font-size: 1.042vw;
+						line-height: 1.25vw;
 						font-weight: 400;
 						@media #{$mobileQuery} {
 							font-size: 3.763vw;
@@ -69,7 +69,7 @@
 				width: 100%;
 				display: flex;
 				flex-wrap: wrap;
-				gap: 30px;
+				gap: 1.563vw;
 				@media #{$mobileQuery} {
 					gap: 5.376vw;
 					flex-wrap: nowrap;
@@ -77,14 +77,14 @@
 				}
 				.item {
 					background: $greyLighter;
-					width: calc(33.333333% - 30px * 2 / 3);
-					height: 171px;
-					padding: 40px;
+					width: calc(33.333333% - 1.563vw * 2 / 3);
+					height: 8.906vw;
+					padding: 2.083vw;
 					display: flex;
 					flex-direction: column;
 					justify-content: space-between;
 					align-items: flex-start;
-					border-radius: 8px;
+					border-radius: 0.417vw;
 					@media #{$mobileQuery} {
 						width: 100%;
 						height: 31.183vw;
@@ -92,11 +92,11 @@
 						border-radius: 2.151vw;
 					}
 					.icon {
-						max-width: 70px;
-						max-height: 70px;
+						max-width: 3.646vw;
+						max-height: 3.646vw;
 						position: absolute;
-						right: 40px;
-						bottom: 30px;
+						right: 2.083vw;
+						bottom: 1.563vw;
 						@media #{$mobileQuery} {
 							max-width: 16.129vw;
 							max-height: 16.129vw;
@@ -105,7 +105,7 @@
 						}
 					}
 					h4 {
-						line-height: 26px;
+						line-height: 1.354vw;
 						@media #{$mobileQuery} {
 							font-size: 4.839vw;
 							line-height: 5.914vw;
@@ -118,7 +118,7 @@
 			}
 			.no-vacancy-wrapper {
 				width: 100%;
-				padding-bottom: 100px;
+				padding-bottom: 5.208vw;
 				border-bottom: 1px solid #dfdfdf;
 				@media #{$mobileQuery} {
 					padding-bottom: 16.129vw;
@@ -127,8 +127,8 @@
 					width: 100%;
 					display: flex;
 					background-color: $greyLighter;
-					height: 171px;
-					border-radius: 8px;
+					height: 8.906vw;
+					border-radius: 0.417vw;
 					overflow: hidden;
 					@media #{$mobileQuery} {
 						height: 43.011vw;
@@ -136,14 +136,14 @@
 					}
 					.side {
 						width: 100%;
-						height: 171px;
+						height: 8.906vw;
 						display: flex;
 						@media #{$mobileQuery} {
 							height: 43.011vw;
 							overflow: hidden;
 						}
 						&.info {
-							padding: 40px;
+							padding: 2.083vw;
 							flex-direction: column;
 							justify-content: space-between;
 							align-items: flex-start;
@@ -151,7 +151,7 @@
 								padding: 8.065vw 5.376vw;
 							}
 							h4 {
-								line-height: 26px;
+								line-height: 1.354vw;
 								@media #{$mobileQuery} {
 									font-size: 4.839vw;
 									line-height: 5.914vw;
@@ -162,7 +162,7 @@
 							}
 						}
 						&.img {
-							width: 952px;
+							width: 49.583vw;
 							overflow: hidden;
 							flex-shrink: 0;
 							@media #{$mobileQuery} {

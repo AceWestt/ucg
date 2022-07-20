@@ -1,9 +1,9 @@
 .section.section-footer {
 	width: 100%;
-	padding-top: 40px;
-	padding-bottom: 26px;
+	padding-top: 2.083vw;
+	padding-bottom: 1.354vw;
 	background-color: $greyDarkCorp;
-	gap: 40px;
+	gap: 2.083vw;
 	@media #{$mobileQuery} {
 		padding-top: 16.129vw;
 		padding-bottom: 5.376vw;
@@ -19,7 +19,7 @@
 		display: flex;
 		justify-content: space-between;
 		.logo {
-			width: 132px;
+			width: 6.875vw;
 			@media #{$mobileQuery} {
 				width: 35.484vw;
 			}
@@ -30,14 +30,14 @@
 		.social-links {
 			display: flex;
 			align-items: center;
-			gap: 20px;
+			gap: 1.042vw;
 			@media #{$mobileQuery} {
 				flex-direction: column;
 				gap: 5.376vw;
 			}
 			img {
-				max-width: 18px;
-				max-height: 18px;
+				max-width: 0.938vw;
+				max-height: 0.938vw;
 				@media #{$mobileQuery} {
 					max-width: 4.301vw;
 					max-height: 4.301vw;
@@ -49,7 +49,7 @@
 		width: 100%;
 		display: flex;
 		justify-content: space-between;
-		gap: 30px;
+		gap: 1.563vw;
 		@media #{$mobileQuery} {
 			flex-direction: column;
 			gap: 8.065vw;
@@ -57,8 +57,8 @@
 		.link-group {
 			display: flex;
 			flex-direction: column;
-			max-width: 200px;
-			gap: 16px;
+			max-width: 10.417vw;
+			gap: 0.833vw;
 			color: #fff;
 			@media #{$mobileQuery} {
 				max-width: 100%;
@@ -72,7 +72,7 @@
 				}
 			}
 			.text-menu {
-				margin-bottom: 4px;
+				margin-bottom: 0.208vw;
 				@media #{$mobileQuery} {
 					margin-bottom: 0;
 					font-weight: 600;
@@ -88,12 +88,12 @@
 	}
 	.copy {
 		width: 100%;
-		padding: 26px 20px 0;
+		padding: 1.354vw 1.042vw 0;
 		border-top: 1px solid #7a7a7a;
 		text-align: center;
 		color: #fff;
 		@media #{$mobileQuery} {
-			padding: 5.376vw 20px 0;
+			padding: 5.376vw 1.042vw 0;
 			font-size: 3.226vw;
 		}
 	}

@@ -10,6 +10,7 @@ import { news } from '../files/news';
 import ProductsGallery from '../components/ProductsGallery';
 import Partners from '../components/commonSections/Partners';
 import NewsFlow from '../components/NewsFlow';
+import vid from '../imgs/home/video-factory.mp4';
 // import ProjectsHome from './home/ProjectsHome';
 
 const Home = () => {
@@ -38,6 +39,11 @@ const Home = () => {
 				</div>
 				<div className="right">
 					<img src={factorymodel} alt="factorymodel" />
+					<video autoPlay muted loop>
+						<source src={vid} type="video/mp4" />
+						{/* <source src="movie.ogg" type="video/ogg" /> */}
+						Your browser does not support the video tag.
+					</video>
 				</div>
 			</div>
 			<section className="section plants section-column">
@@ -66,7 +72,9 @@ const Home = () => {
 											<p>{p.director ? p.director : '-'}</p>
 										</div>
 									</div>
-									<Btn text="Подробнее о заводе" link={{ href: `/production/${i}` }} />
+									{p.fields && (
+										<Btn text="Подробнее о заводе" link={{ href: `/production/${i}` }} />
+									)}
 								</div>
 								<div className="img">
 									<img src={p.homeImg} alt={p.title} />

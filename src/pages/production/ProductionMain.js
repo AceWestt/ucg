@@ -6,7 +6,7 @@ import openBtnIcn from '@imgs/production/openButton.svg';
 import closeBtnIcn from '@imgs/production/closeButton.svg';
 import plantIcn from '@imgs/production/plantIcn.svg';
 
-const responsive = false;
+const responsive = true;
 
 const ProductionMain = ({ id = '' }) => {
 	const [activePlant, setActivePlant] = useState(0);
@@ -70,8 +70,8 @@ const ProductionMain = ({ id = '' }) => {
 								typeof p.coords.x === 'number' &&
 								typeof p.coords.y === 'number'
 							) {
-								const x = responsive ? `${p.coords.x * 0.52}vw` : `${p.coords.x}px`;
-								const y = responsive ? `${p.coords.y * 0.52}vw` : `${p.coords.y}px`;
+								const x = responsive ? `${p.coords.x * 0.052}vw` : `${p.coords.x}px`;
+								const y = responsive ? `${p.coords.y * 0.052}vw` : `${p.coords.y}px`;
 								return (
 									<div
 										className={`point ${activePlant === index ? 'active' : ''}`}

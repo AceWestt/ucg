@@ -33,12 +33,12 @@
 			height: 100%;
 			justify-content: space-between;
 			align-items: center;
-			padding-bottom: 100px;
+			padding-bottom: 5.208vw;
 			@media #{$mobileQuery} {
 				height: auto;
 			}
 			.section.mobile-header {
-				padding: 20px;
+				padding: 5.333vw;
 				width: 100%;
 				flex-direction: column;
 				color: $greyDarkCorp;
@@ -81,13 +81,13 @@
 					.link-group {
 						display: flex;
 						flex-direction: column;
-						gap: 84px;
+						gap: 4.375vw;
 						@media #{$mobileQuery} {
 							gap: 0;
 						}
 						a {
 							font-weight: 500;
-							font-size: 42px;
+							font-size: 2.188vw;
 							color: #000;
 							@media #{$mobileQuery} {
 								font-weight: 600;
@@ -115,7 +115,7 @@
 				.contact {
 					display: flex;
 					flex-direction: column;
-					gap: 46px;
+					gap: 2.396vw;
 					color: $greyDarkCorp;
 					@media #{$mobileQuery} {
 						gap: 5.376vw;
@@ -124,8 +124,8 @@
 					}
 					.title {
 						font-weight: 700;
-						font-size: 18px;
-						line-height: 22px;
+						font-size: 0.938vw;
+						line-height: 1.146vw;
 						@media #{$mobileQuery} {
 							font-size: 4.839vw;
 							line-height: 5.914vw;
@@ -133,23 +133,23 @@
 					}
 					.phone {
 						display: flex;
-						gap: 10px;
+						gap: 0.521vw;
 						align-items: flex-start;
 						@media #{$mobileQuery} {
 							gap: 2.688vw;
 						}
 						img {
-							width: 10px;
-							margin-top: 3px;
+							width: 0.521vw;
+							margin-top: 0.156vw;
 							@media #{$mobileQuery} {
 								width: 2.688vw;
 								margin-top: 0.806vw;
 							}
 						}
 						span {
-							font-size: 14px;
-							line-height: 16px;
-							max-width: 150px;
+							font-size: 0.729vw;
+							line-height: 0.833vw;
+							max-width: 7.813vw;
 							@media #{$mobileQuery} {
 								font-size: 3.763vw;
 								line-height: 4.301vw;
@@ -167,17 +167,17 @@
 		overflow: auto;
 		display: flex;
 		justify-content: center;
-		padding: 70px;
+		padding: 3.646vw;
 		@media #{$mobileQuery} {
 			padding: 0;
 		}
 		.wrapper {
-			border-radius: 10px;
-			width: 1126px;
+			border-radius: 0.521vw;
+			width: 58.646vw;
 			height: 100%;
 			overflow: auto;
-			padding: 77px 160px 60px;
-			gap: 40px;
+			padding: 4.01vw 8.333vw 3.125vw;
+			gap: 2.083vw;
 			background-color: #fff;
 			display: flex;
 			flex-direction: column;
@@ -193,7 +193,7 @@
 		.header {
 			display: flex;
 			flex-direction: column;
-			gap: 20px;
+			gap: 1.042vw;
 			@media #{$mobileQuery} {
 				gap: 8.065vw;
 				h4 {
@@ -207,10 +207,10 @@
 			}
 		}
 		form {
-			width: 614px;
+			width: 31.979vw;
 			display: flex;
 			flex-direction: column;
-			gap: 40px;
+			gap: 2.083vw;
 			color: $greyDarkCorp;
 			@media #{$mobileQuery} {
 				width: 100%;
@@ -221,13 +221,13 @@
 				flex-direction: column;
 				align-items: flex-start;
 				width: 100%;
-				gap: 14px;
+				gap: 0.729vw;
 				@media #{$mobileQuery} {
 					gap: 4.301vw;
 				}
 				&.btn-container {
 					flex-direction: row;
-					gap: 20px;
+					gap: 1.042vw;
 					align-items: center;
 					@media #{$mobileQuery} {
 						flex-direction: column;
@@ -236,19 +236,19 @@
 				}
 				label {
 					font-weight: 500;
-					font-size: 22px;
+					font-size: 1.146vw;
 					@media #{$mobileQuery} {
 						font-size: 3.763vw;
 					}
 				}
 				input {
-					padding: 20px;
+					padding: 1.042vw;
 					width: 100%;
 					background-color: transparent;
 					border: 0px solid transparent;
 					border-bottom: 1px solid $greyDarkCorp;
 					color: $greyDarkCorp;
-					font-size: 18px;
+					font-size: 0.938vw;
 					@media #{$mobileQuery} {
 						font-size: 3.763vw;
 						padding: 3.763vw;
@@ -263,10 +263,10 @@
 			}
 		}
 		.close-btn {
-			width: 30px;
+			width: 1.563vw;
 			position: absolute;
-			top: 60px;
-			right: 60px;
+			top: 3.125vw;
+			right: 3.125vw;
 			@media #{$mobileQuery} {
 				width: 5.914vw;
 				top: 10.215vw;
@@ -284,8 +284,8 @@
 		display: flex;
 		background-color: #fff;
 		flex-direction: column;
-		padding: 83px 50px 50px;
-		gap: 70px;
+		padding: 4.323vw 2.604vw 2.604vw;
+		gap: 3.646vw;
 		@media #{$mobileQuery} {
 			padding: 0;
 			gap: 8.065vw;
@@ -302,7 +302,7 @@
 			}
 			.title {
 				font-weight: 700;
-				font-size: 60px;
+				font-size: 3.125vw;
 				@media #{$mobileQuery} {
 					font-size: 5.376vw;
 					line-height: 6.989vw;
@@ -310,7 +310,7 @@
 			}
 			.close-modal-btn {
 				cursor: pointer;
-				width: 30px;
+				width: 1.563vw;
 				@media #{$mobileQuery} {
 					width: 5.914vw;
 				}
@@ -325,7 +325,7 @@
 			height: 100%;
 			overflow: auto;
 			flex-wrap: wrap;
-			gap: 10px;
+			gap: 0.521vw;
 			@media #{$mobileQuery} {
 				gap: 0;
 				padding: 5.376vw;
@@ -334,7 +334,7 @@
 				align-items: flex-start;
 			}
 			.item {
-				width: calc(33.3333% - 10px * 2 / 3);
+				width: calc(33.3333% - 0.521vw * 2 / 3);
 				display: flex;
 				@media #{$mobileQuery} {
 					width: 100%;
@@ -357,7 +357,7 @@
 				.info {
 					background-color: rgba(0, 0, 0, 0.66);
 					display: flex;
-					padding: 60px 40px 46px;
+					padding: 3.125vw 2.083vw 2.396vw;
 					color: #fff;
 					flex-direction: column;
 					justify-content: space-between;
@@ -372,8 +372,8 @@
 					}
 					.title {
 						font-weight: 600;
-						font-size: 26px;
-						line-height: 34px;
+						font-size: 1.354vw;
+						line-height: 1.771vw;
 						@media #{$mobileQuery} {
 							font-weight: 600;
 							font-size: 5.914vw;
@@ -382,15 +382,16 @@
 					}
 					.address {
 						text-align: center;
-						max-width: 308px;
+						max-width: 16.042vw;
 						font-weight: 700;
-						font-size: 16px;
-						line-height: 24px;
+						font-size: 0.833vw;
+						line-height: 1.25vw;
 						@media #{$mobileQuery} {
 							font-weight: 500;
 							font-size: 3.763vw;
 							line-height: 5.645vw;
 							text-align: left;
+							max-width: 100%;
 						}
 					}
 				}
@@ -401,13 +402,13 @@
 		height: 100%;
 		color: #fff;
 		justify-content: space-between;
-		padding-top: 40px;
-		padding-bottom: 40px;
+		padding-top: 2.083vw;
+		padding-bottom: 2.083vw;
 		.pattern {
-			width: 1262px;
+			width: 65.729vw;
 			position: absolute;
 			right: 0;
-			bottom: 60px;
+			bottom: 3.125vw;
 		}
 		.header {
 			width: 100%;
@@ -418,18 +419,18 @@
 			flex-shrink: 0;
 			.section-label {
 				display: flex;
-				gap: 16px;
+				gap: 0.833vw;
 				align-items: center;
 				img {
-					width: 13px;
+					width: 0.677vw;
 				}
 				span {
 					font-weight: 600;
-					font-size: 18px;
+					font-size: 0.938vw;
 				}
 			}
 			.close-btn {
-				width: 30px;
+				width: 1.563vw;
 				cursor: pointer;
 				img {
 					width: 100%;
@@ -439,15 +440,15 @@
 		.body {
 			width: 100%;
 			height: 100%;
-			padding: 60px 0;
+			padding: 3.125vw 0;
 			display: flex;
 			align-items: center;
-			gap: 80px;
+			gap: 4.167vw;
 			.side {
 				width: 100%;
 				display: flex;
 				&.logo {
-					width: 132px;
+					width: 6.875vw;
 					flex-shrink: 0;
 					img {
 						width: 100%;
@@ -455,7 +456,7 @@
 				}
 				&.links {
 					flex-direction: column;
-					gap: 100px;
+					gap: 5.208vw;
 					color: #fff;
 					height: 100%;
 					justify-content: center;
@@ -463,25 +464,25 @@
 					.column {
 						width: 100%;
 						display: flex;
-						gap: 60px;
+						gap: 3.125vw;
 						.link-group {
-							width: 220px;
+							width: 11.458vw;
 							display: flex;
 							flex-direction: column;
-							gap: 20px;
+							gap: 1.042vw;
 							a {
 								color: #fff;
 							}
 							.text-menu {
-								margin-bottom: 10px;
+								margin-bottom: 0.521vw;
 								font-weight: 700;
-								font-size: 18px;
-								line-height: 22px;
+								font-size: 0.938vw;
+								line-height: 1.146vw;
 							}
 							.text-mini {
 								font-weight: 400;
-								font-size: 14px;
-								line-height: 21px;
+								font-size: 0.729vw;
+								line-height: 1.094vw;
 							}
 						}
 					}
@@ -497,28 +498,28 @@
 			.contact-details {
 				display: flex;
 				flex-direction: column;
-				gap: 20px;
+				gap: 1.042vw;
 				.item {
 					display: flex;
 					color: #fff;
-					gap: 10px;
+					gap: 0.521vw;
 					align-items: center;
 					img {
-						width: 10px;
+						width: 0.521vw;
 					}
 					span {
-						font-size: 14px;
-						line-height: 21px;
+						font-size: 0.729vw;
+						line-height: 1.094vw;
 					}
 				}
 			}
 			.social-links {
 				display: flex;
-				gap: 20px;
+				gap: 1.042vw;
 				align-items: center;
 				a {
-					max-width: 18px;
-					max-height: 18px;
+					max-width: 0.938vw;
+					max-height: 0.938vw;
 				}
 			}
 		}
@@ -526,7 +527,7 @@
 	#director-modal {
 		height: 100%;
 		display: flex;
-		padding: 70px 115px;
+		padding: 3.646vw 5.99vw;
 		color: $greyDarkCorp;
 		@media #{$mobileQuery} {
 			display: none;
@@ -537,20 +538,20 @@
 			height: 100%;
 			flex-direction: column;
 			background-color: #fff;
-			border-radius: 10px;
+			border-radius: 0.521vw;
 			overflow: hidden;
 			.header {
 				width: 100%;
 				display: flex;
 				flex-shrink: 0;
-				padding: 30px 60px 30px 84px;
+				padding: 1.563vw 3.125vw 1.563vw 4.375vw;
 				overflow: hidden;
 				justify-content: space-between;
-				gap: 60px;
+				gap: 3.125vw;
 				background-color: #fafafa;
 				.pattern {
 					position: absolute;
-					right: 150px;
+					right: 7.813vw;
 					top: 50%;
 					transform: translateY(-50%);
 				}
@@ -558,10 +559,10 @@
 					width: 100%;
 					display: flex;
 					&.close {
-						width: 30px;
+						width: 1.563vw;
 						flex-shrink: 0;
 						.close-btn {
-							margin-top: 30px;
+							margin-top: 1.563vw;
 							width: 100%;
 							cursor: pointer;
 							img {
@@ -571,11 +572,11 @@
 					}
 					&.info {
 						align-items: center;
-						gap: 70px;
+						gap: 3.646vw;
 						img {
 							flex-shrink: 0;
-							width: 242px;
-							height: 242px;
+							width: 12.604vw;
+							height: 12.604vw;
 							object-fit: cover;
 							border-radius: 50%;
 						}
@@ -585,30 +586,30 @@
 							flex-direction: column;
 							.name {
 								font-weight: 700;
-								font-size: 26px;
-								line-height: 34px;
+								font-size: 1.354vw;
+								line-height: 1.771vw;
 								letter-spacing: 0.02em;
-								margin-bottom: 13px;
+								margin-bottom: 0.677vw;
 							}
 							.job-title {
-								font-size: 18px;
-								line-height: 27px;
-								margin-bottom: 30px;
+								font-size: 0.938vw;
+								line-height: 1.406vw;
+								margin-bottom: 1.563vw;
 							}
 							.address,
 							.phone {
 								display: flex;
 								flex-direction: column;
-								gap: 16px;
-								margin-bottom: 30px;
+								gap: 0.833vw;
+								margin-bottom: 1.563vw;
 								label {
 									font-weight: 800;
-									font-size: 14px;
+									font-size: 0.729vw;
 								}
 								.value {
 									font-weight: 500;
-									font-size: 18px;
-									line-height: 22px;
+									font-size: 0.938vw;
+									line-height: 1.146vw;
 								}
 							}
 							.phone {
@@ -622,24 +623,24 @@
 				width: 100%;
 				height: 100%;
 				display: flex;
-				padding: 60px 96px;
+				padding: 3.125vw 5vw;
 				overflow: auto;
 				.body-wrap {
 					display: flex;
 					width: 100%;
 					height: 100%;
-					gap: 100px;
+					gap: 5.208vw;
 				}
 				.side {
 					width: 100%;
 					height: 100%;
 					display: flex;
 					flex-direction: column;
-					gap: 40px;
+					gap: 2.083vw;
 					.title {
 						font-weight: 500;
-						font-size: 20px;
-						line-height: 24px;
+						font-size: 1.042vw;
+						line-height: 1.25vw;
 						flex-shrink: 0;
 					}
 					.list {
@@ -649,26 +650,26 @@
 						flex-direction: column;
 						overflow: auto;
 						.item {
-							padding: 20px 0;
+							padding: 1.042vw 0;
 							display: flex;
 							width: 100%;
-							gap: 70px;
+							gap: 3.646vw;
 							border-bottom: 1px solid #dfdfdf;
 							&:last-child {
 								border-color: transparent;
 							}
 							.year {
-								width: 190px;
+								width: 9.896vw;
 								flex-shrink: 0;
 								font-weight: 600;
-								font-size: 20px;
-								line-height: 24px;
+								font-size: 1.042vw;
+								line-height: 1.25vw;
 								color: $green;
 							}
 							.place {
-								font-size: 14px;
-								line-height: 21px;
-								padding-right: 20px;
+								font-size: 0.729vw;
+								line-height: 1.094vw;
+								padding-right: 1.042vw;
 							}
 						}
 					}

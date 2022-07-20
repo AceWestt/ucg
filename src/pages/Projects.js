@@ -54,7 +54,12 @@ const Projects = () => {
 									{typeString && <div className="type">{typeString}</div>}
 									<h3 className="title">{p.title}</h3>
 									<div className="btn-container">
-										<Btn type="subtle" text="Читать подробнее" icon={btnIcon} />
+										<Btn
+											type="subtle"
+											text="Читать подробнее"
+											icon={btnIcon}
+											link={{ href: `/projects/${i}` }}
+										/>
 									</div>
 								</div>
 							</div>

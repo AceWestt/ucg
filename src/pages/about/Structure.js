@@ -8,7 +8,7 @@ const Structure = ({ id = '' }) => {
 			<div className="section-title">Структура холдинга:</div>
 			<div className="structure-wrap">
 				<img src={svg} alt="структура" />
-				<img src={svgm} className="mobile" alt="структура" />
+				<img src={svgm} className="mobile-only" alt="структура" />
 			</div>
 		</section>
 	);

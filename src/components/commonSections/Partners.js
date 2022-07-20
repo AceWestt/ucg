@@ -5,6 +5,7 @@ import img3 from '@imgs/common/partners/3.png';
 import img4 from '@imgs/common/partners/4.png';
 import img5 from '@imgs/common/partners/5.png';
 import img6 from '@imgs/common/partners/6.png';
+import img7 from '@imgs/common/partners/7.png';
 
 const Partners = ({ id = '' }) => {
 	return (
@@ -31,4 +32,4 @@ const Partners = ({ id = '' }) => {
 
 export default Partners;
 
-const array = [img1, img2, img3, img4, img5, img6];
+const array = [img1, img2, img3, img4, img5, img6, img7];

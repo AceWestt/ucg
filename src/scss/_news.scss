@@ -4,13 +4,13 @@
 		.news-hero-container {
 			width: 100%;
 			display: flex;
-			// border: 1px solid blue;
-			padding: 60px 0;
+			// border: 0.998px solid blue;
+			padding: 3.125vw 0;
 			@media #{$mobileQuery} {
 				padding: 0 0;
 			}
 			.news-hero-list-wrapper {
-				margin-left: calc(218px / 2);
+				margin-left: calc(11.354vw / 2);
 				@media #{$mobileQuery} {
 					margin-left: 0;
 				}
@@ -19,7 +19,7 @@
 				width: auto;
 				&:first-child {
 					.news-hero-item {
-						margin-left: calc(-218px);
+						margin-left: calc(-11.354vw);
 						@media #{$mobileQuery} {
 							margin-left: 0;
 						}
@@ -27,9 +27,9 @@
 				}
 			}
 			.news-hero-item {
-				margin-top: 60px;
-				width: 935px;
-				height: 526px;
+				margin-top: 3.125vw;
+				width: 48.698vw;
+				height: 27.396vw;
 				display: flex;
 				@media #{$mobileQuery} {
 					width: 100vw;
@@ -49,7 +49,7 @@
 					top: 0;
 					left: 0;
 					align-items: flex-end;
-					padding: 80px 80px 120px;
+					padding: 4.167vw 4.167vw 6.25vw;
 					color: #fff;
 					background: linear-gradient(
 						180deg,
@@ -60,7 +60,10 @@
 						rgba(18, 18, 18, 0.85) 100%
 					);
 					h3 {
-						max-width: 700px;
+						max-width: 36.458vw;
+						@media #{$mobileQuery} {
+							max-width: 100%;
+						}
 					}
 					@media #{$mobileQuery} {
 						padding: 8.065vw 5.376vw;
@@ -73,8 +76,8 @@
 			}
 			.swiper-slide-active {
 				.news-hero-item {
-					width: 1153px;
-					height: 646px;
+					width: 60.052vw;
+					height: 33.646vw;
 					margin-top: 0;
 					@media #{$mobileQuery} {
 						width: 100vw;
@@ -84,19 +87,19 @@
 				}
 			}
 			.control {
-				width: 24px;
+				width: 1.25vw;
 				cursor: pointer;
-				top: 360px;
+				top: 18.75vw;
 				position: absolute;
 				z-index: 1000;
 				@media #{$mobileQuery} {
 					display: none;
 				}
 				&.prev {
-					left: 300px;
+					left: 15.625vw;
 				}
 				&.next {
-					right: 300px;
+					right: 15.625vw;
 					img {
 						transform: scaleX(-1);
 					}
@@ -110,7 +113,7 @@
 			width: 100%;
 			display: flex;
 			justify-content: center;
-			margin-bottom: 60px;
+			margin-bottom: 3.125vw;
 			align-items: center;
 			@media #{$mobileQuery} {
 				display: none;
@@ -118,18 +121,18 @@
 			.swiper-pagination-bullet {
 				border: 1px solid #fff;
 				background-color: transparent;
-				width: 10px;
-				height: 10px;
+				width: 0.521vw;
+				height: 0.521vw;
 				opacity: 1;
 
 				&.swiper-pagination-bullet-active {
-					width: 18px;
-					height: 18px;
+					width: 0.938vw;
+					height: 0.938vw;
 					border: 1 solid transparent;
 					&::after {
 						content: '';
-						width: 10px;
-						height: 10px;
+						width: 0.521vw;
+						height: 0.521vw;
 						background-color: #fff;
 						position: absolute;
 						left: 50%;
@@ -144,9 +147,9 @@
 	.section.news-container {
 		width: 100%;
 		background-color: #fff;
-		padding-top: 100px;
-		padding-bottom: 100px;
-		gap: 60px;
+		padding-top: 5.208vw;
+		padding-bottom: 5.208vw;
+		gap: 3.125vw;
 		@media #{$mobileQuery} {
 			padding-top: 16.129vw;
 			padding-bottom: 26.882vw;
@@ -156,7 +159,7 @@
 			width: 100%;
 			display: flex;
 			flex-wrap: wrap;
-			gap: 80px 50px;
+			gap: 4.167vw 2.604vw;
 			align-items: stretch;
 			@media #{$mobileQuery} {
 				gap: 10.753vw;
@@ -164,7 +167,7 @@
 				flex-direction: column;
 			}
 			.news-item {
-				width: calc(33.3333% - 50px * 2 / 3);
+				width: calc(33.3333% - 2.604vw * 2 / 3);
 				display: flex;
 				flex-direction: column;
 				color: $greyDarkCorp;
@@ -175,15 +178,15 @@
 				}
 				.date {
 					font-weight: 500;
-					font-size: 16px;
-					margin: 0 0 30px 0;
+					font-size: 0.833vw;
+					margin: 0 0 1.563vw 0;
 					@media #{$mobileQuery} {
 						font-size: 3.763vw;
 						margin: 0 0 8.065vw 0;
 					}
 				}
 				h4 {
-					line-height: 27px;
+					line-height: 1.406vw;
 					margin: 0 0 auto 0;
 					@media #{$mobileQuery} {
 						font-size: 4.839vw;
@@ -193,8 +196,8 @@
 				}
 
 				> img {
-					margin: 30px 0 0 0;
-					height: 280px;
+					margin: 1.563vw 0 0 0;
+					height: 14.583vw;
 					object-fit: cover;
 					width: 100%;
 					@media #{$mobileQuery} {
@@ -203,7 +206,7 @@
 					}
 				}
 				p {
-					margin: 30px 0;
+					margin: 1.563vw 0;
 					@media #{$mobileQuery} {
 						margin: 8.065vw 0;
 						font-size: 4.301vw;
@@ -220,17 +223,17 @@
 			align-items: center;
 			width: 100%;
 			justify-content: flex-start;
-			margin-top: 30px;
+			margin-top: 1.563vw;
 			color: $greyDarkCorp;
 			@media #{$mobileQuery} {
 				margin-top: 8.065vw;
 			}
 			.pagination {
 				width: auto;
-				gap: 20px;
+				gap: 1.042vw;
 				display: flex;
 				align-items: center;
-				font-size: 14px;
+				font-size: 0.729vw;
 				font-weight: 500;
 				@media #{$mobileQuery} {
 					font-size: 3.226vw;
@@ -241,7 +244,7 @@
 				.page-nums {
 					display: flex;
 					align-items: center;
-					gap: 20px;
+					gap: 1.042vw;
 					@media #{$mobileQuery} {
 						gap: 5.376vw;
 					}
@@ -249,7 +252,7 @@
 				.control {
 					cursor: pointer;
 					> img {
-						width: 12px;
+						width: 0.625vw;
 						@media #{$mobileQuery} {
 							width: 3.226vw;
 						}

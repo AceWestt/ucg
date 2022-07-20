@@ -4,12 +4,12 @@ import socialCatCover from '@imgs/projects/socialCover.jpg';
 import stateCatCover from '@imgs/projects/stateCover.jpg';
 import allCover from '@imgs/projects/allCover.jpg';
 import cover1 from '@imgs/projects/cover1.jpg';
-import cover2 from '@imgs/projects/cover2.jpg';
-import cover3 from '@imgs/projects/cover3.jpg';
-import cover4 from '@imgs/projects/cover4.jpg';
-import cover5 from '@imgs/projects/cover5.jpg';
-import cover6 from '@imgs/projects/cover6.jpg';
-import cover7 from '@imgs/projects/cover7.jpg';
+// import cover2 from '@imgs/projects/cover2.jpg';
+// import cover3 from '@imgs/projects/cover3.jpg';
+// import cover4 from '@imgs/projects/cover4.jpg';
+// import cover5 from '@imgs/projects/cover5.jpg';
+// import cover6 from '@imgs/projects/cover6.jpg';
+// import cover7 from '@imgs/projects/cover7.jpg';
 import galleryImg1_1 from '@imgs/projects/gallery1_1.jpg';
 
 const fields = [
@@ -122,46 +122,46 @@ export const projects = [
 		fields: fields,
 		gallery: gallery,
 	},
-	{
-		id: 2,
-		...main2,
-		img: cover2,
-		fields: fields,
-		gallery: gallery,
-	},
-	{
-		id: 3,
-		...main,
-		img: cover3,
-		fields: fields,
-		gallery: gallery,
-	},
-	{
-		id: 4,
-		...main,
-		img: cover4,
-		fields: fields,
-		gallery: gallery,
-	},
-	{
-		id: 5,
-		...main5,
-		img: cover5,
-		fields: fields,
-		gallery: gallery,
-	},
-	{
-		id: 6,
-		...main6,
-		img: cover6,
-		fields: fields,
-		gallery: gallery,
-	},
-	{
-		id: 7,
-		...main7,
-		img: cover7,
-		fields: fields,
-		gallery: gallery,
-	},
+	// {
+	// 	id: 2,
+	// 	...main2,
+	// 	img: cover2,
+	// 	fields: fields,
+	// 	gallery: gallery,
+	// },
+	// {
+	// 	id: 3,
+	// 	...main,
+	// 	img: cover3,
+	// 	fields: fields,
+	// 	gallery: gallery,
+	// },
+	// {
+	// 	id: 4,
+	// 	...main,
+	// 	img: cover4,
+	// 	fields: fields,
+	// 	gallery: gallery,
+	// },
+	// {
+	// 	id: 5,
+	// 	...main5,
+	// 	img: cover5,
+	// 	fields: fields,
+	// 	gallery: gallery,
+	// },
+	// {
+	// 	id: 6,
+	// 	...main6,
+	// 	img: cover6,
+	// 	fields: fields,
+	// 	gallery: gallery,
+	// },
+	// {
+	// 	id: 7,
+	// 	...main7,
+	// 	img: cover7,
+	// 	fields: fields,
+	// 	gallery: gallery,
+	// },
 ];

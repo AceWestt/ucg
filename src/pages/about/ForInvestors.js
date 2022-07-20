@@ -3,6 +3,22 @@ import plusBtn from '@imgs/about/plusbtn.svg';
 import downloadBtn from '@imgs/common/filedownload.svg';
 import samplePdf from '@files/sample.pdf';
 import toggleColumnBtn from '@imgs/common/expandBlockButton.svg';
+import cert1 from '@files/finotchcert/UCG_IFRS FS 2005-2007 Signed.pdf';
+import cert2 from '@files/finotchcert/UCG_IFRS FS 2008 Signed.pdf';
+import cert3 from '@files/finotchcert/UCG_IFRS FS 2010 Signed.pdf';
+import cert4 from '@files/finotchcert/UCG_IFRS FS 2011 Signed.pdf';
+import cert5 from '@files/finotchcert/UCG_IFRS FS 2012 Signed.pdf';
+import cert6 from '@files/finotchcert/UCG_IFRS FS 2013 Signed.pdf';
+import cert7 from '@files/finotchcert/UCG_IFRS FS 2014 Signed.pdf';
+import cert8 from '@files/finotchcert/UCG_IFRS FS 2015 Signed.pdf';
+import cert9 from '@files/finotchcert/UCG_IFRS FS 2016 Signed.pdf';
+import cert10 from '@files/finotchcert/UCG_IFRS FS 2017 Signed.pdf';
+import cert11 from '@files/finotchcert/UCG_IFRS FS 2018 Signed.pdf';
+import cert12 from '@files/finotchcert/UCG_IFRS FS 2019 Signed.pdf';
+import cert13 from '@files/finotchcert/UCG_IFRS FS 2020 Signed.pdf';
+import cert2_1 from '@files/uch/Certificate of Change of Name_Incorporation_UCG.pdf';
+import cert2_2 from '@files/uch/Certificate of Registered Office UCG.PDF';
+import cert2_3 from '@files/uch/UCG-CERTIFICATE OF DIRECTORS.pdf';
 
 const ForInvestors = ({ id = '' }) => {
 	return (
@@ -59,19 +75,57 @@ const columns = [
 		files: [
 			{
 				title: 'UCG_IFRS FS 2005-2007 Singed',
-				src: samplePdf,
+				src: cert1,
 			},
 			{
-				title: 'UCG_IFRS FS 2005-2007 Singed',
-				src: samplePdf,
+				title: 'UCG_IFRS FS 2008 Singed',
+				src: cert2,
 			},
 			{
-				title: 'UCG_IFRS FS 2005-2007 Singed',
-				src: samplePdf,
+				title: 'UCG_IFRS FS 2009 Singed',
+				src: cert3,
+			},
+
+			{
+				title: 'UCG_IFRS FS 2010 Singed',
+				src: cert4,
 			},
 			{
-				title: 'UCG_IFRS FS 2005-2007 Singed',
-				src: samplePdf,
+				title: 'UCG_IFRS FS 2011 Singed',
+				src: cert5,
+			},
+			{
+				title: 'UCG_IFRS FS 2012 Singed',
+				src: cert6,
+			},
+			{
+				title: 'UCG_IFRS FS 2013 Singed',
+				src: cert7,
+			},
+			{
+				title: 'UCG_IFRS FS 2014 Singed',
+				src: cert8,
+			},
+			{
+				title: 'UCG_IFRS FS 2015 Singed',
+				src: cert9,
+			},
+
+			{
+				title: 'UCG_IFRS FS 2016 Singed',
+				src: cert10,
+			},
+			{
+				title: 'UCG_IFRS FS 2017 Singed',
+				src: cert11,
+			},
+			{
+				title: 'UCG_IFRS FS 2019 Singed',
+				src: cert12,
+			},
+			{
+				title: 'UCG_IFRS FS 2020 Singed',
+				src: cert13,
 			},
 		],
 	},
@@ -79,20 +133,16 @@ const columns = [
 		title: 'Учредительные документы',
 		files: [
 			{
-				title: 'UCG_IFRS FS 2005-2007 Singed',
-				src: samplePdf,
+				title: 'Certificate of Change of Name_Incorporation_UCG',
+				src: cert2_1,
 			},
 			{
-				title: 'UCG_IFRS FS 2005-2007 Singed',
-				src: samplePdf,
+				title: 'Certificate of Registered Office UCG',
+				src: cert2_2,
 			},
 			{
-				title: 'UCG_IFRS FS 2005-2007 Singed',
-				src: samplePdf,
-			},
-			{
-				title: 'UCG_IFRS FS 2005-2007 Singed',
-				src: samplePdf,
+				title: 'UCG-CERTIFICATE OF DIRECTORS',
+				src: cert2_3,
 			},
 		],
 	},

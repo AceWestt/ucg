@@ -32,25 +32,25 @@ const Production = () => {
 				<div className="section-container">
 					<div className="side text-holder">
 						<h2>В 2021 году объём произведенного цемента составил 1 500 млн тонн</h2>
-						<p>
+						{/* <p>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
 							veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
 							commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
 							velit esse cillum dolore eu fugiat nulla pariatur.
-						</p>
+						</p> */}
 					</div>
 					<div className="side img-text-holder">
 						<img src={sectionImg} alt="section" />
 						<div className="text-wrapper">
 							<h2>Своя лаборатория для проверки качества цемента</h2>
-							<p>
+							{/* <p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
 								veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
 								commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
 								velit esse cillum dolore eu fugiat nulla pariatur.
-							</p>
+							</p> */}
 						</div>
 					</div>
 				</div>
