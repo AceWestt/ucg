@@ -51,10 +51,13 @@ const ProductsGallery = ({ customClass = '', products = [] }) => {
 													<div className="label text-mini">Марка:</div>
 													<h2>{p.mark}</h2>
 												</div>
-												<div className="info">
-													<div className="label text-mini">Область применения:</div>
-													<p>{p.usage}</p>
-												</div>
+												{p.usage && (
+													<div className="info">
+														<div className="label text-mini">Область применения:</div>
+														<p>{p.usage}</p>
+													</div>
+												)}
+
 												<div className="info">
 													<div className="label text-mini">Заводы:</div>
 													<p>{plantsString}</p>

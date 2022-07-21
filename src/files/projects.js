@@ -10,7 +10,10 @@ import cover1 from '@imgs/projects/cover1.jpg';
 // import cover5 from '@imgs/projects/cover5.jpg';
 // import cover6 from '@imgs/projects/cover6.jpg';
 // import cover7 from '@imgs/projects/cover7.jpg';
-import galleryImg1_1 from '@imgs/projects/gallery1_1.jpg';
+import galleryImg1_1 from '@imgs/projects/gallery1/1.jpg';
+import galleryImg1_2 from '@imgs/projects/gallery1/2.jpg';
+import galleryImg1_3 from '@imgs/projects/gallery1/3.jpg';
+import galleryImg1_4 from '@imgs/projects/gallery1/4.jpg';
 
 const fields = [
 	{
@@ -62,7 +65,7 @@ const fields = [
 	},
 ];
 
-const gallery = [galleryImg1_1, galleryImg1_1, galleryImg1_1, galleryImg1_1];
+const gallery = [galleryImg1_1, galleryImg1_2, galleryImg1_3, galleryImg1_4];
 
 export const categories = [
 	{
@@ -94,25 +97,25 @@ const main = {
 	cat_id: 1,
 };
 
-const main2 = {
-	title: 'Кыргызский\nГосударственный Цирк\nим. А. Изибаева',
-	cat_id: 1,
-};
+// const main2 = {
+// 	title: 'Кыргызский\nГосударственный Цирк\nим. А. Изибаева',
+// 	cat_id: 1,
+// };
 
-const main5 = {
-	title: '«Реабилитация сектора\nэнергетики»',
-	cat_id: 2,
-};
+// const main5 = {
+// 	title: '«Реабилитация сектора\nэнергетики»',
+// 	cat_id: 2,
+// };
 
-const main6 = {
-	title: '«Реконструкция ирригационной системы\nКыргызской Республики»',
-	cat_id: 2,
-};
+// const main6 = {
+// 	title: '«Реконструкция ирригационной системы\nКыргызской Республики»',
+// 	cat_id: 2,
+// };
 
-const main7 = {
-	title: '«Альтернативная\nавтомобильная дорога\nСевер-Юг»',
-	cat_id: 2,
-};
+// const main7 = {
+// 	title: '«Альтернативная\nавтомобильная дорога\nСевер-Юг»',
+// 	cat_id: 2,
+// };
 
 export const projects = [
 	{

@@ -4,6 +4,20 @@ nav.nav {
 	padding: 1.146vw 8.333vw;
 	align-items: center;
 	background-color: #fff;
+
+	&.fixed {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 9999;
+		transition: all 0.3s linear;
+		&.disappear {
+			top: -6.25vw;
+			@media #{$mobileQuery} {
+				top: -32vw;
+			}
+		}
+	}
 	@media #{$mobileQuery} {
 		padding: 5.376vw;
 	}

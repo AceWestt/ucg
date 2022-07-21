@@ -18,7 +18,7 @@ import gallery6_2 from '@imgs/news/6/2.jpg';
 import gallery9_1 from '@imgs/news/9/1.jpg';
 import gallery9_2 from '@imgs/news/9/2.jpg';
 
-export const news = [
+const newsRaw = [
 	{
 		title: 'Озеленение города',
 		text: `Апрель — это месяц полного пробуждения всего живого. Сотрудники холдинга United Cement Group считают своим долгом не только принимать дары природы, но и прикладывать силы для благоустройства города, озеленения улиц, устройства садов, облагораживания своих домов.
@@ -117,3 +117,5 @@ United Cement Group стремится выпускать качественны
 		date: 13.06,
 	},
 ];
+
+export const news = newsRaw.reverse();

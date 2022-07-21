@@ -30,6 +30,30 @@ const SiteMap = () => {
 			<div className="body">
 				<div className="side logo">
 					<img src={logo} alt="logo" />
+					<div className="social-links mobile-only">
+						<a href="https://www.facebook.com/unitedcementgroup/">
+							<img src={facebookIcn} alt="fb" />
+						</a>
+						<a href="https://twitter.com/cement_group?s=21&t=UPU-YlqBmOQl5tUPednszg">
+							<img src={twitterIcn} alt="twitter" />
+						</a>
+					</div>
+					<div
+						className="close-btn mobile-only"
+						onClick={() => setIsSiteMapModalOpen(false)}
+					>
+						<img src={closeIcn} alt="close" />
+					</div>
+				</div>
+				<div className="contact-details mobile-only">
+					<a className="item" href="tel:(357) 22 262108">
+						<img src={phoneIcn} alt="phone" />
+						<span>(357) 22 262108</span>
+					</a>
+					<a className="item" href="mailto:sales@unicementgroup.com">
+						<img src={mailIcn} alt="mail" />
+						<span>sales@unicementgroup.com</span>
+					</a>
 				</div>
 				<div className="side links">
 					<div className="column">

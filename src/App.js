@@ -39,7 +39,7 @@ function App() {
 		<div className="App">
 			<Router>
 				<AppProvider>
-					<Nav />
+					<Nav fixed />
 					<Switch>
 						<Route exact path="/">
 							<Home />

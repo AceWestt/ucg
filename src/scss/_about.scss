@@ -154,6 +154,7 @@
 				position: absolute;
 				top: 0;
 				right: 100%;
+				display: none;
 				@media #{$mobileQuery} {
 					display: none;
 				}

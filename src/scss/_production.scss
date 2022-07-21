@@ -213,6 +213,8 @@
 							// background: #343331;
 							opacity: 1;
 							transition: all 0.3s linear;
+							text-align: center;
+							min-width: 20.833vw;
 						}
 						.icon-container {
 							cursor: pointer;
@@ -484,14 +486,14 @@
 						}
 						h2 {
 							max-width: 21.354vw;
-							text-align: center;
+							// text-align: center;
 							@media #{$mobileQuery} {
 								width: 100%;
 								max-width: 100%;
 								font-weight: 500;
 								font-size: 5.376vw;
 								line-height: 6.989vw;
-								text-align: center;
+								// text-align: center;
 							}
 						}
 						p {

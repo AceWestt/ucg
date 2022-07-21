@@ -52,17 +52,17 @@ const Menu = () => {
 					<div className="links">
 						<div className="link-group">
 							<a href="/">Главная</a>
-							<a href="/about">О компании</a>
-							<a href="/production">Проиозводство</a>
-						</div>
-						<div className="link-group">
 							<a href="/projects">Мы помогли построить</a>
-							<a href="/news">Новости</a>
-							<a href="/special-offer">Бонусы</a>
+							<a href="/career">Карьера</a>
 						</div>
 						<div className="link-group">
-							<a href="/career">Карьера</a>
+							<a href="/about">О компании</a>
+							<a href="/news">Новости</a>
 							<a href="/development">Устойчивое развитие</a>
+						</div>
+						<div className="link-group">
+							<a href="/production">Проиозводство</a>
+							<a href="/special-offer">Бонусы</a>
 							<a href="/contact">Контакты</a>
 						</div>
 					</div>
