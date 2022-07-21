@@ -282,6 +282,7 @@
 			@media #{$mobileQuery} {
 				margin-left: 0;
 				flex-direction: column;
+				gap: 13.333vw;
 			}
 			.column {
 				width: 100%;

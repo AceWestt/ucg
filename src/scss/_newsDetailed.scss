@@ -1,5 +1,8 @@
 .page.news-detailed {
 	.section.content {
+		@media #{$mobileQuery} {
+			padding-left: 0;
+		}
 		.container {
 			display: flex;
 			width: 100%;
@@ -8,14 +11,24 @@
 			background-color: #fff;
 			padding: 5.208vw 13.542vw 5.208vw 5.208vw;
 			gap: 3.125vw;
+			@media #{$mobileQuery} {
+				padding: 10.667vw 5.333vw;
+				gap: 10.667vw;
+			}
 			.date-container {
 				width: 100%;
 				display: flex;
 				padding-bottom: 3.125vw;
 				border-bottom: 1px solid #dfdfdf;
+				@media #{$mobileQuery} {
+					padding-bottom: 10.667vw;
+				}
 				span {
 					font-weight: 500;
 					font-size: 0.833vw;
+					@media #{$mobileQuery} {
+						font-size: 3.733vw;
+					}
 				}
 			}
 			.hero-img {
@@ -24,6 +37,9 @@
 
 			.section-title.gallery-section-title {
 				margin-top: 2.083vw;
+				@media #{$mobileQuery} {
+					margin-top: 10.667vw;
+				}
 			}
 			.gallery-wrapper {
 				display: flex;

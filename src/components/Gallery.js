@@ -16,14 +16,14 @@ const Gallery = ({ customClass = '', slides = [] }) => {
 	useEffect(() => {
 		if (Array.isArray(slides) && slides.length > 0) {
 			thumbsSwiperRef.current = new Swiper(thumbsSwiperElementRef.current, {
-				loop: true,
+				// loop: true,
 				spaceBetween: 10,
 				slidesPerView: 4,
 				freeMode: true,
 				watchSlidesProgress: true,
 			});
 			gallerySwiperRef.current = new Swiper(gallerySwiperElementRef.current, {
-				loop: true,
+				// loop: true,
 				spaceBetween: 10,
 				modules: [Navigation, Thumbs],
 				navigation: {

@@ -33,7 +33,9 @@
 				display: flex;
 				@media #{$mobileQuery} {
 					width: 100vw;
-					height: 180.108vw;
+					// height: 100vh;
+					height: calc(100vh - 26.667vw);
+
 					margin-top: 0;
 				}
 				img {
@@ -81,7 +83,8 @@
 					margin-top: 0;
 					@media #{$mobileQuery} {
 						width: 100vw;
-						height: 180.108vw;
+						height: calc(100vh - 26.667vw);
+						// height: 180.108vw;
 						margin-top: 0;
 					}
 				}
@@ -93,13 +96,22 @@
 				position: absolute;
 				z-index: 1000;
 				@media #{$mobileQuery} {
-					display: none;
+					// display: none;
+					width: 5.334vw;
+					top: 50%;
+					transform: translateY(-50%);
 				}
 				&.prev {
 					left: 15.625vw;
+					@media #{$mobileQuery} {
+						left: 5.333vw;
+					}
 				}
 				&.next {
 					right: 15.625vw;
+					@media #{$mobileQuery} {
+						right: 5.333vw;
+					}
 					img {
 						transform: scaleX(-1);
 					}
@@ -116,7 +128,14 @@
 			margin-bottom: 3.125vw;
 			align-items: center;
 			@media #{$mobileQuery} {
-				display: none;
+				// display: none;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 100;
+				height: auto;
+				align-items: flex-start;
+				padding: 10.667vw;
 			}
 			.swiper-pagination-bullet {
 				border: 1px solid #fff;
@@ -125,10 +144,20 @@
 				height: 0.521vw;
 				opacity: 1;
 
+				@media #{$mobileQuery} {
+					width: 100%;
+					height: 1.333vw;
+					background-color: #fff;
+					border-radius: 1000px;
+					transition: all 0.3s linear;
+					box-shadow: 0 0 10px 1px rgba($color: #000000, $alpha: 0.05);
+				}
+
 				&.swiper-pagination-bullet-active {
 					width: 0.938vw;
 					height: 0.938vw;
 					border: 1 solid transparent;
+
 					&::after {
 						content: '';
 						width: 0.521vw;
@@ -139,6 +168,18 @@
 						top: 50%;
 						transform: translate(-50%, -50%);
 						border-radius: 50%;
+					}
+					@media #{$mobileQuery} {
+						width: 26.133vw;
+						flex-shrink: 0;
+						height: 1.333vw;
+						background-color: $green;
+						border-radius: 1000px;
+						border-color: transparent;
+						border-width: 0;
+						&::after {
+							display: none;
+						}
 					}
 				}
 			}

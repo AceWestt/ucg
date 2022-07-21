@@ -283,6 +283,7 @@
 								line-height: 1.146vw;
 								max-width: 36.458vw;
 								@media #{$mobileQuery} {
+									max-width: 100%;
 									font-weight: 400;
 									font-size: 3.763vw;
 									line-height: 4.57vw;
