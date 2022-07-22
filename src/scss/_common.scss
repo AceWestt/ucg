@@ -128,12 +128,16 @@ body {
 		padding: 1.042vw 1.354vw;
 		width: auto;
 		cursor: pointer;
+		transition: all 0.1s linear;
 		@media #{$mobileQuery} {
 			gap: 2.688vw;
 			padding: 4.032vw 5.376vw;
 		}
 		img {
 			width: 1.042vw;
+			&.hover {
+				display: none;
+			}
 			@media #{$mobileQuery} {
 				width: 5.376vw;
 			}
@@ -148,8 +152,36 @@ body {
 		&.primary {
 			color: #fff;
 			background-color: $green;
+			border: 1px solid transparent;
+			&:hover {
+				background-color: transparent;
+				color: $green;
+				border: 1px solid $green;
+				img {
+					&.hover {
+						display: block;
+					}
+					&.main {
+						display: none;
+					}
+				}
+			}
 			&.disabled {
 				background-color: $grey;
+				&:hover {
+					background-color: $grey;
+
+					color: #ffff;
+					border: 0 solid transparent;
+					img {
+						&.hover {
+							display: block;
+						}
+						&.main {
+							display: none;
+						}
+					}
+				}
 			}
 		}
 		&.secondary,
@@ -162,8 +194,28 @@ body {
 				border-color: $grey;
 			}
 		}
+
+		&.secondary {
+			&:hover {
+				color: #fff;
+				background-color: $green;
+				border: 1px solid transparent;
+				img {
+					&.hover {
+						display: block;
+					}
+					&.main {
+						display: none;
+					}
+				}
+			}
+		}
+
 		&.subtle {
 			border-color: transparent;
+			&:hover {
+				transform: translateX(1%);
+			}
 			&.disabled {
 				border-color: transparent;
 			}

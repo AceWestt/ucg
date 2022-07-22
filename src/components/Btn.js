@@ -8,6 +8,7 @@ const Btn = ({
 	type = 'primary',
 	text = '',
 	icon,
+	hoverIcon,
 	disabled = false,
 	submitButton = false,
 	action = () => {},
@@ -19,8 +20,15 @@ const Btn = ({
 			icon = defaultIconSec;
 		}
 	}
+	if (!hoverIcon) {
+		hoverIcon = defaultIconSec;
+		if (type === 'secondary' || type === 'subtle') {
+			hoverIcon = defaultIcon;
+		}
+	}
 	if (disabled) {
 		icon = disabledIcn;
+		hoverIcon = disabledIcn;
 		action = () => {};
 	}
 	if (link && link.href && link.href.length > 0) {
@@ -29,7 +37,8 @@ const Btn = ({
 				href={link.href}
 				className={`btn ${type} ${customClass} ${disabled ? 'disabled' : ''}`}
 			>
-				{icon && <img src={icon} alt={text} />}
+				{icon && <img className="main" src={icon} alt={text} />}
+				{hoverIcon && <img className="hover" src={hoverIcon} alt={text} />}
 				{text && <span>{text}</span>}
 			</a>
 		);
@@ -40,7 +49,8 @@ const Btn = ({
 				className={`btn ${type} ${customClass} ${disabled ? 'disabled' : ''}`}
 				type="submit"
 			>
-				{icon && <img src={icon} alt={text} />}
+				{icon && <img className="main" src={icon} alt={text} />}
+				{hoverIcon && <img className="hover" src={hoverIcon} alt={text} />}
 				{text && <span>{text}</span>}
 			</button>
 		);
@@ -50,7 +60,8 @@ const Btn = ({
 			className={`btn ${type} ${customClass} ${disabled ? 'disabled' : ''}`}
 			onClick={action}
 		>
-			{icon && <img src={icon} alt={text} />}
+			{icon && <img className="main" src={icon} alt={text} />}
+			{hoverIcon && <img className="hover" src={hoverIcon} alt={text} />}
 			{text && <span>{text}</span>}
 		</div>
 	);
