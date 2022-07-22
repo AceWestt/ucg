@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Hero from './home/Hero';
 import Btn from '../components/Btn';
 import bgPattern from '../imgs/home/bg-pattern.svg';
@@ -11,9 +11,21 @@ import ProductsGallery from '../components/ProductsGallery';
 import Partners from '../components/commonSections/Partners';
 import NewsFlow from '../components/NewsFlow';
 import vid from '../imgs/home/video-factory.mp4';
+import axios from 'axios';
 // import ProjectsHome from './home/ProjectsHome';
 
 const Home = () => {
+	// const [backendData, setBackendData] = useState({});
+	// useEffect(() => {
+	// 	const fetchData = async () => {
+	// 		const data = await axios.get(`/api/main`);
+	// 		if (data.status === 200) {
+	// 			setBackendData(data);
+	// 		}
+	// 	};
+
+	// 	fetchData();
+	// }, []);
 	return (
 		<div className="page home">
 			<Hero />
