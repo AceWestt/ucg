@@ -2,6 +2,7 @@ import React from 'react';
 import defaultIcon from '../imgs/common/btn-primary-icon.svg';
 import defaultIconSec from '../imgs/common/btn-secondary-icon.svg';
 import disabledIcn from '@imgs/common/btn-disabled-icon.svg';
+import { Link } from 'react-router-dom';
 
 const Btn = ({
 	customClass = '',
@@ -32,6 +33,18 @@ const Btn = ({
 		action = () => {};
 	}
 	if (link && link.href && link.href.length > 0) {
+		if (link.router) {
+			return (
+				<Link
+					to={link.href}
+					className={`btn ${type} ${customClass} ${disabled ? 'disabled' : ''}`}
+				>
+					{icon && <img className="main" src={icon} alt={text} />}
+					{hoverIcon && <img className="hover" src={hoverIcon} alt={text} />}
+					{text && <span>{text}</span>}
+				</Link>
+			);
+		}
 		return (
 			<a
 				href={link.href}

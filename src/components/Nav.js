@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import NavLink from './NavLink';
 import Btn from './Btn';
 
-import logo from '../imgs/common/logo.svg';
+import { Link } from 'react-router-dom';
 import siteMapLinkIcon from '../imgs/common/site-map-link-icon.svg';
 import mailIcon from '../imgs/common/nav-mail-icon.svg';
 import phoneIcon from '../imgs/common/nav-phone-icon.svg';
@@ -18,6 +18,9 @@ const Nav = ({ fixed = false }) => {
 		setIsMenuOpen,
 		setIsFactoryModalOpen,
 		setIsSiteMapModalOpen,
+		navPhone,
+		navEmail,
+		navLogo,
 	} = useAppContext();
 	const [y, setY] = useState(window.scrollY);
 	const [disappear, setDisappear] = useState(false);
@@ -54,9 +57,9 @@ const Nav = ({ fixed = false }) => {
 			className={`nav ${fixed ? 'fixed' : ''} ${disappear ? 'disappear' : ''}`}
 		>
 			<div className="container">
-				<a href="/" className="logo">
-					<img src={logo} alt="logo" />
-				</a>
+				<Link to="/" className="logo">
+					<img src={navLogo} alt="logo" />
+				</Link>
 				<NavLink
 					text="Карта сайта"
 					icon={siteMapLinkIcon}
@@ -73,19 +76,25 @@ const Nav = ({ fixed = false }) => {
 						setIsFactoryModalOpen(true);
 					}}
 				/>
-				<NavLink
-					link="mailto:sales@unicementgroup.com"
-					text="sales@unicementgroup.com"
-					icon={mailIcon}
-					customClass="mail-link"
-				/>
-				<NavLink
-					link="tel:+10 (998 7091) 2 24 48"
-					text="+10 (998 7091) 2 24 48"
-					icon={phoneIcon}
-					customClass="phone-link"
-				/>
-				{/* <LangBar /> */}
+
+				{navEmail && (
+					<NavLink
+						link={`mailto:${navEmail}`}
+						text={navEmail}
+						icon={mailIcon}
+						customClass="mail-link"
+					/>
+				)}
+
+				{navPhone && (
+					<NavLink
+						link={`tel:${navPhone}`}
+						text={navPhone}
+						icon={phoneIcon}
+						customClass="phone-link"
+					/>
+				)}
+
 				<div
 					className={`toggle-menu-btn ${isMenuOpen ? 'open' : ''}`}
 					onClick={() => setIsMenuOpen(!isMenuOpen)}

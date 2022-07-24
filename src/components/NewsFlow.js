@@ -3,6 +3,7 @@ import Swiper, { Navigation } from 'swiper';
 import controlIcn from '@imgs/common/newsFlowControlIcn.svg';
 import Btn from '@components/Btn';
 import 'swiper/css';
+import { useAppContext } from '../appContext';
 
 const NewsFlow = ({ news, title = 'Новости' }) => {
 	const newsSwiperRef = useRef(null);
@@ -10,6 +11,8 @@ const NewsFlow = ({ news, title = 'Новости' }) => {
 
 	const prevButtonRef = useRef(null);
 	const nextButtonRef = useRef(null);
+
+	const { lang } = useAppContext();
 
 	useEffect(() => {
 		if (Array.isArray(news) && news.length > 0) {
@@ -51,14 +54,20 @@ const NewsFlow = ({ news, title = 'Новости' }) => {
 									<div className="item">
 										<span className="date">{`${n.date}.2022`}</span>
 										<h4>
-											{n.title.length > 140 ? `${n.title.substring(0, 140)}...` : n.title}
+											{n[`title_${lang}`].length > 140
+												? `${n[`title_${lang}`].substring(0, 140)}...`
+												: n[`title_${lang}`]}
 										</h4>
 										<img src={n.cover} alt={n.title} />
-										<p>{n.text.length > 74 ? `${n.text.substring(0, 74)}...` : n.text}</p>
+										<p>
+											{n[`description_${lang}`].length > 74
+												? `${n[`description_${lang}`].substring(0, 74)}...`
+												: n[`description_${lang}`]}
+										</p>
 										<Btn
 											type="subtle"
 											text="Читать подробнее"
-											link={{ href: `/news/${i}` }}
+											link={{ href: `/news/${i}`, router: true }}
 										/>
 									</div>
 								</div>
@@ -70,8 +79,14 @@ const NewsFlow = ({ news, title = 'Новости' }) => {
 			<div className="go-to-all-container">
 				<Btn
 					type="secondary"
-					text="Смотреть все новости"
-					link={{ href: '/news' }}
+					text={
+						lang === 'ru'
+							? 'Смотреть все новости'
+							: lang === 'en'
+							? 'See All News'
+							: 'Barcha yangiliklar'
+					}
+					link={{ href: '/news', rotuer: true }}
 				/>
 			</div>
 		</section>

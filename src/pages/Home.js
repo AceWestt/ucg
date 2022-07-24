@@ -11,97 +11,119 @@ import ProductsGallery from '../components/ProductsGallery';
 import Partners from '../components/commonSections/Partners';
 import NewsFlow from '../components/NewsFlow';
 import vid from '../imgs/home/video-factory.mp4';
-import axios from 'axios';
+import { useAppContext } from '../appContext';
 // import ProjectsHome from './home/ProjectsHome';
 
 const Home = () => {
-	// const [backendData, setBackendData] = useState({});
-	// useEffect(() => {
-	// 	const fetchData = async () => {
-	// 		const data = await axios.get(`/api/main`);
-	// 		if (data.status === 200) {
-	// 			setBackendData(data);
-	// 		}
-	// 	};
+	const { mainBackendData: backendData, lang } = useAppContext();
 
-	// 	fetchData();
-	// }, []);
 	return (
 		<div className="page home">
-			<Hero />
+			<Hero data={backendData} />
 			<div className="mission-section">
 				<img className="bg-pattern" src={bgPattern} alt="bg" />
 				<div className="left p-left">
-					<img className="logo" alt="logo" src={logo} />
-					<p>
-						United Cement Group (UCG) – крупнейший в Центральной Азии цементный
-						холдинг с общей производственной мощностью в 7,6 миллионов тонн. Холдинг
-						специализируется на производстве общестроительных и специальных марок
-						цемента самого высокого качества, ориентирован на устойчивое развитие и
-						уделяет большое внимание принципам ESG — экологии, социальным вопросам и
-						корпоративному управлению (environmental, social and governance).
-						<br />
-						<br />
-						Наша цель — увеличение доли на рынках цемента Центральной Азии и России и
-						усиление конкурентной позиции.
-						<br />
-						<br />В холдинг входит шесть заводов, которые располагаются на территориях
-						Узбекистана и Кыргызстана:
-					</p>
+					<img
+						className="logo"
+						alt={backendData.main_logo}
+						src={backendData.main_logo}
+					/>
+					<p>{backendData[`main_description_${lang}`]}</p>
 				</div>
 				<div className="right">
 					<img src={factorymodel} alt="factorymodel" />
 					<video autoPlay muted loop>
-						<source src={vid} type="video/mp4" />
+						<source src={backendData.main_video} type="video/mp4" />
 						{/* <source src="movie.ogg" type="video/ogg" /> */}
 						Your browser does not support the video tag.
 					</video>
 				</div>
 			</div>
 			<section className="section plants section-column">
-				<div className="section-title">Наши заводы:</div>
-				<div className="list">
-					{plants.map((p, i) => {
-						return (
-							<div className="item" key={`home-plant-${i}`}>
-								<div className="details">
-									<div className="title">{p.title}</div>
-									<div className="common-details">
-										<div className="row">
-											<div className="row-title">Адрес:</div>
-											<p>{p.address}</p>
-										</div>
-										<div className="row">
-											<div className="row-title">Номер телефона:</div>
-											<p>{p.phone}</p>
-										</div>
-										<div className="row">
-											<div className="row-title">Мощность:</div>
-											<p>{p.power}</p>
-										</div>
-										<div className="row">
-											<div className="row-title">Руководитель:</div>
-											<p>{p.director ? p.director : '-'}</p>
-										</div>
-									</div>
-									{p.fields && (
-										<Btn text="Подробнее о заводе" link={{ href: `/production/${i}` }} />
-									)}
-								</div>
-								<div className="img">
-									<img src={p.homeImg} alt={p.title} />
-								</div>
-							</div>
-						);
-					})}
+				<div className="section-title">
+					{backendData[`factories_label_${lang}`]}
 				</div>
+				{backendData.factories && backendData.factories.length > 0 && (
+					<div className="list">
+						{backendData.factories.map((p, i) => {
+							return (
+								<div className="item" key={`home-plant-${i}`}>
+									<div className="details">
+										<div className="title">{p[`title_${lang}`]}</div>
+										<div className="common-details">
+											<div className="row">
+												<div className="row-title">
+													{lang === 'ru' && 'Адрес:'}
+													{lang === 'en' && 'Address:'}
+													{lang === 'uz' && 'Manzil:'}
+												</div>
+												<p>{p[`address_${lang}`]}</p>
+											</div>
+											<div className="row">
+												<div className="row-title">
+													{lang === 'ru' && 'Номер телефона:'}
+													{lang === 'en' && 'Phone Number:'}
+													{lang === 'uz' && 'Telefon raqami:'}
+												</div>
+												<p>{p.telephone}</p>
+											</div>
+											<div className="row">
+												<div className="row-title">
+													{lang === 'ru' && 'Мощность:'}
+													{lang === 'en' && 'Power:'}
+													{lang === 'uz' && 'Ishlab chiqarish kuchi:'}
+												</div>
+												<p>{p[`power_${lang}`]}</p>
+											</div>
+											<div className="row">
+												<div className="row-title">
+													{lang === 'ru' && 'Руководитель:'}
+													{lang === 'en' && 'Head:'}
+													{lang === 'ru' && 'Rahbar:'}
+												</div>
+												<p>{p[`boss_${lang}`]}</p>
+											</div>
+										</div>
+										{p[`description_${lang}`] && p[`description_${lang}`].length > 0 && (
+											<Btn
+												text={
+													lang === 'ru'
+														? 'Подробнее о заводе'
+														: lang === 'en'
+														? 'Details'
+														: lang === 'uz'
+														? 'Batafsil'
+														: ''
+												}
+												link={{ href: `/production/${p.id}`, router: true }}
+											/>
+										)}
+									</div>
+									<div className="img">
+										<img src={p.cover} alt={p[`title_${lang}`]} />
+									</div>
+								</div>
+							);
+						})}
+					</div>
+				)}
 			</section>
-			<section className="section products">
-				<ProductsGallery products={products} />
-			</section>
+			{Array.isArray(backendData.productions) &&
+				backendData.productions.length > 0 && (
+					<section className="section products">
+						<ProductsGallery products={backendData.productions} />
+					</section>
+				)}
+
 			{/* <ProjectsHome /> */}
-			<Partners />
-			<NewsFlow news={news} />
+			<Partners
+				data={backendData.partners}
+				label={backendData[`partners_label_${lang}`]}
+			/>
+			<NewsFlow
+				news={backendData.news}
+				title={lang === 'ru' ? 'Новости' : lang === 'en' ? 'News' : 'Yangiliklar'}
+			/>
 		</div>
 	);
 };

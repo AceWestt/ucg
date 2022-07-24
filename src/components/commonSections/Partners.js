@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import img0 from '@imgs/common/partners/0.png';
 import img1 from '@imgs/common/partners/1.png';
 import img2 from '@imgs/common/partners/2.png';
@@ -8,28 +8,58 @@ import img5 from '@imgs/common/partners/5.png';
 import img6 from '@imgs/common/partners/6.png';
 import img7 from '@imgs/common/partners/7.png';
 import img8 from '@imgs/common/partners/8.png';
+import { useAppContext } from '../../appContext';
 
-const Partners = ({ id = '' }) => {
+const Partners = ({ id = '', data = [], label = '' }) => {
+	const [partners, setPartners] = useState(array);
+	const [sectionlabel, setSectionLabel] = useState('Партнеры:');
+	const { lang } = useAppContext();
+	useEffect(() => {
+		if (Array.isArray(data) && data.length > 0) {
+			setPartners(data);
+		}
+	}, [data]);
+	useEffect(() => {
+		if (label) {
+			setSectionLabel(label);
+		}
+	}, [label]);
 	return (
 		<section className="section partners section-column" id={id}>
-			<div className="section-title">Партнеры:</div>
+			<div className="section-title">{sectionlabel}</div>
 			<div className="list-wrap">
 				{[1, 2].map((i) => {
 					return (
 						<div className="list-part" key={i}>
-							{array.map((item, index) => {
+							{partners.map((item, index) => {
 								return (
 									<div className="item" key={`partner-${i}-${index}`}>
-										<img src={item.img} alt="partner" />
-										<div className="info">
-											{item.fields.map((f, fi) => {
-												return (
-													<div className="field" key={`field-of-${index}-${fi}`}>
-														<span className="text-600">{f.label}</span> <span>{f.value}</span>
-													</div>
-												);
-											})}
-										</div>
+										<img src={item.image || item.img} alt="partner" />
+										{Array.isArray(item[`description_${lang}`]) &&
+											item[`description_${lang}`].length > 0 && (
+												<div className="info">
+													{item[`description_${lang}`].map((f, fi) => {
+														return (
+															<div className="field" key={`field-of-${index}-${fi}`}>
+																<span className="text-600">{f.heading}</span>{' '}
+																<span>{f.text}</span>
+															</div>
+														);
+													})}
+												</div>
+											)}
+										{item.fields && item.fields.length > 0 && (
+											<div className="info">
+												{item.fields.map((f, fi) => {
+													return (
+														<div className="field" key={`field-of-${index}-${fi}`}>
+															<span className="text-600">{f.label}</span>{' '}
+															<span>{f.value}</span>
+														</div>
+													);
+												})}
+											</div>
+										)}
 									</div>
 								);
 							})}

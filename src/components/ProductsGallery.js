@@ -3,9 +3,12 @@ import { plants } from '@files/plants';
 import Swiper, { Navigation } from 'swiper';
 import controlBtnIcn from '@imgs/common/whitePrevBtnIcn.svg';
 import 'swiper/css';
+import { useAppContext } from '../appContext';
 const ProductsGallery = ({ customClass = '', products = [] }) => {
 	const productsSwiperRef = useRef(null);
 	const productsElementSwiperRef = useRef(null);
+
+	const { lang } = useAppContext();
 
 	const prevButtonRef = useRef(null);
 	const nextButtonRef = useRef(null);
@@ -35,11 +38,17 @@ const ProductsGallery = ({ customClass = '', products = [] }) => {
 					<div className="list-wrapper swiper-wrapper">
 						{products.map((p, i) => {
 							const plantText = () => {
-								return p.plants
-									.map((p) => {
-										return plants[p].title;
-									})
-									.join(', ');
+								if (p.plants) {
+									return p.plants
+										.map((p) => {
+											return plants[p].title;
+										})
+										.join(', ');
+								}
+								if (p[`factories_${lang}`]) {
+									return p[`factories_${lang}`];
+								}
+								return '';
 							};
 							const plantsString = plantText();
 							return (
@@ -48,8 +57,12 @@ const ProductsGallery = ({ customClass = '', products = [] }) => {
 										<div className="side text">
 											<div className="info-container">
 												<div className="info">
-													<div className="label text-mini">Марка:</div>
-													<h2>{p.mark}</h2>
+													<div className="label text-mini">
+														{lang === 'ru' && 'Марка:'}
+														{lang === 'en' && 'Title:'}
+														{lang === 'uz' && 'Markasi:'}
+													</div>
+													<h2>{p[`title_${lang}`] || p.mark}</h2>
 												</div>
 												{p.usage && (
 													<div className="info">
@@ -58,19 +71,31 @@ const ProductsGallery = ({ customClass = '', products = [] }) => {
 													</div>
 												)}
 
+												{p[`description_${lang}`] && (
+													<div className="info">
+														<div className="label text-mini">
+															{lang === 'ru' && 'Область применения:'}
+															{lang === 'en' && 'Field of Usage:'}
+															{lang === 'uz' && 'Qo`llash maydoni:'}
+														</div>
+														<p>{p[`description_${lang}`]}</p>
+													</div>
+												)}
+
 												<div className="info">
-													<div className="label text-mini">Заводы:</div>
+													{plantsString && (
+														<div className="label text-mini">
+															{lang === 'ru' && 'Заводы:'}
+															{lang === 'en' && 'Factories:'}
+															{lang === 'uz' && 'Zavodlar:'}
+														</div>
+													)}
 													<p>{plantsString}</p>
 												</div>
 											</div>
-											{/* {Array.isArray(p.certs) && p.certs.length > 0 && (
-												<div className="btn-container">
-													<Btn text="Посмотреть сертификаты" />
-												</div>
-											)} */}
 										</div>
 										<div className="side img">
-											<img src={p.img} alt={p.mark} />
+											<img src={p.image || p.img} alt={p.mark} />
 										</div>
 									</div>
 								</div>

@@ -40,9 +40,11 @@
 						font-size: 4.167vw;
 						line-height: 5.417vw;
 						text-align: left;
+						max-width: 45.25vw;
 						@media #{$mobileQuery} {
 							font-size: 8.602vw;
 							line-height: 130%;
+							max-width: 100%;
 							/* or 42px */
 						}
 					}
@@ -86,6 +88,12 @@
 						display: flex;
 						align-items: center;
 						gap: 1.042vw;
+						&-link {
+							img {
+								max-width: 1.042vw;
+								max-height: 1.042vw;
+							}
+						}
 					}
 					.slider {
 						display: flex;
@@ -113,6 +121,7 @@
 						text-align: left;
 						padding: 0 0 0.417vw 0;
 						border-bottom: 0.156vw solid $greyDarkCorp;
+						max-width: 11.458vw;
 					}
 				}
 				.right {
@@ -174,10 +183,12 @@
 				margin: 0;
 				padding: 0;
 				text-align: left;
+				max-width: 43.229vw;
 				@media #{$mobileQuery} {
 					font-size: 3.763vw;
 					line-height: 150%;
 					text-align: center;
+					max-width: 100%;
 				}
 			}
 		}

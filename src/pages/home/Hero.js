@@ -6,42 +6,38 @@ import Btn from '../../components/Btn';
 import facebookIcn from '../../imgs/common/facebookicn.svg';
 import twitterIcn from '../../imgs/common/twittericn.svg';
 import { useAppContext } from '../../appContext';
+import { Link } from 'react-router-dom';
 // import slidePrevIcn from '../../imgs/common/hero-slider-prev.svg';
 // import slideNextIcn from '../../imgs/common/hero-slider-next.svg';
 
-const Hero = () => {
-	const { setIsFormModalOpen } = useAppContext();
+const Hero = ({ data = {} }) => {
+	const { setIsFormModalOpen, lang } = useAppContext();
 	return (
 		<div className="hero-section">
 			<div className="slide">
 				<img className="bg-img" src={hero1bg} alt="hero1" />
 				<div className="top-sec p-left">
 					<div className="title">
-						<h1>
-							Международный <br />
-							цементный холдинг
-						</h1>
+						<h1>{data[`heading_${lang}`]}</h1>
 					</div>
 					<div className="logo-holder p-right">
-						<img src={logo} alt="logo" />
+						<img src={data.heading_logo} alt="logo" />
 					</div>
 				</div>
 				<div className="bottom-sec">
 					<div className="left p-left">
-						<div className="social-links">
-							<a
-								href="https://www.facebook.com/unitedcementgroup/"
-								className="social-links-link"
-							>
-								<img src={facebookIcn} alt="fb" />
-							</a>
-							<a
-								href="https://twitter.com/cement_group?s=21&t=UPU-YlqBmOQl5tUPednszg"
-								className="social-links-link"
-							>
-								<img src={twitterIcn} alt="twitter" />
-							</a>
-						</div>
+						{data.common?.socials && (
+							<div className="social-links">
+								{data.common.socials.map((s) => {
+									return (
+										<a key={`social-${s.id}`} href={s.url} className="social-links-link">
+											<img src={s.icon} alt={s.name} />
+										</a>
+									);
+								})}
+							</div>
+						)}
+
 						{/* <div className="slider">
               <div className="slider-slide prev">
                 <img src={slidePrevIcn} alt="prev" />
@@ -52,11 +48,12 @@ const Hero = () => {
             </div> */}
 					</div>
 					<div className="mid">
-						<h3>
-							Немного истории о<br />
-							нашем холдинге
-						</h3>
-						<Btn type="secondary" text="Подробнее" link={{ href: '/about' }} />
+						<h3>{data[`heading_more_${lang}`]}</h3>
+						<Btn
+							type="secondary"
+							text="Подробнее"
+							link={{ href: '/about', router: true }}
+						/>
 					</div>
 					<div className="right p-right">
 						<BtnRounded action={() => setIsFormModalOpen(true)} />
