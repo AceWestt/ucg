@@ -31,7 +31,7 @@ const AppProvider = ({ children }) => {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const maindata = await axios.get(`/api/main`);
+				const maindata = await axios.get(`http://api.unicementgroup.com/api/main`);
 				if (maindata.status === 200) {
 					console.log(maindata.data);
 					setMainBackendData(maindata.data);
