@@ -5,10 +5,11 @@ import 'swiper/css';
 import { officers } from '../../files/officers';
 import chevronLeft from '../../imgs/common/chevron-left.svg';
 import { useAppContext } from '../../appContext';
-const Officers = ({ id = '' }) => {
+const Officers = ({ id = '', data = [], label = '' }) => {
 	const swiperRef = useRef(null);
 	const swiperElementRef = useRef(null);
 	const { setActiveDirector, setIsOfficerModalOpen } = useAppContext();
+	const { lang } = useAppContext();
 	useEffect(() => {
 		swiperRef.current = new Swiper(swiperElementRef.current, {
 			slidesPerView: 1,
@@ -34,7 +35,7 @@ const Officers = ({ id = '' }) => {
 
 	return (
 		<section className="section officers p-left p-right" id={id}>
-			<div className="section-title">Руководители:</div>
+			<div className="section-title">{label}</div>
 			<div className="officers-wrap">
 				<div className="control officers-prev-button" onClick={onPrev}>
 					<img src={chevronLeft} alt="prev" />
@@ -42,14 +43,14 @@ const Officers = ({ id = '' }) => {
 				<div className="officers-container">
 					<div className="officers swiper" ref={swiperElementRef}>
 						<div className="officers-wrapper swiper-wrapper">
-							{officers.map((o) => {
+							{data.map((o) => {
 								return (
 									<div className="officer swiper-slide" key={`officer-${o.id}`}>
 										<div className="item">
-											<img src={o.img} alt={o.name} />
-											<div className="name">{o.name}</div>
-											<div className="job-title">{o.title}</div>
-											{(o.education || o.experience) && (
+											<img src={o.avatar} alt={o[`name_${lang}`]} />
+											<div className="name">{o[`name_${lang}`]}</div>
+											<div className="job-title">{o[`position_${lang}`]}</div>
+											{/* {(o.education || o.experience) && (
 												<Btn
 													type="subtle"
 													text="Подробнее"
@@ -58,7 +59,7 @@ const Officers = ({ id = '' }) => {
 														setIsOfficerModalOpen(true);
 													}}
 												/>
-											)}
+											)} */}
 										</div>
 									</div>
 								);

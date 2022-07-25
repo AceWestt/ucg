@@ -4,6 +4,12 @@ import logo from '@imgs/common/logo.svg';
 
 const AppContext = React.createContext();
 
+const apiEndpoint = 'https://api.unicementgroup.com/';
+
+const callGet = async (url) => {
+	return await axios.get(apiEndpoint + url);
+};
+
 const AppProvider = ({ children }) => {
 	const [lang, setLang] = useState('ru');
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,9 +37,8 @@ const AppProvider = ({ children }) => {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const maindata = await axios.get(`http://api.unicementgroup.com/api/main`);
+				const maindata = await callGet('api/main');
 				if (maindata.status === 200) {
-					console.log(maindata.data);
 					setMainBackendData(maindata.data);
 					setNavEmail(maindata.data.email);
 					setNavPhone(maindata.data.phone);
@@ -82,4 +87,4 @@ export const useAppContext = () => {
 	return useContext(AppContext);
 };
 
-export { AppContext, AppProvider };
+export { AppContext, AppProvider, callGet };
