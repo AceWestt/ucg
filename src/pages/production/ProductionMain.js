@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 // import smallCardImg from '@imgs/production/smallcardplantimg.png';
-import { plants } from '@files/plants';
+// import { plants } from '@files/plants';
 import mapImg from '@imgs/production/map.svg';
 import openBtnIcn from '@imgs/production/openButton.svg';
 import closeBtnIcn from '@imgs/production/closeButton.svg';
@@ -64,7 +64,7 @@ const ProductionMain = ({ id = '', data = {} }) => {
 						</div>
 
 						<div className="thumb-title">
-							{plants[activePlant]?.[`title_${lang}`]}
+							{data.factories?.[activePlant]?.[`title_${lang}`]}
 						</div>
 					</div>
 					<div className="points-container">
