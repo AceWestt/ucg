@@ -4,7 +4,7 @@ import controlIcn from '@imgs/common/newsFlowControlIcn.svg';
 import Btn from '@components/Btn';
 import 'swiper/css';
 import { useAppContext } from '../appContext';
-import parse from 'html-react-parser'
+import parse from 'html-react-parser';
 
 const NewsFlow = ({ news, title = 'Новости' }) => {
 	const newsSwiperRef = useRef(null);
@@ -16,9 +16,9 @@ const NewsFlow = ({ news, title = 'Новости' }) => {
 	const { lang } = useAppContext();
 
 	const formattedDate = (date) => {
-		const d = new Date(date)
+		const d = new Date(date);
 		return `${d.getDate()}.${d.getMonth() + 1}.${d.getFullYear()}`;
-	}
+	};
 
 	useEffect(() => {
 		if (Array.isArray(news) && news.length > 0) {
@@ -55,6 +55,9 @@ const NewsFlow = ({ news, title = 'Новости' }) => {
 				<div className="list swiper" ref={newsElementSwiperRef}>
 					<div className="list-wrapper swiper-wrapper">
 						{news.map((n, i) => {
+							let text = n[`description_${lang}`];
+							text = text.length > 74 ? text.substring(0, 74) + '...' : text;
+
 							return (
 								<div className="item-wrapper swiper-slide" key={`news-flow-item-${i}`}>
 									<div className="item">
@@ -65,11 +68,9 @@ const NewsFlow = ({ news, title = 'Новости' }) => {
 												: n[`title_${lang}`]}
 										</h4>
 										<img src={n.cover} alt={n.title} />
-										<p>
-											{parse([`description_${lang}`].length > 74
-												? `${n[`description_${lang}`].substring(0, 74)}...`
-												: n[`description_${lang}`])}
-										</p>
+
+										{parse(text)}
+
 										<Btn
 											type="subtle"
 											text="Читать подробнее"
@@ -98,7 +99,5 @@ const NewsFlow = ({ news, title = 'Новости' }) => {
 		</section>
 	);
 };
-
-
 
 export default NewsFlow;

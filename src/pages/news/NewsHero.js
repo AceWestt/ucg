@@ -4,6 +4,8 @@ import Swiper, { Pagination, Navigation, Autoplay } from 'swiper';
 import prevButtonImg from '@imgs/common/newsSliderControl.svg';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { useAppContext } from '../../appContext';
+import parse from 'html-react-parser';
 
 const NewsHero = ({ news, id = '' }) => {
 	const heroSwiper = useRef(null);
@@ -11,6 +13,7 @@ const NewsHero = ({ news, id = '' }) => {
 	const heroPaginationContainer = useRef(null);
 	const prevButton = useRef(null);
 	const nextButton = useRef(null);
+	const { lang } = useAppContext();
 	useEffect(() => {
 		if (Array.isArray(news) && news.length > 0) {
 			heroSwiper.current = new Swiper(heroSwiperContainer.current, {
@@ -38,24 +41,27 @@ const NewsHero = ({ news, id = '' }) => {
 			});
 		}
 	}, [news]);
-	console.log(news);
+	// console.log(news);
+	if (!Array.isArray(news) || news.length < 1) {
+		return '';
+	}
 	return (
 		<section className="section news-hero section-column" id={id}>
 			<div className="news-hero-container">
 				<div className="news-hero-list swiper" ref={heroSwiperContainer}>
 					<div className="news-hero-list-wrapper swiper-wrapper">
 						{news.map((n, index) => {
+							let text = n[`description_${lang}`];
+							text = text.length > 140 ? `${text.substring(0, 140)}...` : text;
 							return (
 								<div
 									className="news-hero-item-wrapper swiper-slide"
 									key={`news-hero-${index}`}
 								>
 									<div className="news-hero-item">
-										<img src={n.cover} alt={n.title} />
+										<img src={n.cover} alt={n[`title_${lang}`]} />
 										<div className="text">
-											<h3>
-												{n.text.length > 140 ? `${n.text.substring(0, 140)}...` : n.text}
-											</h3>
+											<h3>{parse(text)}</h3>
 										</div>
 									</div>
 								</div>

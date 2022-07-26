@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { plants } from '@files/plants';
 import Swiper, { Navigation } from 'swiper';
 import controlBtnIcn from '@imgs/common/whitePrevBtnIcn.svg';
 import 'swiper/css';
@@ -38,13 +37,6 @@ const ProductsGallery = ({ customClass = '', products = [] }) => {
 					<div className="list-wrapper swiper-wrapper">
 						{products.map((p, i) => {
 							const plantText = () => {
-								if (p.plants) {
-									return p.plants
-										.map((p) => {
-											return plants[p].title;
-										})
-										.join(', ');
-								}
 								if (p[`factories_${lang}`]) {
 									return p[`factories_${lang}`];
 								}
@@ -62,14 +54,8 @@ const ProductsGallery = ({ customClass = '', products = [] }) => {
 														{lang === 'en' && 'Title:'}
 														{lang === 'uz' && 'Markasi:'}
 													</div>
-													<h2>{p[`title_${lang}`] || p.mark}</h2>
+													<h2>{p[`title_${lang}`]}</h2>
 												</div>
-												{p.usage && (
-													<div className="info">
-														<div className="label text-mini">Область применения:</div>
-														<p>{p.usage}</p>
-													</div>
-												)}
 
 												{p[`description_${lang}`] && (
 													<div className="info">
@@ -95,7 +81,7 @@ const ProductsGallery = ({ customClass = '', products = [] }) => {
 											</div>
 										</div>
 										<div className="side img">
-											<img src={p.image || p.img} alt={p.mark} />
+											<img src={p.image} alt="img" />
 										</div>
 									</div>
 								</div>

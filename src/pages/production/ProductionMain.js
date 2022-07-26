@@ -11,7 +11,7 @@ const responsive = true;
 
 const ProductionMain = ({ id = '', data = {} }) => {
 	const [activePlant, setActivePlant] = useState(0);
-	const {lang} = useAppContext();
+	const { lang } = useAppContext();
 
 	return (
 		<section className="section main section-column p-left p-right">
@@ -33,7 +33,7 @@ const ProductionMain = ({ id = '', data = {} }) => {
 					<div className="side right">
 						<img src={data.info_cover} alt="plant" />
 						<div className="highlights mobile-only">
-							{data[`description_${lang}`].map((h, i) => {
+							{data[`description_${lang}`]?.map((h, i) => {
 								return (
 									<div className="item" key={i}>
 										<span className="line"></span>
@@ -63,7 +63,9 @@ const ProductionMain = ({ id = '', data = {} }) => {
 							})}
 						</div>
 
-						<div className="thumb-title">{plants[activePlant]?.[`title_${lang}`]}</div>
+						<div className="thumb-title">
+							{plants[activePlant]?.[`title_${lang}`]}
+						</div>
 					</div>
 					<div className="points-container">
 						{data.factories?.map((p, index) => {
@@ -111,7 +113,12 @@ const ProductionMain = ({ id = '', data = {} }) => {
 
 export default ProductionMain;
 
-const PlantListItem = ({ item, active = false, click = () => {}, lang = 'ru' }) => {
+const PlantListItem = ({
+	item,
+	active = false,
+	click = () => {},
+	lang = 'ru',
+}) => {
 	const [height, setHeight] = useState(0);
 	const containerRef = useRef(null);
 	useEffect(() => {
@@ -137,16 +144,36 @@ const PlantListItem = ({ item, active = false, click = () => {}, lang = 'ru' }) 
 			<div className="item-body" style={{ height: height }}>
 				<div className="item-body-container" ref={containerRef}>
 					<div className="detail">
-						<span className="label">{lang === 'ru' ? 'Год основания:' : lang === 'en' ? 'Year of Foundation' : 'Tashkil topgan yili'}</span>
-						<span className="value">{item[`foundation_year_${lang}`] ? item[`foundation_year_${lang}`] : '-'}</span>
+						<span className="label">
+							{lang === 'ru'
+								? 'Год основания:'
+								: lang === 'en'
+								? 'Year of Foundation'
+								: 'Tashkil topgan yili'}
+						</span>
+						<span className="value">
+							{item[`foundation_year_${lang}`] ? item[`foundation_year_${lang}`] : '-'}
+						</span>
 					</div>
 					<div className="detail">
-						<span className="label">{lang === 'ru' ? 'Мощность:' : lang === 'en' ? 'Power:' : 'Ishlab chiqarish kuchi:'}</span>
-						<span className="value">{item[`power_${lang}`] ? item[`power_${lang}`] : '-'}</span>
+						<span className="label">
+							{lang === 'ru'
+								? 'Мощность:'
+								: lang === 'en'
+								? 'Power:'
+								: 'Ishlab chiqarish kuchi:'}
+						</span>
+						<span className="value">
+							{item[`power_${lang}`] ? item[`power_${lang}`] : '-'}
+						</span>
 					</div>
 					<div className="detail">
-						<span className="label">{lang === 'ru' ? 'Руководитель:' : lang === 'en' ? 'Head:' : 'Rahbar:'}</span>
-						<span className="value">{item[`boss_${lang}`] ? item[`boss_${lang}`] : '-'}</span>
+						<span className="label">
+							{lang === 'ru' ? 'Руководитель:' : lang === 'en' ? 'Head:' : 'Rahbar:'}
+						</span>
+						<span className="value">
+							{item[`boss_${lang}`] ? item[`boss_${lang}`] : '-'}
+						</span>
 					</div>
 				</div>
 			</div>
