@@ -1,34 +1,46 @@
-import React from 'react';
-import heroImg from '@imgs/production/hero.jpg';
+import React, {useEffect, useState} from 'react';
+// import heroImg from '@imgs/production/hero.jpg';
 import CommonHero from '../components/CommonHero';
 import ProductionMain from './production/ProductionMain';
 import patternImg from '@imgs/production/pattern.png';
 import sectionImg from '@imgs/production/section-2.jpg';
+import { callGet, useAppContext } from '../appContext';
 
 const Production = () => {
+	const [backendData, setBackendData] = useState({});
+	const { lang } = useAppContext();
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const maindata = await callGet('api/production');
+				if (maindata.status === 200) {
+					console.log(maindata)
+					setBackendData(maindata.data);
+				}
+			} catch (error) {
+				console.error(error);
+			}
+		};
+
+		fetchData();
+	}, []);
 	return (
 		<div className="page production">
-			<CommonHero title="Производство" img={heroImg} />
-			<ProductionMain id="production-factory-map" />
+			<CommonHero title={backendData[`block_name_${lang}`]} img={backendData.block_cover} />
+			<ProductionMain id="production-factory-map" data={backendData} />
 			<section className="section text-section-one p-right">
 				<div className="side pattern-holder">
-					<img src={patternImg} alt="pattern" />
+					<img src={backendData.pattern} alt="pattern" />
 				</div>
 				<div className="side text-holder">
-					<h3>Крупнейшая в Центральной Азии цементная компания</h3>
+					<h3>{backendData[`right_${lang}`]}</h3>
 					<p>
-						Мы вносим значительный вклад в дело развития экономики Казахстана и
-						соседних стран, и понимаем, какая ответственность лежит на наших плечах.
-						Успех и благосостояние сотен тысяч людей в странах, где присутствует наша
-						компания, зависит от нашей четкой и слаженной работы. Без цемента не
-						построишь новых домов, больниц и театров; без нашей продукции остановится
-						строительство, и как следствие - рост экономики и благосостояния людей.
-						Поэтому мы всегда в движении и развитии.
+						{backendData[`right_description_${lang}`]}
 					</p>
 				</div>
 			</section>
 			<section className="section text-section-two section-column p-left">
-				<div className="section-title">Производственные мощности:</div>
+				<div className="section-title">{backendData[`power_name_${lang}`]}</div>
 				<div className="section-container">
 					<div className="side text-holder">
 						<h2>В 2021 году объём произведенного цемента составил 1 500 млн тонн</h2>

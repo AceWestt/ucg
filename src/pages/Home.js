@@ -79,7 +79,7 @@ const Home = () => {
 												<div className="row-title">
 													{lang === 'ru' && 'Руководитель:'}
 													{lang === 'en' && 'Head:'}
-													{lang === 'ru' && 'Rahbar:'}
+													{lang === 'uz' && 'Rahbar:'}
 												</div>
 												<p>{p[`boss_${lang}`]}</p>
 											</div>
