@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import CommonHero from '../components/CommonHero';
 import heroImg from '@imgs/contact/hero.jpg';
 import img1 from '@imgs/contact/1.jpg';
@@ -7,8 +7,28 @@ import TextContainerWrapper from '../components/TextContainerWrapper';
 import { plants } from '../files/plants';
 import Btn from '../components/Btn';
 import BottomForm from '@components/BottomForm';
+import { callGet, useAppContext } from '../appContext';
+
 
 const Contact = () => {
+	const [backendData, setBackendData] = useState({});
+	const { lang } = useAppContext();
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const maindata = await callGet('api/contact');
+				console.log(maindata);
+					setBackendData(maindata);
+				// if (maindata.status === 200) {
+					
+				// }
+			} catch (error) {
+				console.error(error);
+			}
+		};
+
+		fetchData();
+	}, []);
 	const plantsData = plants.map((p) => {
 		return {
 			title: p.title,
@@ -30,12 +50,12 @@ const Contact = () => {
 	});
 	return (
 		<div className="page contact">
-			<CommonHero img={heroImg} title="Контакты" />
+			<CommonHero img={backendData.block_cover} title={backendData[`block_name_${lang}}`]} />
 			<div className="section content p-left">
 				<div className="container">
 					<div className="block b-white">
 						<div className="text-container-wrapper-parent" id="contact-main-office">
-							<TextContainerWrapper data={firstDetails} wrapValue />
+							<TextContainerWrapper data={backendData[`first_contact_${lang}`]} wrapValue />
 						</div>
 
 						<div className="img-container first">

@@ -1,13 +1,32 @@
 import React, { useEffect, useRef, useState } from 'react';
 import CommonHero from '../components/CommonHero';
-import heroImg from '@imgs/development/hero.jpg';
+// import heroImg from '@imgs/development/hero.jpg';
 import openBtnIcn from '@imgs/development/buttonOpen.svg';
 import closeBtnIcn from '@imgs/development/buttonClose.svg';
-import { plants as rawPlants } from '../files/plants';
+// import { plants as rawPlants } from '../files/plants';
 import TextBlock from '../components/TextBlock';
 import BottomForm from '@components/BottomForm';
+import { callGet, useAppContext } from '../appContext';
 
 const Development = () => {
+	const [backendData, setBackendData] = useState({});
+	const { lang } = useAppContext();
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const maindata = await callGet('api/growth');
+				console.log(maindata);
+					setBackendData(maindata);
+				// if (maindata.status === 200) {
+					
+				// }
+			} catch (error) {
+				console.error(error);
+			}
+		};
+
+		fetchData();
+	}, []);
 	const [active, setActive] = useState(-1);
 
 	const handleToggle = (index) => {
@@ -17,12 +36,12 @@ const Development = () => {
 			setActive(index);
 		}
 	};
-	const plants = rawPlants.filter(
-		(f) => Array.isArray(f.development) && f.development.length > 0
-	);
+	// const plants = rawPlants.filter(
+	// 	(f) => Array.isArray(f.development) && f.development.length > 0
+	// );
 	return (
 		<div className="page development">
-			<CommonHero img={heroImg} title="Устойчивое развитие" />
+			<CommonHero img={backendData.block_cover} title={backendData[`block_name_${lang}`]} />
 			<section className="section content p-left">
 				<div className="container">
 					<div className="container-header">
@@ -38,14 +57,14 @@ const Development = () => {
 							заводов.
 						</p>
 					</div>
-					{plants.map((p, i) => {
+					{Array.isArray(backendData.factories) && backendData.factories.length > 0 && backendData.factories.map((p, i) => {
 						return (
 							<div
 								className={`development-wrapper ${i === active ? 'active' : ''}`}
 								key={`development-wrapper-of-${i}`}
 							>
 								<div className="wrapper-header">
-									<h2>{p.title}</h2>
+									<h2>{p[`title_${lang}`]}</h2>
 									<div className="toggle-button" onClick={() => handleToggle(i)}>
 										<img src={i === active ? closeBtnIcn : openBtnIcn} alt="toggle" />
 									</div>
@@ -63,7 +82,7 @@ const Development = () => {
 
 export default Development;
 
-const WrapperBody = ({ p, i, active }) => {
+const WrapperBody = ({ p, i, active, lang }) => {
 	const wrapperRef = useRef(null);
 	const [height, setHeight] = useState(0);
 	useEffect(() => {
@@ -77,9 +96,9 @@ const WrapperBody = ({ p, i, active }) => {
 	return (
 		<div className="wrapper-body" style={{ height: height }}>
 			<div className="wrapper" ref={wrapperRef}>
-				{p.development.map((d, di) => {
+				{p?.[`growth_${lang}`]?.map((d, di) => {
 					return (
-						<TextBlock key={`text-of-${i}-${di}`} title={d.title} text={d.text} />
+						<TextBlock key={`text-of-${i}-${di}`} title={d.heading} text={d.text} parseHtml />
 					);
 				})}
 			</div>

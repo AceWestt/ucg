@@ -35,8 +35,8 @@ const Production = () => {
 					<img src={backendData.pattern} alt="pattern" />
 				</div>
 				<div className="side text-holder">
-					<h3>{backendData[`right_${lang}`]}</h3>
-					<p>{backendData[`right_description_${lang}`]}</p>
+					<h3>{backendData[`info_${lang}`]}</h3>
+					<p>{backendData[`info_description_${lang}`]}</p>
 				</div>
 			</section>
 			<section className="section text-section-two section-column p-left">

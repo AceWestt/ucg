@@ -1,28 +1,47 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import CommonHero from '../components/CommonHero';
-import heroImg from '@imgs/specialOffer/hero.jpg';
+// import heroImg from '@imgs/specialOffer/hero.jpg';
 import TextBlock from '../components/TextBlock';
-import { plants as plantsRaw } from '../files/plants';
+// import { plants as plantsRaw } from '../files/plants';
+import { callGet, useAppContext } from '../appContext';
 
 const SpecialOffer = () => {
-	const plants = plantsRaw.filter(
-		(f) => Array.isArray(f.specialOffer) && f.specialOffer.length > 0
-	);
+	const [backendData, setBackendData] = useState({});
+	const { lang } = useAppContext();
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const maindata = await callGet('api/special_offers');
+				console.log(maindata);
+					setBackendData(maindata);
+				// if (maindata.status === 200) {
+					
+				// }
+			} catch (error) {
+				console.error(error);
+			}
+		};
+
+		fetchData();
+	}, []);
+	// const plants = plantsRaw.filter(
+	// 	(f) => Array.isArray(f.specialOffer) && f.specialOffer.length > 0
+	// );
 	return (
 		<div className="page special-offer">
-			<CommonHero title="Специальное предложение" img={heroImg} />
+			<CommonHero title={backendData[`block_name_${lang}`]} img={backendData.block_cover} />
 			<section className="section content p-left" id="special-offer-details">
-				{Array.isArray(plants) && plants.length > 0 && (
+				{Array.isArray(backendData.special_offers) && backendData.special_offers.length > 0 && (
 					<div className="container">
-						{plants.map((p, i) => {
+						{backendData.special_offers.map((p, i) => {
 							return (
 								<div className="wrapper" key={`offer-wrapper-${i}`}>
-									<h2 className="pre-wrap-text">{p.title}</h2>
-									{p.specialOffer.map((s, si) => {
+									<h2 className="pre-wrap-text">{p[`title_${lang}`]}</h2>
+									{p[`description_${lang}`]?.map((s, si) => {
 										return (
 											<TextBlock
 												key={`text-of-${i}-${si}`}
-												title={s.title}
+												title={s.heading}
 												text={s.text}
 												parseHtml
 											/>
