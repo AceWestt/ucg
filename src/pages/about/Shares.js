@@ -1,9 +1,8 @@
 import React from 'react';
 // import { plants } from '@files/plants';
 
-const Shares = ({ id = '', plantsId = '', data = {} }) => {
+const Shares = ({ id = '', plantsId = '', data = {}, title = '' }) => {
 	const {
-		title = '',
 		leftText = '',
 		rightText = '',
 		stocks = '',
@@ -11,6 +10,7 @@ const Shares = ({ id = '', plantsId = '', data = {} }) => {
 		lang = 'ru',
 		plants = [],
 	} = data;
+	console.log(title);
 	return (
 		<section className="section shares section-column p-left" id={id}>
 			<div className="section-title">{title}</div>

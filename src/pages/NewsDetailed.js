@@ -29,7 +29,9 @@ const NewsDetailed = () => {
 
 	const formattedDate = (date) => {
 		const d = new Date(date);
-		return `${d.getDate()}.${d.getMonth() + 1}.${d.getFullYear()}`;
+		return `${d.getDate() < 10 ? `0${d.getDate()}` : d.getDate()}.${
+			d.getMonth() + 1
+		}.${d.getFullYear()}`;
 	};
 
 	if (!newsItem || !newsItem[`description_${lang}`]) {

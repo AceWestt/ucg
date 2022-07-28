@@ -17,7 +17,9 @@ const NewsFlow = ({ news, title = 'Новости' }) => {
 
 	const formattedDate = (date) => {
 		const d = new Date(date);
-		return `${d.getDate()}.${d.getMonth() + 1}.${d.getFullYear()}`;
+		return `${d.getDate() < 10 ? `0${d.getDate()}` : d.getDate()}.${
+			d.getMonth() + 1
+		}.${d.getFullYear()}`;
 	};
 
 	useEffect(() => {
@@ -55,19 +57,18 @@ const NewsFlow = ({ news, title = 'Новости' }) => {
 				<div className="list swiper" ref={newsElementSwiperRef}>
 					<div className="list-wrapper swiper-wrapper">
 						{news.map((n, i) => {
-							let text = n[`description_${lang}`];
+							let text = n[`description_${lang}`] || '';
 							text = text.length > 74 ? text.substring(0, 74) + '...' : text;
+
+							let title = n[`title_${lang}`] || '';
+							title = title.length > 140 ? title.substring(0, 140) + '...' : title;
 
 							return (
 								<div className="item-wrapper swiper-slide" key={`news-flow-item-${i}`}>
 									<div className="item">
 										<span className="date">{formattedDate(n.published_at)}</span>
-										<h4>
-											{n[`title_${lang}`].length > 140
-												? `${n[`title_${lang}`].substring(0, 140)}...`
-												: n[`title_${lang}`]}
-										</h4>
-										<img src={n.cover} alt={n.title} />
+										<h4>{title}</h4>
+										<img src={n.cover} alt="cover" />
 
 										{parse(text)}
 

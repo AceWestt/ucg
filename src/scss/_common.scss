@@ -292,12 +292,18 @@ body {
 		display: flex;
 		align-items: center;
 		gap: 0.26vw;
+		@media #{$mobileQuery} {
+			gap: 3.457vw;
+		}
 		&-lang {
 			cursor: pointer;
 			color: #000;
 			font-size: 0.938vw;
 			font-weight: 400;
 			text-transform: capitalize;
+			@media #{$mobileQuery} {
+				font-size: 4.787vw;
+			}
 			&::after {
 				content: '';
 				position: absolute;
@@ -308,6 +314,10 @@ body {
 				opacity: 0;
 				transition: all 0.3s linear;
 				background-color: $green;
+				@media #{$mobileQuery} {
+					height: 0.532vw;
+					top: calc(100% + 1.596vw);
+				}
 			}
 			&.current {
 				color: $green;
@@ -399,11 +409,6 @@ body {
 				animation-duration: 30s;
 				animation-timing-function: linear;
 				animation-iteration-count: infinite;
-				// &.delay{
-				// 	// transform: translateX(-100%);
-				// 	animation-name: partnersInfiniteScroll;
-				// 	animation-delay: 15s;
-				// }
 
 				.item {
 					width: 16.667vw;
@@ -419,7 +424,8 @@ body {
 						border-color: transparent;
 					}
 					img {
-						max-width: 5.208vw;
+						width: 150%;
+						max-width: 7.208vw;
 						max-height: 3.438vw;
 						@media #{$mobileQuery} {
 							max-width: 35.882vw;
@@ -472,6 +478,7 @@ body {
 	.text-block {
 		width: 100%;
 		display: flex;
+		gap: 4.167vw;
 		@media #{$mobileQuery} {
 			flex-direction: column;
 			gap: 8.065vw;

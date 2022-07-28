@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
+// import React, { useState, useEffect } from 'react';
 import Hero from './home/Hero';
 import Btn from '../components/Btn';
 import bgPattern from '../imgs/home/bg-pattern.svg';
 import factorymodel from '../imgs/home/ucg-factory-model.png';
-import logo from '../imgs/common/logo.svg';
-import { plants } from '@files/plants';
-import { products } from '../files/products';
-import { news } from '../files/news';
+// import logo from '../imgs/common/logo.svg';
+// import { plants } from '@files/plants';
+// import { products } from '../files/products';
+// import { news } from '../files/news';
 import ProductsGallery from '../components/ProductsGallery';
 import Partners from '../components/commonSections/Partners';
 import NewsFlow from '../components/NewsFlow';
-import vid from '../imgs/home/video-factory.mp4';
+// import vid from '../imgs/home/video-factory.mp4';
 import { useAppContext } from '../appContext';
 // import ProjectsHome from './home/ProjectsHome';
 

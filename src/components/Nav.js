@@ -9,7 +9,8 @@ import phoneIcon from '../imgs/common/nav-phone-icon.svg';
 import menuToggleIcon from '../imgs/common/nav-menu-btn.svg';
 import menuCloseIcon from '@imgs/common/closeModalMenuIcn.svg';
 import { useAppContext } from '../appContext';
-// import LangBar from './navComponents/LangBar';
+import LangBar from './navComponents/LangBar';
+import { getLangString } from '../utils/tools';
 
 const Nav = ({ fixed = false }) => {
 	const {
@@ -21,6 +22,7 @@ const Nav = ({ fixed = false }) => {
 		navPhone,
 		navEmail,
 		navLogo,
+		lang,
 	} = useAppContext();
 	const [y, setY] = useState(window.scrollY);
 	const [disappear, setDisappear] = useState(false);
@@ -61,7 +63,7 @@ const Nav = ({ fixed = false }) => {
 					<img src={navLogo} alt="logo" />
 				</Link>
 				<NavLink
-					text="Карта сайта"
+					text={getLangString(lang, 'Карта сайта', 'Site Map', 'Sayt xaritasi')}
 					icon={siteMapLinkIcon}
 					customClass="sitemap-open"
 					action={() => {
@@ -70,7 +72,12 @@ const Nav = ({ fixed = false }) => {
 					}}
 				/>
 				<Btn
-					text="Выбрать предприятие"
+					text={getLangString(
+						lang,
+						'Выбрать предприятие',
+						'Choose Factory',
+						'Zavodni tanlash'
+					)}
 					action={() => {
 						closeAllModals();
 						setIsFactoryModalOpen(true);
@@ -94,6 +101,8 @@ const Nav = ({ fixed = false }) => {
 						customClass="phone-link"
 					/>
 				)}
+
+				<LangBar />
 
 				<div
 					className={`toggle-menu-btn ${isMenuOpen ? 'open' : ''}`}

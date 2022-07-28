@@ -11,7 +11,8 @@ import { plants } from '../../files/plants';
 import { useAppContext } from '../../appContext';
 
 const SiteMap = () => {
-	const { setIsSiteMapModalOpen } = useAppContext();
+	const { setIsSiteMapModalOpen, factories, common, navPhone, navEmail } =
+		useAppContext();
 	return (
 		<div
 			className="section section-sitemap-modal section-column p-left p-right"
@@ -30,13 +31,17 @@ const SiteMap = () => {
 			<div className="body">
 				<div className="side logo">
 					<img src={logo} alt="logo" />
+
 					<div className="social-links mobile-only">
-						<a href="https://www.facebook.com/unitedcementgroup/">
-							<img src={facebookIcn} alt="fb" />
-						</a>
-						<a href="https://twitter.com/cement_group?s=21&t=UPU-YlqBmOQl5tUPednszg">
-							<img src={twitterIcn} alt="twitter" />
-						</a>
+						{Array.isArray(common.socials) &&
+							common.socials.length &&
+							common.socials.map((s, i) => {
+								return (
+									<a href={s.url} key={`social-link-site-map-mobile-${i}`}>
+										<img src={s.icon} alt="fb" />
+									</a>
+								);
+							})}
 					</div>
 					<div
 						className="close-btn mobile-only"
@@ -46,13 +51,13 @@ const SiteMap = () => {
 					</div>
 				</div>
 				<div className="contact-details mobile-only">
-					<a className="item" href="tel:(357) 22 262108">
+					<a className="item" href={`tel:${navPhone}`}>
 						<img src={phoneIcn} alt="phone" />
-						<span>(357) 22 262108</span>
+						<span>{navPhone}</span>
 					</a>
-					<a className="item" href="mailto:sales@unicementgroup.com">
+					<a className="item" href={`mailto:${navEmail}`}>
 						<img src={mailIcn} alt="mail" />
-						<span>sales@unicementgroup.com</span>
+						<span>{navEmail}</span>
 					</a>
 				</div>
 				<div className="side links">
@@ -122,14 +127,17 @@ const SiteMap = () => {
 							<a className="text-mini" href="/production#production-factory-map">
 								Карта заводов
 							</a>
-							{plants.map((p, i) => {
+							{factories.map((p, i) => {
+								if (!Array.isArray(p.description_ru) || p.description_ru.length < 1) {
+									return '';
+								}
 								return (
 									<a
 										className="text-mini"
 										key={`plant-link-footer-${i}`}
-										href={`/production/${i}`}
+										href={`/production/${p.id}`}
 									>
-										{p.title}
+										{p.title_ru}
 									</a>
 								);
 							})}
@@ -198,22 +206,25 @@ const SiteMap = () => {
 			</div>
 			<div className="footer">
 				<div className="contact-details">
-					<a className="item" href="tel:(357) 22 262108">
+					<a className="item" href={`tel:${navPhone}`}>
 						<img src={phoneIcn} alt="phone" />
-						<span>(357) 22 262108</span>
+						<span>{navPhone}</span>
 					</a>
-					<a className="item" href="mailto:sales@unicementgroup.com">
+					<a className="item" href={`mailto:${navEmail}`}>
 						<img src={mailIcn} alt="mail" />
-						<span>sales@unicementgroup.com</span>
+						<span>{navEmail}</span>
 					</a>
 				</div>
 				<div className="social-links">
-					<a href="https://www.facebook.com/unitedcementgroup/">
-						<img src={facebookIcn} alt="fb" />
-					</a>
-					<a href="https://twitter.com/cement_group?s=21&t=UPU-YlqBmOQl5tUPednszg">
-						<img src={twitterIcn} alt="twitter" />
-					</a>
+					{Array.isArray(common.socials) &&
+						common.socials.length &&
+						common.socials.map((s, i) => {
+							return (
+								<a href={s.url} key={`social-link-site-map-mobile-${i}`}>
+									<img src={s.icon} alt="fb" />
+								</a>
+							);
+						})}
 				</div>
 			</div>
 		</div>

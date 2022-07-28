@@ -1,12 +1,13 @@
 import React from 'react';
 import BtnRounded from '../../components/BtnRounded';
 import hero1bg from '../../imgs/home/hero-bg-1.png';
-import logo from '../../imgs/common/logo.svg';
+// import logo from '../../imgs/common/logo.svg';
 import Btn from '../../components/Btn';
-import facebookIcn from '../../imgs/common/facebookicn.svg';
-import twitterIcn from '../../imgs/common/twittericn.svg';
+// import facebookIcn from '../../imgs/common/facebookicn.svg';
+// import twitterIcn from '../../imgs/common/twittericn.svg';
 import { useAppContext } from '../../appContext';
-import { Link } from 'react-router-dom';
+import { getLangString } from '../../utils/tools';
+// import { Link } from 'react-router-dom';
 // import slidePrevIcn from '../../imgs/common/hero-slider-prev.svg';
 // import slideNextIcn from '../../imgs/common/hero-slider-next.svg';
 
@@ -51,7 +52,7 @@ const Hero = ({ data = {} }) => {
 						<h3>{data[`heading_more_${lang}`]}</h3>
 						<Btn
 							type="secondary"
-							text="Подробнее"
+							text={getLangString(lang, 'Подробно', 'Details', 'Batafsil')}
 							link={{ href: '/about', router: true }}
 						/>
 					</div>

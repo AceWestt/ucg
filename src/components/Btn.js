@@ -38,6 +38,7 @@ const Btn = ({
 				<Link
 					to={link.href}
 					className={`btn ${type} ${customClass} ${disabled ? 'disabled' : ''}`}
+					onClick={action}
 				>
 					{icon && <img className="main" src={icon} alt={text} />}
 					{hoverIcon && <img className="hover" src={hoverIcon} alt={text} />}

@@ -42,7 +42,9 @@ const News = () => {
 
 	const formattedDate = (date) => {
 		const d = new Date(date);
-		return `${d.getDate()}.${d.getMonth() + 1}.${d.getFullYear()}`;
+		return `${d.getDate() < 10 ? `0${d.getDate()}` : d.getDate()}.${
+			d.getMonth() + 1
+		}.${d.getFullYear()}`;
 	};
 
 	if (!Array.isArray(news) || news.length < 1) {

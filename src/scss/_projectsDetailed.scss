@@ -20,6 +20,16 @@
 				display: flex;
 				align-items: center;
 				justify-content: space-between;
+				@media #{$mobileQuery} {
+					flex-direction: column-reverse;
+					align-items: flex-start;
+					gap: 8vw;
+				}
+				h2 {
+					font-weight: 500;
+					font-size: 6.933vw;
+					line-height: 34px;
+				}
 			}
 			.hero-img {
 				width: 100%;

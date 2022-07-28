@@ -7,6 +7,7 @@ import closeBtnIcn from '@imgs/development/buttonClose.svg';
 import TextBlock from '../components/TextBlock';
 import BottomForm from '@components/BottomForm';
 import { callGet, useAppContext } from '../appContext';
+import parse from 'html-react-parser';
 
 const Development = () => {
 	const [backendData, setBackendData] = useState({});
@@ -15,10 +16,10 @@ const Development = () => {
 		const fetchData = async () => {
 			try {
 				const maindata = await callGet('api/growth');
-				console.log(maindata);
-					setBackendData(maindata);
+				console.log(maindata.data);
+				setBackendData(maindata.data);
 				// if (maindata.status === 200) {
-					
+
 				// }
 			} catch (error) {
 				console.error(error);
@@ -41,38 +42,36 @@ const Development = () => {
 	// );
 	return (
 		<div className="page development">
-			<CommonHero img={backendData.block_cover} title={backendData[`block_name_${lang}`]} />
+			<CommonHero
+				img={backendData.block_cover}
+				title={backendData[`block_name_${lang}`]}
+			/>
 			<section className="section content p-left">
 				<div className="container">
 					<div className="container-header">
-						<div className="company-title">United Cement Group</div>
-						<p>
-							United Cement Group — крупнейший в Центральной Азии цементный холдинг,
-							который стремится соответствовать самым высоким стандартам бизнеса.
-							Холдинг UCG ориентирован на устойчивое развитие и уделяет большое
-							внимание принципам ESG — экологии, социальным вопросам и корпоративному
-							управлению (environmental, social and governance).
-							<br /> Каждое предприятие UCG проводит регулярную работу по устойчивому
-							развитию, с подробной информацией можно ознакомиться на страницах
-							заводов.
-						</p>
+						<div className="company-title">{backendData[`info_${lang}`]}</div>
+						<span className="text-usual">
+							{parse(backendData[`info_description_${lang}`] || '')}
+						</span>
 					</div>
-					{Array.isArray(backendData.factories) && backendData.factories.length > 0 && backendData.factories.map((p, i) => {
-						return (
-							<div
-								className={`development-wrapper ${i === active ? 'active' : ''}`}
-								key={`development-wrapper-of-${i}`}
-							>
-								<div className="wrapper-header">
-									<h2>{p[`title_${lang}`]}</h2>
-									<div className="toggle-button" onClick={() => handleToggle(i)}>
-										<img src={i === active ? closeBtnIcn : openBtnIcn} alt="toggle" />
+					{Array.isArray(backendData.factories) &&
+						backendData.factories.length > 0 &&
+						backendData.factories.map((p, i) => {
+							return (
+								<div
+									className={`development-wrapper ${i === active ? 'active' : ''}`}
+									key={`development-wrapper-of-${i}`}
+								>
+									<div className="wrapper-header">
+										<h2>{p[`title_${lang}`]}</h2>
+										<div className="toggle-button" onClick={() => handleToggle(i)}>
+											<img src={i === active ? closeBtnIcn : openBtnIcn} alt="toggle" />
+										</div>
 									</div>
+									<WrapperBody p={p} i={i} active={active === i} lang={lang} />
 								</div>
-								<WrapperBody p={p} i={i} active={active === i} />
-							</div>
-						);
-					})}
+							);
+						})}
 				</div>
 			</section>
 			<BottomForm />
@@ -98,7 +97,12 @@ const WrapperBody = ({ p, i, active, lang }) => {
 			<div className="wrapper" ref={wrapperRef}>
 				{p?.[`growth_${lang}`]?.map((d, di) => {
 					return (
-						<TextBlock key={`text-of-${i}-${di}`} title={d.heading} text={d.text} parseHtml />
+						<TextBlock
+							key={`text-of-${i}-${di}`}
+							title={d.heading}
+							text={d.text}
+							parseHtml
+						/>
 					);
 				})}
 			</div>

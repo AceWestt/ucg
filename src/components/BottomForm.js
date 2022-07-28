@@ -2,17 +2,56 @@ import React, { useEffect, useState } from 'react';
 import bg from '@imgs/common/bottomFormBg.jpg';
 import Btn from '@components/Btn';
 import { useForm } from 'react-hook-form';
+import axios from 'axios';
+import { getLangString } from '../utils/tools';
+import { useAppContext } from '../appContext';
 
 const BottomForm = ({ customClass = '' }) => {
+	const { lang } = useAppContext();
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
 	} = useForm();
 	const [successMessage, setSuccessMessage] = useState('');
-	const onSubmit = (data) => {
-		console.log(data);
-		setSuccessMessage('Сообщение успешно отправлено!');
+	const [isloading, setIsloading] = useState(false);
+
+	const onSubmit = async (data) => {
+		if (isloading) {
+			return;
+		}
+		setIsloading(true);
+		const payload = {
+			kind: 'common',
+			name: data.name,
+			phone: data.phone,
+			email: data.email,
+			message: data.message,
+		};
+
+		try {
+			const resp = await axios.post(
+				`https://api.unicementgroup.com/api/contact-form`,
+				payload,
+				{
+					headers: {
+						'Content-Type': 'application/json',
+					},
+				}
+			);
+
+			setSuccessMessage(
+				getLangString(
+					lang,
+					'Сообщение успешно отправлено!',
+					'Message sent!',
+					'Xabar yuborildi!'
+				)
+			);
+			setIsloading(false);
+		} catch (error) {
+			console.error(error);
+		}
 	};
 
 	useEffect(() => {
@@ -29,40 +68,69 @@ const BottomForm = ({ customClass = '' }) => {
 			<div className="container">
 				<div className="side text">
 					<div className="title">
-						Появились вопросы?
-						<br />
-						Напишите нам
+						{
+							(getLangString(lang),
+							'Появились вопросы? Напишите нам',
+							'Have questions? Write to us',
+							'Savollar bormi? Bizga yozing')
+						}
 					</div>
 					<div className="desc">
-						Наши специалисты свяжутся с<br />
-						вами в ближайшее время
+						{
+							(getLangString(lang),
+							'Наши специалисты свяжутся с вами в ближайшее время',
+							'Our experts will contact you soon',
+							'Bizning mutaxassisimiz tez orada aloqaga chiqadi')
+						}
 					</div>
 				</div>
 				<div className="side form">
 					<form onSubmit={handleSubmit(onSubmit)}>
 						<div className="form-control">
-							<label>Имя*</label>
+							<label>{getLangString(lang, 'Имя*', 'First Name*', 'Ism*')}</label>
 							<input
 								type="text"
-								placeholder="Напишите ваше имя"
+								placeholder={getLangString(
+									lang,
+									'Напишите ваше имя',
+									'Write your name',
+									'Ismingizni yozing*'
+								)}
 								{...register('name', { required: true })}
 							/>
 							{errors.name?.type === 'required' && (
 								<p className="text-mini" style={{ color: 'red' }}>
-									Пожалуйста укажите имя
+									{getLangString(
+										lang,
+										'Напишите ваше имя',
+										'Write your name',
+										'Ismingizni yozing*'
+									)}
 								</p>
 							)}
 						</div>
 						<div className="form-control">
-							<label>Номер телефона*</label>
+							<label>
+								{getLangString(lang, 'Номер телефона*', 'Phone*', 'Telefon*')}
+							</label>
 							<input
 								type="text"
-								placeholder="Напишите номер вашего телефона"
+								placeholder={getLangString(
+									lang,
+									'Напишите номер вашего телефона',
+									'Write your phone number',
+									'Telefon raqamingizni yozing'
+								)}
 								{...register('phone', { required: true })}
 							/>
 							{errors.phone?.type === 'required' && (
 								<p style={{ color: 'red' }} className="text-mini">
-									Пожалуйста введите правильный номер
+									{getLangString(
+										lang,
+										'Напишите номер вашего телефона',
+										'Write your phone number',
+										'Telefon raqamingizni yozing'
+									)}
 								</p>
 							)}
 						</div>
@@ -70,7 +138,12 @@ const BottomForm = ({ customClass = '' }) => {
 							<label>E-mail</label>
 							<input
 								type="text"
-								placeholder="Напишите ваш e-mail адрес"
+								placeholder={getLangString(
+									lang,
+									'Напишите ваш e-mail адрес',
+									'Write your email address',
+									'E-mail manzilingizni yozing'
+								)}
 								{...register('email')}
 							/>
 						</div>
@@ -78,17 +151,41 @@ const BottomForm = ({ customClass = '' }) => {
 							<label>Сообщение*</label>
 							<input
 								type="text"
-								placeholder="Напишите ваше сообщение..."
+								placeholder={getLangString(
+									lang,
+									'Напишите ваше сообщение...',
+									'Write your message...',
+									'Xabaringizni yozing...'
+								)}
 								{...register('message', { required: true })}
 							/>
 							{errors.message?.type === 'required' && (
 								<p className="text-mini" style={{ color: 'red' }}>
-									Пожалуйста введите сообщение
+									{getLangString(
+										lang,
+										'Напишите ваше сообщение...',
+										'Write your message...',
+										'Xabaringizni yozing...'
+									)}
 								</p>
 							)}
 						</div>
 						<div className="form-control btn-container">
-							<Btn type="primary" submitButton text="Отправить" />
+							<Btn
+								type="primary"
+								submitButton
+								text={
+									isloading
+										? getLangString(
+												lang,
+												'Отправляется...',
+												'Sending...',
+												'Yuborilmoqda...'
+										  )
+										: getLangString(lang, 'Отправить', 'Send', 'Yuborish')
+								}
+								disabled={isloading}
+							/>
 							{successMessage && (
 								<div className="text-usual green-text text-600">{successMessage}</div>
 							)}

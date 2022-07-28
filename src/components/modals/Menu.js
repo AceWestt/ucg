@@ -7,10 +7,18 @@ import mailIcon from '@imgs/common/nav-mail-icon.svg';
 import { useAppContext } from '../../appContext';
 import NavLink from '../NavLink';
 import siteMapLinkIcon from '@imgs/common/site-map-link-icon.svg';
-
+import { getLangString } from '../../utils/tools';
+import { Link } from 'react-router-dom';
 const Menu = () => {
-	const { closeAllModals, setIsFactoryModalOpen, setIsSiteMapModalOpen } =
-		useAppContext();
+	const {
+		closeAllModals,
+		setIsFactoryModalOpen,
+		setIsSiteMapModalOpen,
+		factories,
+		lang,
+		navEmail,
+		navPhone,
+	} = useAppContext();
 	return (
 		<div id="site-menu">
 			<img className="bg" src={bg} alt="menu-bg" />
@@ -24,10 +32,15 @@ const Menu = () => {
 							setIsFactoryModalOpen(true);
 						}}
 					>
-						Выберите предприятие: Бекабадцемент
+						{getLangString(
+							lang,
+							'Выберите предприятие',
+							'Choose factory',
+							'Zavodni tanlang'
+						)}
 					</div>
 					<NavLink
-						text="Карта сайта"
+						text={getLangString(lang, 'Карта сайта', 'Site Map', 'Sayt xaritasi')}
 						icon={siteMapLinkIcon}
 						customClass="sitemap-open"
 						action={() => {
@@ -35,46 +48,80 @@ const Menu = () => {
 							setIsSiteMapModalOpen(true);
 						}}
 					/>
-					<NavLink
-						link="tel:+10 (998 7091) 2 24 48"
-						text="+10 (998 7091) 2 24 48"
-						icon={phoneIcon}
-						customClass="phone-link"
-					/>
-					<NavLink
-						link="mailto:sales@unicementgroup.com"
-						text="sales@unicementgroup.com"
-						icon={mailIcon}
-						customClass="mail-link"
-					/>
+
+					{navEmail && (
+						<NavLink
+							link={`mailto:${navEmail}`}
+							text={navEmail}
+							icon={mailIcon}
+							customClass="mail-link"
+						/>
+					)}
+
+					{navPhone && (
+						<NavLink
+							link={`tel:${navPhone}`}
+							text={navPhone}
+							icon={phoneIcon}
+							customClass="phone-link"
+						/>
+					)}
 				</div>
 				<div className="links-wrapper p-left p-right">
 					<div className="links">
 						<div className="link-group">
-							<a href="/">Главная</a>
-							<a href="/projects">Мы помогли построить</a>
-							<a href="/career">Карьера</a>
+							<Link to="/" onClick={() => closeAllModals()}>
+								{getLangString(lang, 'Главная', 'Asosiy', 'Main')}
+							</Link>
+							<Link to="/projects" onClick={() => closeAllModals()}>
+								{getLangString(
+									lang,
+									'Мы помогли построить',
+									'We helped build',
+									'Qurishga yordam berdik'
+								)}
+							</Link>
+							<Link to="/career" onClick={() => closeAllModals()}>
+								{getLangString(lang, 'Карьера', 'Career', 'Karyera')}
+							</Link>
 						</div>
 						<div className="link-group">
-							<a href="/about">О компании</a>
-							<a href="/news">Новости</a>
-							<a href="/development">Устойчивое развитие</a>
+							<Link to="/about" onClick={() => closeAllModals()}>
+								{getLangString(lang, 'О компании', 'About', 'Biz haqimizda')}
+							</Link>
+							<Link to="/news" onClick={() => closeAllModals()}>
+								{getLangString(lang, 'Новости', 'News', 'Yangiliklar')}
+							</Link>
+							<Link to="/development" onClick={() => closeAllModals()}>
+								{getLangString(
+									lang,
+									'Устойчивое развитие',
+									'Sustainable Growth',
+									'Barqaror rivojlanish'
+								)}
+							</Link>
 						</div>
 						<div className="link-group">
-							<a href="/production">Проиозводство</a>
-							<a href="/special-offer">Бонусы</a>
-							<a href="/contact">Контакты</a>
+							<Link to="/production" onClick={() => closeAllModals()}>
+								{getLangString(lang, 'Производство', 'Production', 'Ishlab chiqarish')}
+							</Link>
+							<Link to="/special-offer" onClick={() => closeAllModals()}>
+								{getLangString(lang, 'Бонусы', 'Bonuses', 'Bonuslar')}
+							</Link>
+							<Link to="/contact" onClick={() => closeAllModals()}>
+								{getLangString(lang, 'Контакты', 'Contact', 'Aloqa')}
+							</Link>
 						</div>
 					</div>
 				</div>
 				<div className="contact-details p-left p-right">
-					{plants.map((p, i) => {
+					{factories.map((p, i) => {
 						return (
 							<div className="contact" key={`plant-contact-${i}`}>
-								<div className="title">{p.title}</div>
+								<div className="title">{p[`title_${lang}`]}</div>
 								<div className="phone">
 									<img src={phoneIcon} alt="phone" />
-									<span>{p.phone}</span>
+									<span>{p.telephone}</span>
 								</div>
 							</div>
 						);

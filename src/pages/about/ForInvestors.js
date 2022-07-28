@@ -22,6 +22,7 @@ import toggleColumnBtn from '@imgs/common/expandBlockButton.svg';
 import { useAppContext } from '../../appContext';
 
 const ForInvestors = ({ id = '', finances = [], docs = [], label = '' }) => {
+	console.log(label);
 	const { lang } = useAppContext();
 	return (
 		<section

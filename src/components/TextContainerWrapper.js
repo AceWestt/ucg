@@ -20,9 +20,9 @@ const TextContainerWrapper = ({
 								row.columns.map((c, cindex) => {
 									return (
 										<div className="column" key={`text-row-${rindex}-column-${cindex}`}>
-											<div className="label">{c.label}</div>
+											<div className="label">{c.heading}</div>
 											<div className={`value ${wrapValue ? 'pre-wrap-text' : ''}`}>
-												{c.value}
+												{c.text}
 											</div>
 										</div>
 									);

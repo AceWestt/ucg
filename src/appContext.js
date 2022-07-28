@@ -33,6 +33,7 @@ const AppProvider = ({ children }) => {
 	const [navEmail, setNavEmail] = useState('sales@unicementgroup.com');
 	const [navPhone, setNavPhone] = useState('+10 (998 7091) 2 24 48');
 	const [navLogo, setNavLogo] = useState(logo);
+	const [common, setCommon] = useState({});
 	const [factories, setFactories] = useState([]);
 
 	useEffect(() => {
@@ -40,11 +41,13 @@ const AppProvider = ({ children }) => {
 			try {
 				const maindata = await callGet('api/main');
 				if (maindata.status === 200) {
+					console.log(maindata.data);
 					setMainBackendData(maindata.data);
 					setNavEmail(maindata.data.email);
 					setNavPhone(maindata.data.phone);
 					setNavLogo(maindata.data.logo);
 					setFactories(maindata.data.factories);
+					setCommon(maindata.data.common);
 				}
 			} catch (error) {
 				console.error(error);
@@ -79,6 +82,7 @@ const AppProvider = ({ children }) => {
 				mainBackendData,
 				navLogo,
 				factories,
+				common,
 			}}
 		>
 			{children}
